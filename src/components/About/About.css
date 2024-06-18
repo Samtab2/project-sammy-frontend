@@ -1,0 +1,23 @@
+.about {
+    display: flex;
+    height: 624px;
+    margin-bottom: 20px;
+}
+
+
+about__image {
+}
+
+.about__content {
+    padding: 0 216px 0 56px;
+    margin-top: 200px;
+}
+
+.about__title {
+margin: 0;
+padding: 131px 0 24px;
+}
+
+.about__description {
+margin: 0;
+}

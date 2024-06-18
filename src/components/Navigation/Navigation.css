@@ -1,0 +1,41 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 19px 104px 13px 104px;
+  border-bottom: 1px solid rgba (246, 244, 244, 0.7);
+  margin-bottom: -80px;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.nav__user-container {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.nav__button-home {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.nav__button-sigin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 100px;
+  padding: 12px;
+  width: 152px;
+  color: #ffffff;
+  border-color: #ffffff;
+}

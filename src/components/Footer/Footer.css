@@ -1,0 +1,45 @@
+.footer {
+  height: 64px;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 104px 26px;
+}
+
+.footer__copyright {
+  font-weight: 400;
+  font-size: 16px;
+  color: #b6bcbf;
+  margin: 0;
+}
+
+.footer__links {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer__link-home {
+  margin-right: 40px;
+  font-weight: 400;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.footer__link-triplenTen {
+  font-weight: 400;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.footer__link-github {
+  padding: 0 24px 0 40px;
+}
+
+.footer__link-icon {
+  cursor: pointer;
+}
