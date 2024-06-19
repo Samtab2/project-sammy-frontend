@@ -39,29 +39,25 @@ function App() {
     <>
       <div className="page">
         <div className="page__content">
-          <Navigation />
+          <Navigation onLoginClick={handleSignInModalClick} />
           <Header onLoginClick={handleSignInModalClick} />
           <SearchForm />
           <Main />
           <Footer />
-          {activeModal === "sign-in" && (
-            <SigninModal
-              isOpen={true}
-              onClose={onClose}
-              onSecondButtonClick={handleRegisterModalClick}
-              handleSignInModalClick={handleSignInModalClick}
-              activeModal={activeModal}
-            />
-          )}
-          {activeModal === "sign-up" && (
-            <RegisterModal
-              isOpen={true}
-              onClose={onClose}
-              onSecondButtonClick={handleSignInModalClick}
-              handleRegisterModalClick={handleRegisterModalClick}
-              activeModal={activeModal}
-            />
-          )}
+          <SigninModal
+            isOpen={activeModal === "sign-in"}
+            onClose={onClose}
+            onRegisterClick={handleRegisterModalClick}
+            OnLogInClick={handleSignInModalClick}
+            activeModal={activeModal}
+          />
+          <RegisterModal
+            isOpen={activeModal === "sign-up"}
+            onClose={onClose}
+            onLoginClick={handleSignInModalClick}
+            onRegisterClick={handleRegisterModalClick}
+            activeModal={activeModal}
+          />
         </div>
       </div>
     </>

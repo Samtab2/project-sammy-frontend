@@ -12,14 +12,13 @@ const ModalWithForm = ({
   onSecondButtonClick,
 }) => {
   return (
-    <div className={`modal ${isOpen ? "modal_open" : ""}`}>
+    <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
       <div className="modal__container">
+        <h2 className="modal__title">{title}</h2>
         <button
           className="modal__close-button"
           type="button"
           onClick={onClose}></button>
-        <h2 className="modal__title">{title}</h2>
-
         <form onSubmit={onSubmit}>
           {children}
           <div className="modal__button-container">

@@ -1,9 +1,16 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  padding: 19px 104px 13px 104px;
-  border-bottom: 1px solid rgba (246, 244, 244, 0.7);
-  margin-bottom: -80px;
+  align-items: center;
+  padding: 0 104px;
+  border-bottom: 1px solid rgba(246, 244, 244, 0.7);
+  position: relative;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #ffffff;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .nav__logo {
@@ -27,7 +34,7 @@
   color: #ffffff;
 }
 
-.nav__button-sigin {
+.nav__button-signin {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,5 +44,5 @@
   padding: 12px;
   width: 152px;
   color: #ffffff;
-  border-color: #ffffff;
+  border: 1px solid #ffffff;
 }
