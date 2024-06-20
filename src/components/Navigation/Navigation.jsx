@@ -1,18 +1,18 @@
 import "./Navigation.css";
-import { NavLink } from "react-router-dom";
+
 function Navigation ({ onLoginClick }) {
   
   return (
     <nav className="nav">
       <div className="nav__logo">NewsExplorer</div>
       <div className="nav__user-container">
-        <NavLink className="nav__button-home active" to="/" >Home</NavLink>
+        <button className="nav__button-home active">Home</button>
         <button
           className="nav__button-signin"
           type="text"
           onClick={onLoginClick}
           >
-          Sign in {" "}
+          Sign in  {" "}
         </button>
       </div>
     </nav>

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 104px;
+  padding: 20px 40px;
   border-bottom: 1px solid rgba(246, 244, 244, 0.7);
   z-index: 1000;
   color: #fff;
@@ -28,7 +28,7 @@
 .nav__user-container {
   display: flex;
   align-items: center;
-  gap: 42px;
+  gap: 20px;
 }
 
 .nav__button-home {
@@ -41,13 +41,19 @@
   font-weight: 500;
   font-family: roboto;
   line-height: 24px;
+  padding: 20px 0;
 }
 
-.nav__button-home.active {
-  border-bottom: 2px solid #ffffff;
+.nav__button-home.active::after,
+.nav__button-home:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ffffff;
 }
-
-
 
 .nav__button-signin {
   display: flex;
@@ -69,7 +75,7 @@
   margin-right: 560px;
 }
 
-
-.nav__button-signin.active {
+.nav__button-signin.active,
+.nav__button-signin:hover {
   border: 1px solid #ffffff;
 }
