@@ -40,6 +40,7 @@ function RegisterModal({ onClose, isOpen, onRegisterClick, onLoginClick }) {
       buttonText={"Sign up"}
       buttonText2={"or Log in"}>
       <label htmlFor="email2" className="modal__label">
+        Email
         <input
           className="modal__input"
           type="email"
@@ -52,6 +53,7 @@ function RegisterModal({ onClose, isOpen, onRegisterClick, onLoginClick }) {
         />
       </label>
       <label htmlFor="password2" className="modal__label">
+        Password
         <input
           className="modal__input"
           type="password"
@@ -63,22 +65,24 @@ function RegisterModal({ onClose, isOpen, onRegisterClick, onLoginClick }) {
           required
         />
       </label>
-      <label className="modal__label">
+      <label htmlFor="username" className="modal__label">
+        Username
         <input
           className="modal__input"
           type="text"
           name="username"
+          id="username"
           placeholder="Username"
           value={username}
           onChange={handleUserName}
           required
         />
       </label>
-      <button type="submit" className="SignUp__button"></button>
+      <button type="submit" className="SignUp__button">Sign up</button>
       <button
         onClick={onLoginClick}
         type="button"
-        className="Or-Login__button"></button>
+        className="Or-Login__button"> or Log in</button>
     </ModalWithForm>
   );
 }

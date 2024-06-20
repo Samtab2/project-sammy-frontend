@@ -12,7 +12,7 @@ function Navigation ({ onLoginClick }) {
           type="text"
           onClick={onLoginClick}
           >
-          Log in {" "}
+          Sign in {" "}
         </button>
       </div>
     </nav>

@@ -35,11 +35,12 @@ const SigninModal = ({
       isOpen={isOpen}
       onSubmit={handleSubmit}
       onClose={onClose}
-      title="Log in"
+      title="Sign in"
       buttonText="Sign in"
       secondButtonText="or Sign up"
      >
       <label htmlFor="email" className="modal__label">
+        Email
         <input
           className="modal__input"
           type="email"
@@ -52,6 +53,7 @@ const SigninModal = ({
         />
       </label>
       <label htmlFor="password" className="modal__label">
+        Password
         <input
           className="modal__input"
           type="password"
@@ -66,8 +68,8 @@ const SigninModal = ({
       <button
         type="submit"
         onClick={OnLogInClick}
-        className="Login__button"></button>
-      <button onClick={onRegisterClick} className="Or-Sign-Up__button"></button>
+        className="Login__button">Sign in</button>
+      <button onClick={onRegisterClick} className="Or-Sign-Up__button"> or Sign up</button>
     </ModalWithForm>
   );
 };

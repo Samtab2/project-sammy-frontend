@@ -1,17 +1,17 @@
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 104px;
-  border-bottom: 1px solid rgba(246, 244, 244, 0.7);
-  position: relative;
-  z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.05);
-  color: #ffffff;
-  top: 0;
-  left: 0;
-  right: 0;
-}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 104px;
+    border-bottom: 1px solid rgba(246, 244, 244, 0.7);
+    z-index: 1000;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    right: 0;
+  }
+  
 
 .nav__logo {
   display: flex;
@@ -19,6 +19,11 @@
   cursor: pointer;
   font-size: 20px;
   color: #ffffff;
+  font-weight: 700;
+  font-style: normal;
+  font-family: roboto-slab;
+  line-height: 24px;
+  margin-left: 560px;
 }
 
 .nav__user-container {
@@ -32,6 +37,12 @@
   background: none;
   cursor: pointer;
   color: #ffffff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  font-family: roboto;
+  line-height: 24px;
+
 }
 
 .nav__button-signin {
@@ -42,7 +53,14 @@
   background: transparent;
   border-radius: 100px;
   padding: 12px;
-  width: 152px;
+  width: 176px;
+  height: 48px;
   color: #ffffff;
   border: 1px solid #ffffff;
+  font-family: roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  margin-right: 560px;
 }
