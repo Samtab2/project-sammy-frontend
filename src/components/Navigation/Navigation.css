@@ -1,17 +1,16 @@
 .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 104px;
-    border-bottom: 1px solid rgba(246, 244, 244, 0.7);
-    z-index: 1000;
-    color: #fff;
-    position: absolute;
-    top: 0;
-    left: 0; 
-    right: 0;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 104px;
+  border-bottom: 1px solid rgba(246, 244, 244, 0.7);
+  z-index: 1000;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 
 .nav__logo {
   display: flex;
@@ -42,7 +41,7 @@
   font-weight: 500;
   font-family: roboto;
   line-height: 24px;
-
+  
 }
 
 .nav__button-signin {

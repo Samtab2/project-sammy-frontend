@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "../header/header";
 import Main from "../Main/Main";
@@ -39,8 +40,8 @@ function App() {
     <>
       <div className="page">
         <div className="page__content">
+          <Header />
           <Navigation onLoginClick={handleSignInModalClick} />
-          <Header onLoginClick={handleSignInModalClick} />
           <SearchForm />
           <Main />
           <Footer />

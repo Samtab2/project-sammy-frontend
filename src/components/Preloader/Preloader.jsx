@@ -1,5 +1,5 @@
 const Preloader = () => {
-  return <div className="preloader"></div>;
+  return <div className="circle-preloader"></div>;
 };
 
 export default Preloader;
