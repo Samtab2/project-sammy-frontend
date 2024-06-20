@@ -41,8 +41,13 @@
   font-weight: 500;
   font-family: roboto;
   line-height: 24px;
-  
 }
+
+.nav__button-home.active {
+  border-bottom: 2px solid #ffffff;
+}
+
+
 
 .nav__button-signin {
   display: flex;
@@ -62,4 +67,9 @@
   font-size: 18px;
   line-height: 24px;
   margin-right: 560px;
+}
+
+
+.nav__button-signin.active {
+  border: 1px solid #ffffff;
 }

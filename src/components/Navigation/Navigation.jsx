@@ -6,7 +6,7 @@ function Navigation ({ onLoginClick }) {
     <nav className="nav">
       <div className="nav__logo">NewsExplorer</div>
       <div className="nav__user-container">
-        <NavLink className="nav__button-home" to="/" >Home</NavLink>
+        <NavLink className="nav__button-home active" to="/" >Home</NavLink>
         <button
           className="nav__button-signin"
           type="text"
