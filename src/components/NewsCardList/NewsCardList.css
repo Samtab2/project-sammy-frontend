@@ -1,0 +1,25 @@
+.news__card-section {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f6f7;
+    padding: 80px;
+}
+
+.news__cards-title {
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 46px;
+    color: #1A1B22;
+}
+
+.news__cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    margin: 64px  0;
+}
