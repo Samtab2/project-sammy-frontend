@@ -14,22 +14,23 @@ class Api {
   getNewsItems() {
     return fetch(`${this._baseUrl}/items`, {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: this._headers,
     }).then(this._checkResponse);
   }
 
   postNews(data) {
     return fetch(`${this._baseUrl}/items`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: this._headers,
       body: JSON.stringify(data),
     }).then(this._checkResponse);
   }
+
+  getGeneralNews() {
+    return fetch(`${this._baseUrl}/items`, {
+      method: "GET",
+      headers: this._headers,
+    }).then(this._checkResponse);
+  }
 }
-
-
 export default Api;

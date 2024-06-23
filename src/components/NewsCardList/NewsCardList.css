@@ -1,25 +1,38 @@
 .news__card-section {
-    display: flex;
-    flex-direction: column;
-    background-color: #f5f6f7;
-    padding: 80px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin: 16px;
 }
 
 .news__cards-title {
-    margin: 0;
-    font-family: 'Roboto Slab', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 46px;
-    color: #1A1B22;
+  font-size: 24px;
+  margin-bottom: 16px;
 }
 
 .news__cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    gap: 16px;
-    margin: 64px  0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.newscards__button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.newscards__button_hidden {
+  display: none;
+}
+
+.newscards__button:hover {
+  background-color: #0056b3;
 }

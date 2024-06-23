@@ -3,39 +3,28 @@ import NewsCard from "../NewsCard/NewsCard";
 import { useState, useContext } from "react";
 import { searchResultContext } from "../../contexts/searchResultContext";
 import { hasSearchedContext } from "../../contexts/hasSearchedContext";
-import { currentPageContext } from "../../contexts/currentPageContext";
-import { keywordContext } from "../../contexts/keywordContext";
-const NewsCardList = ({ }) => {
-    const [cardsDisplayed, setCardsDisplayed] = useState(3);
+const NewsCardList = ({}) => {
+  const [cardsDisplayed, setCardsDisplayed] = useState(3);
 
-    const { searchResults } = useContext(searchResultContext);
+  const { searchResults } = useContext(searchResultContext);
 
-    const { hasSearched } = useContext(hasSearchedContext);
+  const { hasSearched } = useContext(hasSearchedContext);
 
-    const { currentPage } = useContext(currentPageContext);
+  const increaseVisibleCards = () => {
+    setCardsDisplayed(cardsDisplayed + 3);
+  };
 
-    const { keyword } = useContext(keywordContext);
+  console.log("search Results context", searchResults);
+  console.log("has Searched context", hasSearched);
 
-
-    const increaseVisibleCards = () => {
-        setCardsDisplayed(cardsDisplayed + 3);
-    }
-
-   console.log(searchResults)
-
-    return (
-        <section className="news__card-section">
-                 {hasSearched ? (
+  return (
+    <section className="news__card-section">
+      {hasSearched ? (
         <>
-          <h2 className="news__cards-title">Search results</h2>
+          <h2 className="news__cards-title">News Articles</h2>
           <div className="news__cards-container">
             {searchResults.slice(0, cardsDisplayed).map((result) => {
-              return (
-                <NewsCard
-                  newsData={result}
-                  key={result.url}
-                />
-              );
+               <NewsCard newsData={result} key={result.url} />
             })}
           </div>
           <button
@@ -44,14 +33,15 @@ const NewsCardList = ({ }) => {
                 ? "newscards__button_hidden"
                 : ""
             }`}
-            onClick={increaseVisibleCards}
-          >
+            onClick={increaseVisibleCards}>
             Show more
           </button>
         </>
       ) : (
-        ""
+        <p>No results found</p>
       )}
     </section>
   );
 };
+
+export default NewsCardList;

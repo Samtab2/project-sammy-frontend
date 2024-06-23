@@ -8,9 +8,11 @@ import RegisterModal from "../ModalWithForm/RegisterModal";
 import Footer from "../Footer/Footer";
 import SearchForm from "../SearchForm/SearchForm";
 import Navigation from "../Navigation/Navigation";
-import Api from "../../../utils/Api";
+import NewsCard from "../NewsCard/NewsCard";
+import Api from "../../utils/Api";
+import { getSearchResults } from "../../utils/NewsApi";
 import { useLocation } from "react-router-dom";
-import { keyWordContext } from "../../contexts/keyWordContext";
+import { keywordContext } from "../../contexts/keywordContext";
 import { currentPageContext } from "../../contexts/currentPageContext";
 import { searchResultContext } from "../../contexts/searchResultContext";
 import { hasSearchedContext } from "../../contexts/hasSearchedContext";
@@ -53,17 +55,16 @@ function App() {
   const handleSearch = (keyword) => {
     setKeyword(keyword);
     setIsSearching(true);
-    getSearchResults(keyword)
+    api
+      .getNewsItems(keyword)
       .then((res) => {
-        setSearchResult(res.articles);
+        setSearchResult(res.articles || []);
         setHasSearched(true);
-        setIsSearching(false);
         setSearchError(false);
       })
       .catch((err) => {
         console.log(err);
         setSearchError(true);
-        setIsSearching(false);
       });
   };
 
@@ -80,12 +81,16 @@ function App() {
 
   useEffect(() => {
     api
-      .getNewsItems()
+      .getGeneralNews()
       .then((res) => {
-        console.log(res);
+        console.log("API response", res);
+        setSearchResult(res.articles || []);
+        setHasSearched(true);
+        setSearchError(false);
       })
       .catch((err) => {
         console.log(err);
+        setSearchError(true);
       });
   }, []);
 
@@ -97,10 +102,10 @@ function App() {
   }, []);
 
   return (
-    <searchResultContext.Provider value={{searchResult, setSearchResult}}>
-      <hasSearchedContext.Provider value={{hasSearched, setHasSearched}}>
-        <currentPageContext.Provider value={{currentPage, setCurrentPage}}>
-          <keyWordContext.Provider value={{keyword, setKeyword}}>
+    <searchResultContext.Provider value={{ searchResult, setSearchResult }}>
+      <hasSearchedContext.Provider value={{ hasSearched, setHasSearched }}>
+        <currentPageContext.Provider value={{ currentPage, setCurrentPage }}>
+          <keywordContext.Provider value={{ keyword, setKeyword }}>
             <div className="page">
               <div className="page__content">
                 <Header />
@@ -124,7 +129,7 @@ function App() {
                 />
               </div>
             </div>
-          </keyWordContext.Provider>
+          </keywordContext.Provider>
         </currentPageContext.Provider>
       </hasSearchedContext.Provider>
     </searchResultContext.Provider>

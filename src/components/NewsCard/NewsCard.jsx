@@ -1,19 +1,21 @@
 import "./NewsCard.css";
 import { useLocation } from "react-router-dom";
-import { keyWordContext } from "../../contexts/keywordContext";
+import { keywordContext } from "../../contexts/keywordContext";
 import { currentPageContext } from "../../contexts/currentPageContext";
 import { useContext, useEffect } from "react";
 
 
 
 function NewsCard ({ newsData }) {
-    const formattedDate = new Date(newsData.publishedAt || newsData.date).toLocaleDateString("default", {
+
+    console.log("Rendering NewsCard", newsData);
+    const formattedDate = new Date(newsData.publishedAt.newsData.date).toLocaleDateString("default", {
         day: "numeric",
         month: "long",
         year: "numeric"
     });
 
-    const { keyword } = useContext(keyWordContext);
+    const { keyword } = useContext(keywordContext);
 
     const { currentPage, setCurrentPage } = useContext(currentPageContext);
 
