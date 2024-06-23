@@ -10,7 +10,10 @@ import SearchForm from "../SearchForm/SearchForm";
 import Navigation from "../Navigation/Navigation";
 import Api from "../../../utils/Api";
 import { useLocation } from "react-router-dom";
-import { getSearchResults } from "../../../utils/NewsApi";
+import { keyWordContext } from "../../contexts/keyWordContext";
+import { currentPageContext } from "../../contexts/currentPageContext";
+import { searchResultContext } from "../../contexts/searchResultContext";
+import { hasSearchedContext } from "../../contexts/hasSearchedContext";
 function App() {
   const api = new Api({
     baseUrl: "http://localhost:3000",
@@ -94,31 +97,37 @@ function App() {
   }, []);
 
   return (
-    <>
-      <div className="page">
-        <div className="page__content">
-          <Header />
-          <Navigation onLoginClick={handleSignInModalClick} />
-          <SearchForm />
-          <Main handleSearch={handleSearch} searchError={searchError} />
-          <Footer />
-          <SigninModal
-            isOpen={activeModal === "sign-in"}
-            onClose={onClose}
-            onRegisterClick={handleRegisterModalClick}
-            OnLogInClick={handleSignInModalClick}
-            activeModal={activeModal}
-          />
-          <RegisterModal
-            isOpen={activeModal === "sign-up"}
-            onClose={onClose}
-            onLoginClick={handleSignInModalClick}
-            onRegisterClick={handleRegisterModalClick}
-            activeModal={activeModal}
-          />
-        </div>
-      </div>
-    </>
+    <searchResultContext.Provider value={{searchResult, setSearchResult}}>
+      <hasSearchedContext.Provider value={{hasSearched, setHasSearched}}>
+        <currentPageContext.Provider value={{currentPage, setCurrentPage}}>
+          <keyWordContext.Provider value={{keyword, setKeyword}}>
+            <div className="page">
+              <div className="page__content">
+                <Header />
+                <Navigation onLoginClick={handleSignInModalClick} />
+                <SearchForm />
+                <Main handleSearch={handleSearch} searchError={searchError} />
+                <Footer />
+                <SigninModal
+                  isOpen={activeModal === "sign-in"}
+                  onClose={onClose}
+                  onRegisterClick={handleRegisterModalClick}
+                  OnLogInClick={handleSignInModalClick}
+                  activeModal={activeModal}
+                />
+                <RegisterModal
+                  isOpen={activeModal === "sign-up"}
+                  onClose={onClose}
+                  onLoginClick={handleSignInModalClick}
+                  onRegisterClick={handleRegisterModalClick}
+                  activeModal={activeModal}
+                />
+              </div>
+            </div>
+          </keyWordContext.Provider>
+        </currentPageContext.Provider>
+      </hasSearchedContext.Provider>
+    </searchResultContext.Provider>
   );
 }
 
