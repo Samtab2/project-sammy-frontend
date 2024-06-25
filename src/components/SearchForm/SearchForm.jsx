@@ -1,14 +1,17 @@
 import "./SearchForm.css";
+import { useContext } from "react";
+import { keyWordContext } from "../../contexts/keyWordContext";
 
+function SearchForm({ onSubmit }) {
+  const { keyWord } = useContext(keyWordContext);
 
-function SearchForm() {
-  const handlesubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    getSearchResults().then((res) => console.log(res));
+    onSubmit(keyWord);
   };
 
   return (
-    <form  onSubmit={handlesubmit} className="search__form">
+    <form onSubmit={handleSubmit} className="search__form">
       <section className="search__form-container">
         <h1 className="search__form-header">What's going on in the world?</h1>
         <p className="search__form-subHeader">

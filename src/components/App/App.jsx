@@ -51,10 +51,10 @@ function App() {
     }
   };
 
-  const handleSearch = (keyword) => {
-    setKeyWord(keyword);
+  const handleSearch = (keyWord) => {
+    setKeyWord(keyWord);
     setIsSearching(true);
-    getSearchResults(keyword)
+    getSearchResults(keyWord)
       .then((res) => {
         setSearchResult(res.articles);
         setHasSearched(true);
@@ -110,7 +110,7 @@ function App() {
               <div className="page__content">
                 <Header />
                 <Navigation onLoginClick={handleSignInModalClick} />
-                <SearchForm />
+                <SearchForm onSubmit={(keyWord) => handleSearch(keyWord)} />
                 <Main handleSearch={handleSearch} searchError={searchError} />
                 <SavedNews handleRemoveArticle={handleAddNews} />
                 <Footer />
