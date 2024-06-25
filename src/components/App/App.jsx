@@ -8,7 +8,7 @@ import RegisterModal from "../ModalWithForm/RegisterModal";
 import Footer from "../Footer/Footer";
 import SearchForm from "../SearchForm/SearchForm";
 import Navigation from "../Navigation/Navigation";
-import NewsCard from "../NewsCard/NewsCard";
+import SavedNews from "../SavedNews/SavedNews";
 import Api from "../../utils/Api";
 import { getSearchResults } from "../../utils/NewsApi";
 import { useLocation } from "react-router-dom";
@@ -25,7 +25,6 @@ function App() {
   });
 
   const [activeModal, setActiveModal] = useState("");
-  const [newsItems, setNewsItems] = useState([]);
   const [keyword, setKeyword] = useState("");
   const [currentPage, setCurrentPage] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
@@ -112,6 +111,7 @@ function App() {
                 <Navigation onLoginClick={handleSignInModalClick} />
                 <SearchForm />
                 <Main handleSearch={handleSearch} searchError={searchError} />
+                <SavedNews handleRemoveArticle={handleAddNews} />
                 <Footer />
                 <SigninModal
                   isOpen={activeModal === "sign-in"}
