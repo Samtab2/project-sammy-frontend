@@ -11,22 +11,22 @@ function SavedNewsHeader() {
     (article) => article.owner === currentUser._id
   );
 
-  const keywordArray = userArticles.map((article) => article.keyword);
-  const capitalizedFirstLetter = keywordArray.map((string) => {
+  const KeywordArray = userArticles.map((article) => article.Keyword);
+  const capitalizedFirstLetter = KeywordArray.map((string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   });
 
-  const getKeywordsString = (keywords) => {
-    if (keywords.length === 0) {
+  const getKeywordsString = (Keywords) => {
+    if (Keywords.length === 0) {
       return "";
     }
-    if (keywords.length === 1) {
+    if (Keywords.length === 1) {
       const count = {};
-      for (let keyword of keywords) {
-        if (count[keyword]) {
-          count[keyword]++;
+      for (let Keyword of Keywords) {
+        if (count[Keyword]) {
+          count[Keyword]++;
         } else {
-          count[keyword] = 1;
+          count[Keyword] = 1;
         }
       }
 
@@ -47,7 +47,7 @@ function SavedNewsHeader() {
       } else {
         const firstKeywords = sortedKeywordsArrary
           .slice(0, 2)
-          .map((keyword) => capitalizedFirstLetter(keyword[0]))
+          .map((Keyword) => capitalizedFirstLetter(Keyword[0]))
           .join(", ");
 
         const moreCount = sortedKeywordsArrary.length - 2;
@@ -57,7 +57,7 @@ function SavedNewsHeader() {
       return null;
     }
   };
-  const keywordString = getKeywordsString(keywordArray);
+  const KeywordString = getKeywordsString(KeywordArray);
   return (
     <div className="saved__news">
       <div className="saved__news-container">
@@ -66,9 +66,9 @@ function SavedNewsHeader() {
           {currentUser.name}, you {userArticles.length} saved article{" "}
           {userArticles.length === 1 ? "s" : ""}{" "}
         </h1>
-        <div className="saved__news-keyword-container">
-          <p className="saved__news-keywords-title">By keywords:</p>
-          <p className="saved__news-keywords">{keywordString}</p>
+        <div className="saved__news-Keyword-container">
+          <p className="saved__news-Keywords-title">By Keywords:</p>
+          <p className="saved__news-Keywords">{KeywordString}</p>
         </div>
       </div>
     </div>

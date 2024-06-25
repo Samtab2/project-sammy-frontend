@@ -1,6 +1,6 @@
 import "./NewsCard.css";
 import { useLocation } from "react-router-dom";
-import { keywordContext } from "../../contexts/keywordContext";
+import { keyWordContext } from "../../contexts/keyWordContext";
 import { currentPageContext } from "../../contexts/currentPageContext";
 import { useContext, useEffect } from "react";
 
@@ -15,7 +15,7 @@ function NewsCard ({ newsData }) {
         year: "numeric"
     });
 
-    const { keyword } = useContext(keywordContext);
+    const { Keyword } = useContext(keyWordContext);
 
     const { currentPage, setCurrentPage } = useContext(currentPageContext);
 
@@ -34,7 +34,7 @@ function NewsCard ({ newsData }) {
                 <div className="news-card__description">
                     <h3 className="news-card__title">{newsData.title}</h3>
                     <p className="news-card__date">{formattedDate}</p> 
-                    <p className="news-card__keyword">{keyword}</p> 
+                    <p className="news-card__Keyword">{Keyword}</p> 
                 </div>  
             </a>
         </div>
