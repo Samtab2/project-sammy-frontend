@@ -3,11 +3,15 @@ import { useContext } from "react";
 import { keyWordContext } from "../../contexts/keyWordContext";
 
 function SearchForm({ onSubmit }) {
-  const { keyWord } = useContext(keyWordContext);
+  const { keyWord, setKeyWord } = useContext(keyWordContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit(keyWord);
+  };
+
+  const handleKeyWord = (event) => {
+    setKeyWord(event.target.value);
   };
 
   return (
@@ -23,7 +27,9 @@ function SearchForm({ onSubmit }) {
             className="search__form-input"
             type="text"
             id="search"
+            value={keyWord}
             placeholder="Enter Topic"
+            onChange={handleKeyWord}
           />
         </div>
         <button type="submit" className="search__form-button">

@@ -15,7 +15,7 @@ function NewsCard ({ newsData }) {
         year: "numeric"
     });
 
-    const { Keyword } = useContext(keyWordContext);
+    const { keyWord } = useContext(keyWordContext);
 
     const { currentPage, setCurrentPage } = useContext(currentPageContext);
 
@@ -28,13 +28,13 @@ function NewsCard ({ newsData }) {
             <a className="news-card__link" href={newsData.url} target="_blank" rel="noreferrer">
                 <img
                     className="news-card__image"
-                    src={newsData.image}
+                    src={newsData.urlToImage}
                     alt={newsData.title}
                 />
                 <div className="news-card__description">
                     <h3 className="news-card__title">{newsData.title}</h3>
                     <p className="news-card__date">{formattedDate}</p> 
-                    <p className="news-card__Keyword">{Keyword}</p> 
+                    <p className="news-card__Keyword">{keyWord}</p> 
                 </div>  
             </a>
         </div>

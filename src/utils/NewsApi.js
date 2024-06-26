@@ -1,6 +1,10 @@
 import { APIKey, parseCurrentDate, parsePreviousWeek } from "./constants";
 
-export const getSearchResults = (keyword) => {
+
+export const getSearchResults = (keyWord) => {
+   if (!keyWord) {
+    return Promise.reject(`Error: ${keyWord}`);
+  }
   const processServerResponse = (res) => {
     if (res.ok) {
       return res.json();
@@ -10,6 +14,6 @@ export const getSearchResults = (keyword) => {
   };
 
   return fetch(
-    `https://newsapi.org/v2/everything?q=${keyword}&from=${parsePreviousWeek}&to=${parseCurrentDate}&sortBy=popularity&apiKey=${APIKey}`
+    `https://newsapi.org/v2/everything?q=${keyWord}&from=${parsePreviousWeek}&to=${parseCurrentDate}&sortBy=popularity&apiKey=${APIKey}`
   ).then(processServerResponse);
 };
