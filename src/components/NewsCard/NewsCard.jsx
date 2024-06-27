@@ -9,15 +9,24 @@ import { useContext, useEffect } from "react";
 function NewsCard ({ newsData }) {
 
     console.log("Rendering NewsCard", newsData);
-    const formattedDate = new Date(newsData.publishedAt.newsData.date).toLocaleDateString("default", {
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-    });
+
+    let formattedDate;
+
+    if (newsData.publishedAt) {
+        formattedDate = new Date(newsData.publishedAt).toLocaleDateString("default", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+        });
+    } else {
+        formattedDate = "";
+    }
+
+    const location = useLocation();
 
     const { keyWord } = useContext(keyWordContext);
 
-    const { currentPage, setCurrentPage } = useContext(currentPageContext);
+    const { setCurrentPage } = useContext(currentPageContext);
 
     useEffect(() => {
         setCurrentPage(location.pathname);

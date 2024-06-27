@@ -3,7 +3,7 @@ import NewsCard from "../NewsCard/NewsCard";
 import { useState, useContext } from "react";
 import { searchResultContext } from "../../contexts/searchResultContext";
 import { hasSearchedContext } from "../../contexts/hasSearchedContext";
-const NewsCardList = ({}) => {
+const NewsCardList = () => {
   const [cardsDisplayed, setCardsDisplayed] = useState(3);
 
   const { searchResult } = useContext(searchResultContext);
@@ -24,7 +24,7 @@ const NewsCardList = ({}) => {
           <h2 className="news__cards-title">News Articles</h2>
           <div className="news__cards-container">
             {searchResult.slice(0, cardsDisplayed).map((result) => {
-               <NewsCard newsData={result} key={result.url} />
+              return <NewsCard newsData={result} key={result.url} />
             })}
           </div>
           <button
