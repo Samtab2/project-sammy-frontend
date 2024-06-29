@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { keyWordContext } from "../../contexts/keyWordContext";
 import { currentPageContext } from "../../contexts/currentPageContext";
 import { useContext, useEffect } from "react";
-debugger
+
 function NewsCard({ newsData }) {
   console.log("Rendering NewsCard", newsData);
 
@@ -24,7 +24,6 @@ function NewsCard({ newsData }) {
 
   const location = useLocation();
 
-  const { keyWord } = useContext(keyWordContext);
 
   const { setCurrentPage } = useContext(currentPageContext);
 
@@ -43,13 +42,20 @@ function NewsCard({ newsData }) {
           <img
             className="news-card__image"
             src={newsData.urlToImage}
-            alt={newsData.title}
+            alt={newsData.url}
           />
         )}
-        <div className="news-card__description">
-          <h3 className="news-card__title">{newsData.title}</h3>
+        <div className="news-card__text">
           <p className="news-card__date">{formattedDate}</p>
-          <p className="news-card__Keyword">{keyWord}</p>
+          <h3 className="news-card__title">{newsData.title}</h3>
+          <p className="news-card__description">
+            {newsData.text || newsData.description}
+          </p>
+          {newsData.source && (
+            <p className="news-card__source">
+              {newsData.source.name || newsData.source}
+            </p>
+          )}
         </div>
       </a>
     </div>

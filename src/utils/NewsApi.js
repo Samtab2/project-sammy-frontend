@@ -14,6 +14,14 @@ export const getSearchResults = (keyWord) => {
   };
 
   return fetch(
-    `https://newsapi.org/v2/everything?q=${keyWord}&from=${parsePreviousWeek}&to=${parseCurrentDate}&sortBy=popularity&apiKey=${APIKey}`
-  ).then(processServerResponse);
-};
+    `https://newsapi.org/v2/everything?q=${keyWord}&from=${parsePreviousWeek}&sortBy=popularity&apiKey=${APIKey}`
+  ).then(processServerResponse)
+  .then((res) => {
+    return {
+      ...res,
+      articles: res.articles.filter(
+        (article) => article.title != "[Removed]"
+      ),
+    };
+  });
+}

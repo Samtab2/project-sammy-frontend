@@ -6,7 +6,6 @@ import Main from "../Main/Main";
 import SigninModal from "../ModalWithForm/SigninModal";
 import RegisterModal from "../ModalWithForm/RegisterModal";
 import Footer from "../Footer/Footer";
-import SearchForm from "../SearchForm/SearchForm";
 import Navigation from "../Navigation/Navigation";
 import SavedNews from "../SavedNews/SavedNews";
 import Api from "../../utils/Api";
@@ -31,7 +30,9 @@ function App() {
   const [searchError, setSearchError] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
-  const location = useLocation();
+  const [isLoading, setIsLoading] = useState(false);
+
+  // const location = useLocation(); for Stage 3 I will update it later
 
   const handleSignInModalClick = () => {
     setActiveModal("sign-in");
@@ -108,9 +109,8 @@ function App() {
           <keyWordContext.Provider value={{ keyWord, setKeyWord }}>
             <div className="page">
               <div className="page__content">
-                <Header />
+                <Header onLoginClick={handleSignInModalClick} />
                 <Navigation onLoginClick={handleSignInModalClick} />
-                <SearchForm onSubmit={(keyWord) => handleSearch(keyWord)} />
                 <Main handleSearch={handleSearch} searchError={searchError} />
                 <SavedNews handleRemoveArticle={handleAddNews} />
                 <Footer />
@@ -120,6 +120,7 @@ function App() {
                   onRegisterClick={handleRegisterModalClick}
                   OnLogInClick={handleSignInModalClick}
                   activeModal={activeModal}
+                  isLoading={isLoading}
                 />
                 <RegisterModal
                   isOpen={activeModal === "sign-up"}
@@ -127,6 +128,7 @@ function App() {
                   onLoginClick={handleSignInModalClick}
                   onRegisterClick={handleRegisterModalClick}
                   activeModal={activeModal}
+                  isLoading={isLoading}
                 />
               </div>
             </div>

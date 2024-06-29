@@ -2,12 +2,12 @@ import "./SearchForm.css";
 import { useContext } from "react";
 import { keyWordContext } from "../../contexts/keyWordContext";
 
-function SearchForm({ onSubmit }) {
+function SearchForm({ handleSearch }) {
   const { keyWord, setKeyWord } = useContext(keyWordContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onSubmit(keyWord);
+    handleSearch(keyWord);
   };
 
   const handleKeyWord = (event) => {

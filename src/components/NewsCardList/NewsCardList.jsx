@@ -21,7 +21,7 @@ const NewsCardList = () => {
     <section className="news__card-section">
       {hasSearched ? (
         <>
-          <h2 className="news__cards-title">News Articles</h2>
+          <h2 className="news__cards-header">News Articles</h2>
           <div className="news__cards-container">
             {searchResult.slice(0, cardsDisplayed).map((result) => {
               return <NewsCard newsData={result} key={result.url} />

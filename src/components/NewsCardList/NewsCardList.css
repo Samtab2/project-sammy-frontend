@@ -1,11 +1,12 @@
 .news__card-section {
-  padding: 20px;
+  display: flex;
+  padding: 80px 104px;
   background: #f9f9f9;
-  border-radius: 8px;
   margin: 16px;
+  flex-direction: column;
 }
 
-.news__cards-title {
+.news__cards-header {
   font-size: 24px;
   margin-bottom: 16px;
 }
@@ -14,6 +15,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  flex-direction: row;
+  justify-content: center;
+  margin: 64px 0;
 }
 
 .newscards__button {
