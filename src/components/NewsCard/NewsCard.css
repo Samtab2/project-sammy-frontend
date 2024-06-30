@@ -1,11 +1,12 @@
 .news-card {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   background-color: white;
-  border-radius: 25px;
+  border-radius: 8px;
   width: 400px;
   min-height: 576px;
-  position: relative;
-  flex-direction: row;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .news-card__link {
@@ -19,7 +20,8 @@
 }
 
 .news-card__text {
-  padding: 10px 0;
+  text-align: left;
+  margin: 0 24px;
 }
 
 .news-card__date {
@@ -69,7 +71,7 @@
 }
 
 .news-card__source {
-  font-size: Roboto-Slab, Arial, sans-serif;
+  font-family: Roboto-Slab, Arial, sans-serif;
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;

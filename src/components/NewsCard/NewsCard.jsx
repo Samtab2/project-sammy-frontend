@@ -24,7 +24,6 @@ function NewsCard({ newsData }) {
 
   const location = useLocation();
 
-
   const { setCurrentPage } = useContext(currentPageContext);
 
   useEffect(() => {

@@ -7,7 +7,7 @@ import SigninModal from "../ModalWithForm/SigninModal";
 import RegisterModal from "../ModalWithForm/RegisterModal";
 import Footer from "../Footer/Footer";
 import Navigation from "../Navigation/Navigation";
-import SavedNews from "../SavedNews/SavedNews";
+import savedNews from "../SavedNews/SavedNews";
 import Api from "../../utils/Api";
 import { getSearchResults } from "../../utils/NewsApi";
 import { useLocation } from "react-router-dom";
@@ -46,11 +46,29 @@ function App() {
     setActiveModal("");
   };
 
-  const handleEscClose = (event) => {
-    if (event.key === "Escape") {
-      onClose();
-    }
-  };
+  useEffect(() => {
+    const handleEscClose = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+    document.addEventListener("keydown", handleEscClose);
+    return () => {
+      document.removeEventListener("keydown", handleEscClose);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleOverlayClick = (e) => {
+      if (e.target.classList.contains("modal")) {
+        onClose();
+      }
+    };
+    document.addEventListener("click", handleOverlayClick);
+    return () => {
+      document.removeEventListener("click", handleOverlayClick);
+    };
+  }, []);
 
   const handleSearch = (keyWord) => {
     setKeyWord(keyWord);
@@ -69,6 +87,7 @@ function App() {
       });
   };
 
+  // for Stage 3 I will update it later
   const handleAddNews = (data) => {
     api
       .postNews(data)
@@ -95,24 +114,28 @@ function App() {
       });
   }, []);
 
-  useEffect(() => {
-    document.addEventListener("keydown", handleEscClose);
-    return () => {
-      document.removeEventListener("keydown", handleEscClose);
-    };
-  }, []);
+
 
   return (
-    <searchResultContext.Provider value={{ searchResult, setSearchResult }}>
+    <currentPageContext.Provider value={{ currentPage, setCurrentPage }}>
       <hasSearchedContext.Provider value={{ hasSearched, setHasSearched }}>
-        <currentPageContext.Provider value={{ currentPage, setCurrentPage }}>
+        <searchResultContext.Provider value={{ searchResult, setSearchResult }}>
           <keyWordContext.Provider value={{ keyWord, setKeyWord }}>
             <div className="page">
               <div className="page__content">
                 <Header onLoginClick={handleSignInModalClick} />
                 <Navigation onLoginClick={handleSignInModalClick} />
-                <Main handleSearch={handleSearch} searchError={searchError} />
-                <SavedNews handleRemoveArticle={handleAddNews} />
+                <Routes>
+                  <Route
+                    path="/"
+                    element={
+                      <Main
+                        handleSearch={handleSearch}
+                        searchError={searchError}
+                      />
+                    }
+                  />
+                </Routes>
                 <Footer />
                 <SigninModal
                   isOpen={activeModal === "sign-in"}
@@ -133,9 +156,9 @@ function App() {
               </div>
             </div>
           </keyWordContext.Provider>
-        </currentPageContext.Provider>
+        </searchResultContext.Provider>
       </hasSearchedContext.Provider>
-    </searchResultContext.Provider>
+    </currentPageContext.Provider>
   );
 }
 

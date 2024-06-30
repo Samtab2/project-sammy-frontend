@@ -7,10 +7,17 @@ function About() {
       <div className="about__content">
         <h2 className="about__title">About the author</h2>
         <p className="about__description">
-          This block describles the project author. Here you should indicate
-          your name, what you do and which development technologies you know.
-          You can also talk about your experience with TripleTen, what you
-          learned there, and how you help potential customers.
+          Hello, I'm Sammy Tabally, I'm full stack engineer proficient in
+          JavaScript, React, Express, Node, HTML, CSS. I had a warehouse job
+          before I started studying in web development.
+          <br></br>
+          <br></br>I started learning to code at TripleTen Bootcamp. There, I
+          received thorough training and learned how to handle difficult
+          programming tasks. I'm skilled in creating smooth user experiences
+          with React and building large scalable backend systems with Node.js
+          Whether you want to improve online presence or upgrade your tech
+          setup, I can provide smart solutions and achive effective outcomes.
+          Let's work together to turn your ideas into reality, step by step.
         </p>
       </div>
     </section>

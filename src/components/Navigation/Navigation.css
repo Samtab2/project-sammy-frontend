@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 104px;
   border-bottom: 1px solid rgba(246, 244, 244, 0.7);
   z-index: 1000;
   color: #fff;
@@ -22,13 +22,13 @@
   font-style: normal;
   font-family: roboto-slab;
   line-height: 24px;
-  margin-left: 560px;
+  margin-left: 450px;
 }
 
 .nav__user-container {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 42px;
 }
 
 .nav__button-home {
@@ -41,7 +41,6 @@
   font-weight: 500;
   font-family: roboto;
   line-height: 24px;
-  padding: 20px 0;
 }
 
 .nav__button-home.active::after,
@@ -72,7 +71,7 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  margin-right: 560px;
+  margin-right: 450px;
 }
 
 .nav__button-signin.active,

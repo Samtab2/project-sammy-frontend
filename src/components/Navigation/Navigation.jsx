@@ -1,7 +1,6 @@
 import "./Navigation.css";
 
-function Navigation ({ onLoginClick }) {
-  
+function Navigation({ onLoginClick }) {
   return (
     <nav className="nav">
       <div className="nav__logo">NewsExplorer</div>
@@ -10,14 +9,12 @@ function Navigation ({ onLoginClick }) {
         <button
           className="nav__button-signin"
           type="text"
-          onClick={onLoginClick}
-          >
-          Sign in  {" "}
+          onClick={onLoginClick}>
+          Sign in{" "}
         </button>
       </div>
     </nav>
   );
-};
-
+}
 
 export default Navigation;

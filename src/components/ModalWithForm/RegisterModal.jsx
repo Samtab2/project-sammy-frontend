@@ -2,7 +2,13 @@ import "./RegisterModal.css";
 import ModalWithForm from "./ModalWithForm";
 import { useState, useEffect } from "react";
 
-function RegisterModal({ onClose, isOpen, onRegisterClick, onLoginClick }) {
+function RegisterModal({
+  onClose,
+  isOpen,
+  onRegisterClick,
+  onLoginClick,
+  IsLoading,
+}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUserName] = useState("");
@@ -37,7 +43,7 @@ function RegisterModal({ onClose, isOpen, onRegisterClick, onLoginClick }) {
       onClose={onClose}
       title="Sign up"
       name="signup"
-      buttonText={"Sign up"}
+      buttonText={IsLoading ? "Loading..." : "Sign up"}
       buttonText2={"or Log in"}>
       <label htmlFor="email2" className="modal__label">
         Email
@@ -78,11 +84,13 @@ function RegisterModal({ onClose, isOpen, onRegisterClick, onLoginClick }) {
           required
         />
       </label>
-      <button type="submit" className="SignUp__button">Sign up</button>
-      <button
-        onClick={onLoginClick}
-        type="button"
-        className="Or-Login__button"> or Log in</button>
+      <button type="submit" className="SignUp__button">
+        Sign up
+      </button>
+      <button onClick={onLoginClick} type="button" className="Or-Login__button">
+        {" "}
+        or Log in
+      </button>
     </ModalWithForm>
   );
 }

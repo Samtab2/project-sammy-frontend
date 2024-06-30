@@ -16,15 +16,15 @@ const NewsCardList = () => {
 
   console.log("search Results context", searchResult);
   console.log("has Searched context", hasSearched);
-  
+
   return (
     <section className="news__card-section">
       {hasSearched ? (
         <>
-          <h2 className="news__cards-header">News Articles</h2>
+          <h2 className="news__cards-header">Search results</h2>
           <div className="news__cards-container">
             {searchResult.slice(0, cardsDisplayed).map((result) => {
-              return <NewsCard newsData={result} key={result.url} />
+              return <NewsCard newsData={result} key={result.url} />;
             })}
           </div>
           <button

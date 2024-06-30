@@ -15,7 +15,7 @@
 }
 
 @font-face {
-  font-family: roboto;
+  font-family: Roboto;
   src: url(../fonts/roboto-400-regular.woff);
   font-style: normal;
   font-weight: 400;
@@ -23,7 +23,7 @@
 }
 
 @font-face {
-  font-family: roboto;
+  font-family: Roboto;
   src: url(../fonts/roboto-500.woff);
   font-style: normal;
   font-weight: 500;
@@ -31,7 +31,7 @@
 }
 
 @font-face {
-  font-family: roboto;
+  font-family: Roboto;
   src: url(../fonts/roboto-700.woff);
   font-style: normal;
   font-weight: 700;
@@ -39,7 +39,7 @@
 }
 
 @font-face {
-  font-family: roboto;
+  font-family: Roboto;
   src: url(../fonts/roboto-900.woff);
   font-style: normal;
   font-weight: 900;
@@ -47,7 +47,7 @@
 }
 
 @font-face {
-  font-family: roboto-slab;
+  font-family: Roboto-Slab;
   src: url(../fonts/roboto-slab-400-regular.woff);
   font-style: normal;
   font-weight: 400;
@@ -55,7 +55,7 @@
 }
 
 @font-face {
-  font-family: roboto-slab;
+  font-family: Roboto-Slab;
   src: url(../fonts/roboto-slab-700.woff);
   font-style: normal;
   font-weight: 700;

@@ -1,7 +1,10 @@
 .about {
   display: flex;
-  height: 624px;
-  margin-bottom: 20px;
+  min-height: 624px;
+  background-color: white;
+  padding: 0 104px;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .about__image {
@@ -21,18 +24,17 @@
 .about__title {
   margin: 0;
   padding: 131px 0 24px;
-  font-family: roboto-slab;
+  font-family: Roboto-Slab;
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
   line-height: 48px;
   margin-top: -120px;
-
 }
 
 .about__description {
   margin: 0;
-  font-family: roboto;
+  font-family: Roboto;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;

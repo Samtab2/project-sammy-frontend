@@ -7,6 +7,7 @@ const SigninModal = ({
   onClose,
   onRegisterClick,
   OnLogInClick,
+  IsLoading,
 }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -36,9 +37,8 @@ const SigninModal = ({
       onSubmit={handleSubmit}
       onClose={onClose}
       title="Sign in"
-      buttonText="Sign in"
-      secondButtonText="or Sign up"
-     >
+      buttonText={IsLoading ? "Loading..." : "Sign in"}
+      secondButtonText="or Sign up">
       <label htmlFor="email" className="modal__label">
         Email
         <input
@@ -65,11 +65,13 @@ const SigninModal = ({
           required
         />
       </label>
-      <button
-        type="submit"
-        onClick={OnLogInClick}
-        className="Login__button">Sign in</button>
-      <button onClick={onRegisterClick} className="Or-Sign-Up__button"> or Sign up</button>
+      <button type="submit" onClick={OnLogInClick} className="Login__button">
+        Sign in
+      </button>
+      <button onClick={onRegisterClick} className="Or-Sign-Up__button">
+        {" "}
+        or Sign up
+      </button>
     </ModalWithForm>
   );
 };
