@@ -1,5 +1,5 @@
 @font-face {
-  font-family: inter;
+  font-family: Inter;
   src: url(../fonts/inter-400-regular.woff);
   font-style: normal;
   font-weight: 400;
@@ -7,9 +7,9 @@
 }
 
 @font-face {
-  font-family: inter;
+  font-family: Inter;
   src: url(../fonts/inter-500.woff);
-  font-style: medium;
+  font-style: normal;
   font-weight: 500;
   font-display: swap;
 }

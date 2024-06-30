@@ -1,14 +1,13 @@
 .saved__news-card {
-    display: flex;
-    flex-direction: column;
-    background-color: #f5f6f7;
-    padding: 62px 102px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f6f7;
+  padding: 62px 102px;
 }
 
 .saved__newscards-container {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
 }
-

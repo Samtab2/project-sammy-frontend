@@ -1,31 +1,31 @@
-import { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import Header from "../header/header";
-import Main from "../Main/Main";
-import SigninModal from "../ModalWithForm/SigninModal";
-import RegisterModal from "../ModalWithForm/RegisterModal";
-import Footer from "../Footer/Footer";
-import Navigation from "../Navigation/Navigation";
-import savedNews from "../SavedNews/SavedNews";
-import Api from "../../utils/Api";
-import { getSearchResults } from "../../utils/NewsApi";
-import { useLocation } from "react-router-dom";
-import { keyWordContext } from "../../contexts/keyWordContext";
-import { currentPageContext } from "../../contexts/currentPageContext";
-import { searchResultContext } from "../../contexts/searchResultContext";
-import { hasSearchedContext } from "../../contexts/hasSearchedContext";
+import { useState, useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import Header from '../header/header';
+import Main from '../Main/Main';
+import SigninModal from '../ModalWithForm/SigninModal';
+import RegisterModal from '../ModalWithForm/RegisterModal';
+import Footer from '../Footer/Footer';
+import Navigation from '../Navigation/Navigation';
+import savedNews from '../SavedNews/SavedNews';
+import Api from '../../utils/Api';
+import { getSearchResults } from '../../utils/NewsApi';
+import { useLocation } from 'react-router-dom';
+import { keyWordContext } from '../../contexts/keyWordContext';
+import { currentPageContext } from '../../contexts/currentPageContext';
+import { searchResultContext } from '../../contexts/searchResultContext';
+import { hasSearchedContext } from '../../contexts/hasSearchedContext';
 function App() {
   const api = new Api({
-    baseUrl: "http://localhost:3000",
+    baseUrl: 'http://localhost:3000',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   });
 
-  const [activeModal, setActiveModal] = useState("");
-  const [keyWord, setKeyWord] = useState("");
-  const [currentPage, setCurrentPage] = useState("");
+  const [activeModal, setActiveModal] = useState('');
+  const [keyWord, setKeyWord] = useState('');
+  const [currentPage, setCurrentPage] = useState('');
   const [hasSearched, setHasSearched] = useState(false);
   const [searchError, setSearchError] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
@@ -35,44 +35,45 @@ function App() {
   // const location = useLocation(); for Stage 3 I will update it later
 
   const handleSignInModalClick = () => {
-    setActiveModal("sign-in");
+    setActiveModal('sign-in');
   };
 
   const handleRegisterModalClick = () => {
-    setActiveModal("sign-up");
+    setActiveModal('sign-up');
   };
 
   const onClose = () => {
-    setActiveModal("");
+    setActiveModal('');
   };
 
   useEffect(() => {
     const handleEscClose = (e) => {
-      if (e.key === "Escape") {
+      if (e.key === 'Escape') {
         onClose();
       }
     };
-    document.addEventListener("keydown", handleEscClose);
+    document.addEventListener('keydown', handleEscClose);
     return () => {
-      document.removeEventListener("keydown", handleEscClose);
+      document.removeEventListener('keydown', handleEscClose);
     };
   }, []);
 
   useEffect(() => {
     const handleOverlayClick = (e) => {
-      if (e.target.classList.contains("modal")) {
+      if (e.target.classList.contains('modal')) {
         onClose();
       }
     };
-    document.addEventListener("click", handleOverlayClick);
+    document.addEventListener('click', handleOverlayClick);
     return () => {
-      document.removeEventListener("click", handleOverlayClick);
+      document.removeEventListener('click', handleOverlayClick);
     };
   }, []);
 
   const handleSearch = (keyWord) => {
     setKeyWord(keyWord);
     setIsSearching(true);
+    setIsLoading(true);
     getSearchResults(keyWord)
       .then((res) => {
         setSearchResult(res.articles);
@@ -84,6 +85,9 @@ function App() {
         console.log(err);
         setIsSearching(false);
         setSearchError(true);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
@@ -100,10 +104,10 @@ function App() {
   };
 
   useEffect(() => {
+    setIsLoading(true);
     api
       .getNewsItems()
       .then((res) => {
-        console.log("API response", res);
         setSearchResult(res.articles);
         setHasSearched(true);
         setSearchError(false);
@@ -111,10 +115,11 @@ function App() {
       .catch((err) => {
         console.log(err);
         setSearchError(true);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }, []);
-
-
 
   return (
     <currentPageContext.Provider value={{ currentPage, setCurrentPage }}>
@@ -132,13 +137,14 @@ function App() {
                       <Main
                         handleSearch={handleSearch}
                         searchError={searchError}
+                        isLoading={isLoading}
                       />
                     }
                   />
                 </Routes>
                 <Footer />
                 <SigninModal
-                  isOpen={activeModal === "sign-in"}
+                  isOpen={activeModal === 'sign-in'}
                   onClose={onClose}
                   onRegisterClick={handleRegisterModalClick}
                   OnLogInClick={handleSignInModalClick}
@@ -146,7 +152,7 @@ function App() {
                   isLoading={isLoading}
                 />
                 <RegisterModal
-                  isOpen={activeModal === "sign-up"}
+                  isOpen={activeModal === 'sign-up'}
                   onClose={onClose}
                   onLoginClick={handleSignInModalClick}
                   onRegisterClick={handleRegisterModalClick}

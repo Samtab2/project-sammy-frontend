@@ -1,6 +1,6 @@
-import "./SavedNews.css";
-import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
-import SavedNewsCardList from "../SavedNewsCardList/SavedNewsCardList";
+import './SavedNews.css';
+import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
+import SavedNewsCardList from '../SavedNewsCardList/SavedNewsCardList';
 
 const SavedNews =
   () =>

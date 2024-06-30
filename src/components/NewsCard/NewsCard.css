@@ -27,6 +27,7 @@
 .news-card__date {
   font-family: Roboto, Arial, sans-serif;
   font-size: 18px;
+  font-style: normal;
   line-height: 24px;
   font-weight: 400;
   color: #b6bcbf;
@@ -38,6 +39,7 @@
   font-size: 26px;
   line-height: 30px;
   font-weight: 400;
+  font-style: normal;
   color: black;
   margin-top: 15px;
   height: 60px;
@@ -52,6 +54,7 @@
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
+  font-style: normal;
   color: black;
   margin-top: 16px;
   height: 6.9em;
@@ -61,18 +64,10 @@
   -webkit-box-orient: vertical;
 }
 
-.newscards__button {
-  display: block;
-  margin: 10px auto;
-}
-
-.newscards__button_hidden {
-  display: none;
-}
-
 .news-card__source {
   font-family: Roboto-Slab, Arial, sans-serif;
   font-size: 16px;
+  font-style: normal;
   line-height: 20px;
   font-weight: 700;
   color: #b6bcbf;

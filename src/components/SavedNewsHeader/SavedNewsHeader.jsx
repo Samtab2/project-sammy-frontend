@@ -1,7 +1,7 @@
-import "./SavedNewsHeader.css";
-import { useContext } from "react";
-import { currentUserContext } from "../../contexts/currentUserContext";
-import { savedArticlesContext } from "../../contexts/savedArticlesContext";
+import './SavedNewsHeader.css';
+import { useContext } from 'react';
+import { currentUserContext } from '../../contexts/currentUserContext';
+import { savedArticlesContext } from '../../contexts/savedArticlesContext';
 
 function SavedNewsHeader() {
   const { currentUser } = useContext(currentUserContext);
@@ -18,7 +18,7 @@ function SavedNewsHeader() {
 
   const getKeywordsString = (Keywords) => {
     if (Keywords.length === 0) {
-      return "";
+      return '';
     }
     if (Keywords.length === 1) {
       const count = {};
@@ -48,7 +48,7 @@ function SavedNewsHeader() {
         const firstKeywords = sortedKeywordsArrary
           .slice(0, 2)
           .map((Keyword) => capitalizedFirstLetter(Keyword[0]))
-          .join(", ");
+          .join(', ');
 
         const moreCount = sortedKeywordsArrary.length - 2;
         return `${firstKeywords} and ${moreCount} more`;
@@ -63,8 +63,8 @@ function SavedNewsHeader() {
       <div className="saved__news-container">
         <div className="saved__news-title">Saved Articles</div>
         <h1 className="saved__news-header">
-          {currentUser.name}, you {userArticles.length} saved article{" "}
-          {userArticles.length === 1 ? "s" : ""}{" "}
+          {currentUser.name}, you {userArticles.length} saved article{' '}
+          {userArticles.length === 1 ? 's' : ''}{' '}
         </h1>
         <div className="saved__news-Keyword-container">
           <p className="saved__news-Keywords-title">By Keywords:</p>

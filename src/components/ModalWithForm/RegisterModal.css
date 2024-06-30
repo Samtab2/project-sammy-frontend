@@ -11,10 +11,14 @@
   width: 358px;
   height: 64px;
   margin-left: 35px;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 24px;
 }
 
 .SignUp__button:hover {
-  opacity: 60%;
+  background-color: #e8e8e8;
 }
 
 .Or-Login__button {
@@ -27,4 +31,8 @@
   transition: 0.25s ease-in-out;
   padding: 0;
   margin-top: 20px;
+}
+
+.Or-Login__button:hover {
+  opacity: 60%;
 }

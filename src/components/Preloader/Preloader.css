@@ -1,5 +1,5 @@
 .preloader {
-  position: absolute;
+  height: 282px;
   background-color: #f5f6f7;
 }
 
@@ -12,18 +12,19 @@
   border-radius: 50%;
   position: absolute;
   top: 0;
-  bottom: -90px;
+  bottom: -140px;
   left: 0;
   right: 0;
   margin: auto;
-  animation: spin 1s infinite linear;
+  animation: spin 0.75s infinite linear;
 }
 
 .preloader-text {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
+  font-style: normal;
   color: #b6bcbf;
   text-align: center;
   margin: 0;

@@ -1,8 +1,8 @@
-import "./NewsCardList.css";
-import NewsCard from "../NewsCard/NewsCard";
-import { useState, useContext } from "react";
-import { searchResultContext } from "../../contexts/searchResultContext";
-import { hasSearchedContext } from "../../contexts/hasSearchedContext";
+import './NewsCardList.css';
+import NewsCard from '../NewsCard/NewsCard';
+import { useState, useContext } from 'react';
+import { searchResultContext } from '../../contexts/searchResultContext';
+import { hasSearchedContext } from '../../contexts/hasSearchedContext';
 const NewsCardList = () => {
   const [cardsDisplayed, setCardsDisplayed] = useState(3);
 
@@ -14,8 +14,8 @@ const NewsCardList = () => {
     setCardsDisplayed(cardsDisplayed + 3);
   };
 
-  console.log("search Results context", searchResult);
-  console.log("has Searched context", hasSearched);
+  console.log('search Results context', searchResult);
+  console.log('has Searched context', hasSearched);
 
   return (
     <section className="news__card-section">
@@ -24,14 +24,19 @@ const NewsCardList = () => {
           <h2 className="news__cards-header">Search results</h2>
           <div className="news__cards-container">
             {searchResult.slice(0, cardsDisplayed).map((result) => {
-              return <NewsCard newsData={result} key={result.url} />;
+              return (
+                <NewsCard
+                  newsData={result}
+                  key={result.url}
+                />
+              );
             })}
           </div>
           <button
             className={`newscards__button ${
               cardsDisplayed >= searchResult.length
-                ? "newscards__button_hidden"
-                : ""
+                ? 'newscards__button_hidden'
+                : ''
             }`}
             onClick={increaseVisibleCards}>
             Show more
