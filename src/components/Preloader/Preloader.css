@@ -10,12 +10,7 @@
   border: 1px solid #444;
   border-bottom-color: #888;
   border-radius: 50%;
-  position: absolute;
-  top: 0;
-  bottom: -140px;
-  left: 0;
-  right: 0;
-  margin: auto;
+  margin: 120px auto;
   animation: spin 0.75s infinite linear;
 }
 
@@ -27,9 +22,7 @@
   font-style: normal;
   color: #b6bcbf;
   text-align: center;
-  margin: 0;
-  position: relative;
-  top: 178px;
+  margin: -80px;
 }
 
 @keyframes spin {
