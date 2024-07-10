@@ -7,17 +7,17 @@ import SigninModal from '../ModalWithForm/SigninModal';
 import RegisterModal from '../ModalWithForm/RegisterModal';
 import Footer from '../Footer/Footer';
 import Navigation from '../Navigation/Navigation';
-import savedNews from '../SavedNews/SavedNews';
+import savedNews from '../SavedNews/SavedNews'; // for Stage 3 I will update it later
 import Api from '../../utils/Api';
 import { getSearchResults } from '../../utils/NewsApi';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom'; //for Stage 3 I will update it later
 import { keyWordContext } from '../../contexts/keyWordContext';
 import { currentPageContext } from '../../contexts/currentPageContext';
 import { searchResultContext } from '../../contexts/searchResultContext';
 import { hasSearchedContext } from '../../contexts/hasSearchedContext';
 function App() {
   const api = new Api({
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'http://localhost:3001',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -32,7 +32,7 @@ function App() {
   const [searchResult, setSearchResult] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  // const location = useLocation(); for Stage 3 I will update it later
+  // const location = useLocation(); 
 
   const handleSignInModalClick = () => {
     setActiveModal('sign-in');
@@ -141,6 +141,7 @@ function App() {
                       />
                     }
                   />
+                  // Route SavedNews for Stage 3 I will update it later
                 </Routes>
                 <Footer />
                 <SigninModal
