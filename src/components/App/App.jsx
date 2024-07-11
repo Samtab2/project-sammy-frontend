@@ -9,7 +9,11 @@ import Footer from '../Footer/Footer';
 import Navigation from '../Navigation/Navigation';
 import SavedNews from '../SavedNews/SavedNews';
 import NewsCardList from '../NewsCardList/NewsCardList';
-import Api from '../../utils/Api';
+import {
+  getSavedArticles,
+  removeSavedArticle,
+  addSavedArticle,
+} from '../../utils/Api';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import { getSearchResults } from '../../utils/NewsApi';
 import { useLocation } from 'react-router-dom'; //for Stage 3 I will update it later
@@ -19,12 +23,6 @@ import { searchResultContext } from '../../contexts/searchResultContext';
 import { hasSearchedContext } from '../../contexts/hasSearchedContext';
 import { savedArticlesContext } from '../../contexts/savedArticlesContext';
 function App() {
-  const api = new Api({
-    baseUrl: 'http://localhost:3001',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
 
   const [activeModal, setActiveModal] = useState('');
   const [keyWord, setKeyWord] = useState('');
@@ -96,8 +94,7 @@ function App() {
   };
 
   const handleRemoveArticle = ({ newsData }) => {
-    api
-      .removeArticle(newsData)
+    removeSavedArticle(newsData)
       .then(() => {
         const unsavedNewsArticles = savedArticles.filter(
           (article) => article._id !== newsData._id
@@ -111,8 +108,7 @@ function App() {
 
   const handleSaveArticle = ({ newsData, keyWord }) => {
     if (!savedArticles.find((article) => article.link === newsData.url)) {
-      api
-        .addArticle(newsData, keyWord)
+      addSavedArticle(newsData, keyWord)
         .then((data) => {
           setSavedArticles([data.data, ...savedArticles]);
           const savedArticlesId = data.data_id;
@@ -133,7 +129,7 @@ function App() {
           setSavedArticles(unsaveNewsArticles);
 
           const newArticle = { ...newsData, _id: '' };
-          const newSearchResults = searchResults.map((article) =>
+          const newSearchResults = searchResult.map((article) =>
             article.url === newsData.url ? newArticle : article
           );
           setSearchResults(newSearchResults);
@@ -144,8 +140,7 @@ function App() {
 
   useEffect(() => {
     setIsLoading(true);
-    api
-      .getArticles()
+    getSavedArticles()
       .then((res) => {
         setSearchResult(res.articles);
         setHasSearched(true);
