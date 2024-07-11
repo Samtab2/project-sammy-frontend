@@ -15,7 +15,7 @@ import {
   addSavedArticle,
 } from '../../utils/Api';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-import { getSearchResults } from '../../utils/NewsApi';
+import { getSearchResult } from '../../utils/NewsApi';
 import { useLocation } from 'react-router-dom'; //for Stage 3 I will update it later
 import { keyWordContext } from '../../contexts/keyWordContext';
 import { currentPageContext } from '../../contexts/currentPageContext';
@@ -23,7 +23,6 @@ import { searchResultContext } from '../../contexts/searchResultContext';
 import { hasSearchedContext } from '../../contexts/hasSearchedContext';
 import { savedArticlesContext } from '../../contexts/savedArticlesContext';
 function App() {
-
   const [activeModal, setActiveModal] = useState('');
   const [keyWord, setKeyWord] = useState('');
   const [currentPage, setCurrentPage] = useState('');
@@ -76,9 +75,9 @@ function App() {
     setKeyWord(keyWord);
     setIsSearching(true);
     setIsLoading(true);
-    getSearchResults(keyWord)
+    getSearchResult(keyWord)
       .then((res) => {
-        setSearchResult(res.articles);
+        setSearchResult(res);
         setHasSearched(true);
         setIsSearching(false);
         setSearchError(false);
@@ -129,10 +128,10 @@ function App() {
           setSavedArticles(unsaveNewsArticles);
 
           const newArticle = { ...newsData, _id: '' };
-          const newSearchResults = searchResult.map((article) =>
+          const newSearchResult = searchResult.map((article) =>
             article.url === newsData.url ? newArticle : article
           );
-          setSearchResults(newSearchResults);
+          setSearchResult(newSearchResult);
         })
         .catch((err) => console.error(err));
     }
@@ -142,7 +141,7 @@ function App() {
     setIsLoading(true);
     getSavedArticles()
       .then((res) => {
-        setSearchResult(res.articles);
+        setSearchResult(res);
         setHasSearched(true);
         setSearchError(false);
       })

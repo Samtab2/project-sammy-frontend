@@ -56,7 +56,7 @@ export function addSavedArticle(newsData, keyword) {
       title: newsData.title,
       text: newsData.description,
       date: newsData.publishedAt,
-      source: newsData.source.name,
+      source: newsData.source,
       link: newsData.url,
       image: newsData.urlToImage,
       keyword: keyword,

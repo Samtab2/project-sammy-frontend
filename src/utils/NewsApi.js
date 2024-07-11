@@ -1,6 +1,6 @@
-import { APIKey, parseCurrentDate, parsePreviousWeek } from './constants';
+import { APIKey, parsePreviousWeek } from './constants';
 
-export const getSearchResults = (keyWord) => {
+export const getSearchResult = (keyWord) => {
   if (!keyWord) {
     return Promise.reject(`Error: ${keyWord}`);
   }
