@@ -8,6 +8,7 @@ import RegisterModal from '../ModalWithForm/RegisterModal';
 import Footer from '../Footer/Footer';
 import Navigation from '../Navigation/Navigation';
 import SavedNews from '../SavedNews/SavedNews';
+import NewsCardList from '../NewsCardList/NewsCardList';
 import Api from '../../utils/Api';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import { getSearchResults } from '../../utils/NewsApi';
@@ -108,7 +109,7 @@ function App() {
       });
   };
 
-  const handleSavedArticle = ({ newsData, keyWord }) => {
+  const handleSaveArticle = ({ newsData, keyWord }) => {
     if (!savedArticles.find((article) => article.link === newsData.url)) {
       api
         .addArticle(newsData, keyWord)
@@ -179,7 +180,7 @@ function App() {
                           searchError={searchError}
                           isLoading={isLoading}
                           handleRemoveArticle={handleRemoveArticle}
-                          handleSavedArticle={handleSavedArticle}
+                          handleSaveArticle={handleSaveArticle}
                         />
                       }
                     />
@@ -195,6 +196,10 @@ function App() {
                       }
                     />
                   </Routes>
+                  <NewsCardList
+                      handleSaveArticle={handleSaveArticle}
+                      handleRemoveArticle={handleRemoveArticle}
+                    />
                   <Footer />
                   <SigninModal
                     isOpen={activeModal === 'sign-in'}
