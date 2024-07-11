@@ -20,7 +20,7 @@ import { hasSearchedContext } from '../../contexts/hasSearchedContext';
 import { savedArticlesContext } from '../../contexts/savedArticlesContext';
 function App() {
   const api = new Api({
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'http://localhost:3001',
     headers: {
       'Content-Type': 'application/json',
     },
