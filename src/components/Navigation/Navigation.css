@@ -15,13 +15,6 @@
 .nav__logo {
   display: flex;
   align-items: center;
-  cursor: pointer;
-  font-size: 20px;
-  color: #ffffff;
-  font-weight: 700;
-  font-style: normal;
-  font-family: Roboto-Slab;
-  line-height: 24px;
   margin-left: 450px;
 }
 
@@ -41,6 +34,7 @@
   font-weight: 500;
   font-family: Roboto;
   line-height: 24px;
+  text-decoration: none;
 }
 
 .nav__button-home.active::after,
@@ -78,3 +72,20 @@
 .nav__button-signin:hover {
   border: 1px solid #ffffff;
 }
+
+
+.nav__button-saved-articles {
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: Roboto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  max-height: 80px;
+  width: 178px;
+}
+
+

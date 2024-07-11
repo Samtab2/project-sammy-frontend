@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from '../header/header';
 import Main from '../Main/Main';
@@ -7,17 +7,19 @@ import SigninModal from '../ModalWithForm/SigninModal';
 import RegisterModal from '../ModalWithForm/RegisterModal';
 import Footer from '../Footer/Footer';
 import Navigation from '../Navigation/Navigation';
-import savedNews from '../SavedNews/SavedNews'; // for Stage 3 I will update it later
+import SavedNews from '../SavedNews/SavedNews';
 import Api from '../../utils/Api';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import { getSearchResults } from '../../utils/NewsApi';
 import { useLocation } from 'react-router-dom'; //for Stage 3 I will update it later
 import { keyWordContext } from '../../contexts/keyWordContext';
 import { currentPageContext } from '../../contexts/currentPageContext';
 import { searchResultContext } from '../../contexts/searchResultContext';
 import { hasSearchedContext } from '../../contexts/hasSearchedContext';
+import { savedArticlesContext } from '../../contexts/savedArticlesContext';
 function App() {
   const api = new Api({
-    baseUrl: 'http://localhost:3001',
+    baseUrl: 'http://localhost:3000',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -30,9 +32,10 @@ function App() {
   const [searchError, setSearchError] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
+  const [savedArticles, setSavedArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  // const location = useLocation(); 
+  // const location = useLocation();
 
   const handleSignInModalClick = () => {
     setActiveModal('sign-in');
@@ -91,22 +94,57 @@ function App() {
       });
   };
 
-  // for Stage 3 I will update it later
-  const handleAddNews = (data) => {
+  const handleRemoveArticle = ({ newsData }) => {
     api
-      .postNews(data)
-      .then((res) => {
-        console.log(res);
+      .removeArticle(newsData)
+      .then(() => {
+        const unsavedNewsArticles = savedArticles.filter(
+          (article) => article._id !== newsData._id
+        );
+        setSavedArticles(unsavedNewsArticles);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
+  const handleSavedArticle = ({ newsData, keyWord }) => {
+    if (!savedArticles.find((article) => article.link === newsData.url)) {
+      api
+        .addArticle(newsData, keyWord)
+        .then((data) => {
+          setSavedArticles([data.data, ...savedArticles]);
+          const savedArticlesId = data.data_id;
+          const newArticle = { ...newsData, _id: savedArticlesId };
+          const newSearchResult = searchResult.map((article) =>
+            article.url === newsData.url ? newArticle : article
+          );
+          setSearchResult(newSearchResult);
+        })
+        .catch((err) => console.error(err));
+    } else if (savedArticles.some((article) => article.link === newsData.url)) {
+      api
+        .removeArticle(newsData)
+        .then(() => {
+          const unsaveNewsArticles = savedArticles.filter(
+            (article) => article._id !== newsData._id
+          );
+          setSavedArticles(unsaveNewsArticles);
+
+          const newArticle = { ...newsData, _id: '' };
+          const newSearchResults = searchResults.map((article) =>
+            article.url === newsData.url ? newArticle : article
+          );
+          setSearchResults(newSearchResults);
+        })
+        .catch((err) => console.error(err));
+    }
+  };
+
   useEffect(() => {
     setIsLoading(true);
     api
-      .getNewsItems()
+      .getArticles()
       .then((res) => {
         setSearchResult(res.articles);
         setHasSearched(true);
@@ -125,44 +163,59 @@ function App() {
     <currentPageContext.Provider value={{ currentPage, setCurrentPage }}>
       <hasSearchedContext.Provider value={{ hasSearched, setHasSearched }}>
         <searchResultContext.Provider value={{ searchResult, setSearchResult }}>
-          <keyWordContext.Provider value={{ keyWord, setKeyWord }}>
-            <div className="page">
-              <div className="page__content">
-                <Header onLoginClick={handleSignInModalClick} />
-                <Navigation onLoginClick={handleSignInModalClick} />
-                <Routes>
-                  <Route
-                    path="/"
-                    element={
-                      <Main
-                        handleSearch={handleSearch}
-                        searchError={searchError}
-                        isLoading={isLoading}
-                      />
-                    }
+          <savedArticlesContext.Provider
+            value={{ savedArticles, setSavedArticles }}>
+            <keyWordContext.Provider value={{ keyWord, setKeyWord }}>
+              <div className="page">
+                <div className="page__content">
+                  <Header />
+                  <Navigation onLoginClick={handleSignInModalClick} />
+                  <Routes>
+                    <Route
+                      path="/"
+                      element={
+                        <Main
+                          handleSearch={handleSearch}
+                          searchError={searchError}
+                          isLoading={isLoading}
+                          handleRemoveArticle={handleRemoveArticle}
+                          handleSavedArticle={handleSavedArticle}
+                        />
+                      }
+                    />
+
+                    <Route
+                      path="/saved-news"
+                      element={
+                        <ProtectedRoute>
+                          <SavedNews
+                            handleRemoveArticle={handleRemoveArticle}
+                          />
+                        </ProtectedRoute>
+                      }
+                    />
+                  </Routes>
+                  <Footer />
+                  <SigninModal
+                    isOpen={activeModal === 'sign-in'}
+                    onClose={onClose}
+                    onRegisterClick={handleRegisterModalClick}
+                    OnLogInClick={handleSignInModalClick}
+                    activeModal={activeModal}
+                    isLoading={isLoading}
                   />
-                  // Route SavedNews for Stage 3 I will update it later
-                </Routes>
-                <Footer />
-                <SigninModal
-                  isOpen={activeModal === 'sign-in'}
-                  onClose={onClose}
-                  onRegisterClick={handleRegisterModalClick}
-                  OnLogInClick={handleSignInModalClick}
-                  activeModal={activeModal}
-                  isLoading={isLoading}
-                />
-                <RegisterModal
-                  isOpen={activeModal === 'sign-up'}
-                  onClose={onClose}
-                  onLoginClick={handleSignInModalClick}
-                  onRegisterClick={handleRegisterModalClick}
-                  activeModal={activeModal}
-                  isLoading={isLoading}
-                />
+                  <RegisterModal
+                    isOpen={activeModal === 'sign-up'}
+                    onClose={onClose}
+                    onLoginClick={handleSignInModalClick}
+                    onRegisterClick={handleRegisterModalClick}
+                    activeModal={activeModal}
+                    isLoading={isLoading}
+                  />
+                </div>
               </div>
-            </div>
-          </keyWordContext.Provider>
+            </keyWordContext.Provider>
+          </savedArticlesContext.Provider>
         </searchResultContext.Provider>
       </hasSearchedContext.Provider>
     </currentPageContext.Provider>

@@ -1,16 +1,35 @@
-import "./Navigation.css";
+import './Navigation.css';
+import headerBlackLogo from '../../assets/NewsExplorer.BlackLogoHeader.svg';
+import { NavLink } from 'react-router-dom';
 
 function Navigation({ onLoginClick }) {
   return (
     <nav className="nav">
-      <div className="nav__logo">NewsExplorer</div>
+      <NavLink to="/">
+        <img
+          src={headerBlackLogo}
+          alt="NewsExplorer  Black Logo"
+          className="nav__logo"
+        />
+      </NavLink>
       <div className="nav__user-container">
-        <button className="nav__button-home active">Home</button>
+        <NavLink
+          to="/"
+          type="text"
+          className="nav__button-home active">
+          Home
+        </NavLink>
+        <NavLink
+          to="/saved-news"
+          className="nav__button-saved-articles">
+          Saved Articles
+        </NavLink>
+
         <button
           className="nav__button-signin"
           type="text"
           onClick={onLoginClick}>
-          Sign in{" "}
+          Sign in{' '}
         </button>
       </div>
     </nav>

@@ -3,7 +3,7 @@ import NewsCard from '../NewsCard/NewsCard';
 import { useState, useContext } from 'react';
 import { searchResultContext } from '../../contexts/searchResultContext';
 import { hasSearchedContext } from '../../contexts/hasSearchedContext';
-const NewsCardList = () => {
+const NewsCardList = ({ handleSaveArticle, handleRemoveArticle }) => {
   const [cardsDisplayed, setCardsDisplayed] = useState(3);
 
   const { searchResult } = useContext(searchResultContext);
@@ -28,6 +28,8 @@ const NewsCardList = () => {
                 <NewsCard
                   newsData={result}
                   key={result.url}
+                  handleSaveArticle={handleSaveArticle}
+                  handleRemoveArticle={handleRemoveArticle}
                 />
               );
             })}

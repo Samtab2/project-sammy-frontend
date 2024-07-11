@@ -11,19 +11,28 @@ class Api {
     return Promise.reject(`Error: ${res.status}`);
   }
 
-  getNewsItems() {
+  getArticles() {
     return fetch(`${this._baseUrl}/items`, {
       method: 'GET',
       headers: this._headers,
     }).then(this._checkResponse);
   }
 
-  postNews(data) {
+  addArticle(data) {
     return fetch(`${this._baseUrl}/items`, {
       method: 'POST',
       headers: this._headers,
       body: JSON.stringify(data),
     }).then(this._checkResponse);
-  }
+  };
+
+
+  removeArticle = (selectedArticle) => {
+    const selectedArticle_id = selectedArticle._id;
+    return fetch(`${this._baseUrl}/items/${selectedArticle_id}`, {
+      method: 'DELETE',
+      headers: this._headers,
+    }).then(this._checkResponse);
+  };
 }
 export default Api;
