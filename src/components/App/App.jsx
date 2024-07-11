@@ -184,6 +184,15 @@ function App() {
                         />
                       }
                     />
+                    <Route
+                      path="/news"
+                      element={
+                        <NewsCardList
+                          handleSaveArticle={handleSaveArticle}
+                          handleRemoveArticle={handleRemoveArticle}
+                        />
+                      }
+                    />
 
                     <Route
                       path="/saved-news"
@@ -196,10 +205,6 @@ function App() {
                       }
                     />
                   </Routes>
-                  <NewsCardList
-                      handleSaveArticle={handleSaveArticle}
-                      handleRemoveArticle={handleRemoveArticle}
-                    />
                   <Footer />
                   <SigninModal
                     isOpen={activeModal === 'sign-in'}

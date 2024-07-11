@@ -8,17 +8,25 @@ import { useContext } from 'react';
 import { searchResultContext } from '../../contexts/searchResultContext';
 import { hasSearchedContext } from '../../contexts/hasSearchedContext';
 
-function Main({ searchError, handleSearch, isLoading }) {
+function Main({
+  searchError,
+  handleSearch,
+  isLoading,
+  handleRemoveArticle,
+  handleSaveArticle,
+}) {
   const { searchResult } = useContext(searchResultContext);
   const { hasSearched } = useContext(hasSearchedContext);
-
 
   return (
     <main className="main">
       <SearchForm handleSearch={handleSearch} />
       <div>
         {hasSearched && searchResult.length > 0 ? (
-          <NewsCardList />
+          <NewsCardList
+            handleSaveArticle={handleSaveArticle}
+            handleRemoveArticle={handleRemoveArticle}
+          />
         ) : hasSearched && searchResult.length === 0 ? (
           <NotFound />
         ) : isLoading ? (
