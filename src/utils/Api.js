@@ -1,5 +1,7 @@
 import { processServerResponse } from './utils';
 
+ export const baseUrl = 'http://localhost:3000';
+
 export function getSavedArticles() {
   return new Promise((resolve, reject) => {
     resolve([
@@ -73,5 +75,3 @@ export const removeSavedArticle = (selectedArticle) => {
     },
   }).then(processServerResponse);
 };
-
-
