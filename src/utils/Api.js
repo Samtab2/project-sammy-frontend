@@ -1,7 +1,3 @@
-import { processServerResponse } from './utils';
-
- export const baseUrl = 'http://localhost:3000';
-
 export function getSavedArticles() {
   return new Promise((resolve, reject) => {
     resolve([
@@ -66,12 +62,13 @@ export function addSavedArticle(newsData, keyword) {
   });
 }
 
-export const removeSavedArticle = (selectedArticle) => {
-  const selectedArticle_id = selectedArticle._id;
-  return fetch(`${baseUrl}/articles/${selectedArticle_id}`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  }).then(processServerResponse);
+export const removeSavedArticle = () => {
+  return new Promise((resolve, reject) => {
+    const response = {
+      ok: true,
+      status: 200,
+      statusText: 'OK',
+    };
+    resolve(response);
+  });
 };
