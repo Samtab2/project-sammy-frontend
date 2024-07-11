@@ -108,9 +108,9 @@ function App() {
   const handleSaveArticle = ({ newsData, keyWord }) => {
     if (!savedArticles.find((article) => article.link === newsData.url)) {
       addSavedArticle(newsData, keyWord)
-        .then((data) => {
-          setSavedArticles([data.data, ...savedArticles]);
-          const savedArticlesId = data.data_id;
+        .then((res) => {
+          setSavedArticles([res, ...savedArticles]);
+          const savedArticlesId = res.data_id;
           const newArticle = { ...newsData, _id: savedArticlesId };
           const newSearchResult = searchResult.map((article) =>
             article.url === newsData.url ? newArticle : article
@@ -119,8 +119,7 @@ function App() {
         })
         .catch((err) => console.error(err));
     } else if (savedArticles.some((article) => article.link === newsData.url)) {
-      api
-        .removeArticle(newsData)
+      removeSavedArticle(newsData)
         .then(() => {
           const unsaveNewsArticles = savedArticles.filter(
             (article) => article._id !== newsData._id

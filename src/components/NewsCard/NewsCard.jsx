@@ -71,7 +71,7 @@ function NewsCard({ newsData, handleSaveArticle, handleRemoveArticle }) {
         <button
           className={`card__button-bookmark ${
             savedArticles.some(
-              (savedArticle) => savedArticle.link === newsData.url
+              (savedArticles) => savedArticles.link === newsData.url
             )
               ? 'card__button-bookmark_marked'
               : ''
