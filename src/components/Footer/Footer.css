@@ -54,3 +54,33 @@
 .footer__link-icon {
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .footer {
+    width: 768px;
+    height: 64px;
+  }
+
+  .footer__content {
+    align-items: flex-start; 
+  }
+
+  .footer__copyright {
+    font-size: 14px;
+    line-height: 18px;
+    margin-left: -80px;
+  }
+
+  .footer__link-home,
+  .footer__link-triplenTen {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 16px; 
+  }
+
+  
+
+  .footer__link-icon {
+    margin-right: 16px; 
+  }
+}

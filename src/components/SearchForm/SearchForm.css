@@ -69,3 +69,44 @@
   opacity: 60%;
   transition: 0.25s ease-in-out;
 }
+
+@media screen and (max-width: 768px) {
+  .search__form {
+    padding: 0 40px;
+    margin-top: -350px;
+  }
+
+  .search__form-container {
+    margin: 40px auto 0;
+    max-width: 400px;
+  }
+
+  .search__form-header {
+    width: 385px;
+    font-size: 36px;
+    line-height: 40px;
+    padding-top: 10px;
+  }
+
+  .search__form-subHeader {
+    padding: 20px 0 40px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .search__form-input {
+    padding: 18px 15px;
+    width: 452px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .search__form-button {
+    padding: 18px 30px;
+    width: 160px;
+    height: 56px; 
+    font-size: 16px;
+    line-height: 18px;
+    right: -45px;
+  }
+}

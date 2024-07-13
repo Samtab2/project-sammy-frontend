@@ -19,11 +19,8 @@ function Navigation({ onLoginClick }) {
           className="nav__button-home active">
           Home
         </NavLink>
-        <NavLink
-          to="/saved-news"
-          className="nav__button-saved-articles">
-          Saved Articles
-        </NavLink>
+       
+       
 
         <button
           className="nav__button-signin"

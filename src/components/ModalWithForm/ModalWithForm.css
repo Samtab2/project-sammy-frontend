@@ -85,3 +85,34 @@
   font-style: normal;
   line-height: 14.52px;
 }
+
+
+@media screen and (max-width: 768px) {
+  .modal__content {
+    width: 430px; 
+    padding: 35px 24px 30px; 
+  }
+
+  .modal__close-button {
+    top: -30px;
+    right: -30px;
+    width: 30px;
+    height: 30px; 
+  }
+
+  .modal__title {
+    font-size: 20px;
+    line-height: 24px; 
+  }
+
+  .modal__input {
+    padding: 10px 0 10px 1px; 
+    font-size: 12px; 
+    margin-bottom: 12px; 
+  }
+
+  .modal__label {
+    font-size: 10px; 
+    line-height: 12px; 
+  }
+}
