@@ -8,7 +8,6 @@ import RegisterModal from '../ModalWithForm/RegisterModal';
 import Footer from '../Footer/Footer';
 import Navigation from '../Navigation/Navigation';
 import SavedNews from '../SavedNews/SavedNews';
-import NewsCardList from '../NewsCardList/NewsCardList';
 import {
   getSavedArticles,
   removeSavedArticle,
@@ -16,7 +15,7 @@ import {
 } from '../../utils/Api';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import { getSearchResult } from '../../utils/NewsApi';
-import { useLocation } from 'react-router-dom'; //for Stage 3 I will update it later
+import { useLocation } from 'react-router-dom'; 
 import { keyWordContext } from '../../contexts/keyWordContext';
 import { currentPageContext } from '../../contexts/currentPageContext';
 import { searchResultContext } from '../../contexts/searchResultContext';
@@ -38,8 +37,6 @@ function App() {
   useEffect(() => {
     setCurrentPage(location.pathname);
   }, [location.pathname]);
-
-
 
   const handleSignInModalClick = () => {
     setActiveModal('sign-in');
@@ -83,7 +80,7 @@ function App() {
     setIsLoading(true);
     getSearchResult(keyWord)
       .then((res) => {
-        setSearchResult(res);
+        setSearchResult(res.articles);
         setHasSearched(true);
         setIsSearching(false);
         setSearchError(false);
@@ -184,15 +181,6 @@ function App() {
                           isLoading={isLoading}
                           handleRemoveArticle={handleRemoveArticle}
                           handleSaveArticle={handleSaveArticle}
-                        />
-                      }
-                    />
-                    <Route
-                      path="/news"
-                      element={
-                        <NewsCardList
-                          handleSaveArticle={handleSaveArticle}
-                          handleRemoveArticle={handleRemoveArticle}
                         />
                       }
                     />

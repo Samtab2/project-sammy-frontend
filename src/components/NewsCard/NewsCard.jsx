@@ -119,9 +119,10 @@ function NewsCard({
           <img
             className="news-card__image"
             src={newsData.urlToImage}
-            alt={newsData.url}
+            alt={newsData.title}
           />
         )}
+        
         <div className="news-card__text">
           <p className="news-card__date">{formattedDate}</p>
           <h3 className="news-card__title">{newsData.title}</h3>
