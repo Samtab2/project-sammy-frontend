@@ -30,13 +30,13 @@
   border-radius: 8px;
   text-align: center;
   position: absolute;
-  top: 24px;
-  right: 69px;
   font-family: 'Roboto', Arial, sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.7;
   text-align: center;
+  margin-left: 150px;
+  margin-top: 24px;
 }
 
 .card__popup-text_hidden {
@@ -66,8 +66,9 @@
   height: 40px;
   border-radius: 8px;
   border: none;
-  top: 24px;
-  right: 24px;
+  position: absolute;
+  margin-left: 340px;
+  margin-top: 24px;
   cursor: pointer;
 }
 

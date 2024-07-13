@@ -3,45 +3,47 @@ export function getSavedArticles() {
     resolve([
       {
         id: '65f7368dfb74bd6a92114c85',
-        author: 'Joy the Baker',
-        title: 'Lemon Poppy Seed Kolache',
+        author: 'Lauren Forristal',
+        title:
+          "Bye-bye bots: Altera's game-playing AI agents get backing from Eric Schmidt | TechCrunch",
         description:
-          'As you know, I’ve entered my kolache era.  Here’s a twist on a classic kolache recipe using an enriched dough with a lemon curd and poppy seed twist. They’re a perfect springtime Texas pastry.\n\nI have this daydream that one day in the not so distant future I’…',
-        link: 'https://joythebaker.com/2024/03/lemon-poppy-seed-kolache/',
+          'Autonomous, AI-based players are coming to a gaming experience near you, and a new startup, Altera, is joining the fray to build this new guard of AI Research company Altera raised $9 million to build AI agents that can play video games alongside other player…',
+        url: 'https://techcrunch.com/2024/05/08/bye-bye-bots-alteras-game-playing-ai-agents-get-backing-from-eric-schmidt/',
         urlToImage:
-          'https://joythebaker.com/wp-content/uploads/2024/03/LemonPoppySeedKolaches-19.jpg',
-        publishedAt: '2024-03-26T07:54:38Z',
+          'https://techcrunch.com/wp-content/uploads/2024/05/Minecraft-keyart.jpg?resize=1200,720',
+        publishedAt: '2024-05-08T15:14:57Z',
         content:
-          'As you know, Ive entered my kolache era.  Heres a twist on a classic kolache recipe using an enriched dough with a lemon curd and poppy seed twist. They’re a perfect springtime Texas pastry.\r\nI have … [+7373 chars]',
-        keyword: 'Yellowstone',
+          'Autonomous, AI-based players are coming to a gaming experience near you, and a new startup, Altera, is joining the fray to build this new guard of AI agents.\r\nThe company announced Wednesday that it … [+6416 chars]',
+        keyword: 'Tech',
       },
       {
         id: '65f7368dfb74bd6a92114c85',
-        author: 'Joy the Baker',
-        title: 'Lemon Poppy Seed Kolache',
+        author: 'Alex Wilhelm',
+        title: 'Watch: When did iPads get as expensive as MacBooks?',
         description:
-          'As you know, I’ve entered my kolache era.  Here’s a twist on a classic kolache recipe using an enriched dough with a lemon curd and poppy seed twist. They’re a perfect springtime Texas pastry.\n\nI have this daydream that one day in the not so distant future I’…',
-        link: 'https://joythebaker.com/2024/03/lemon-poppy-seed-kolache/',
+          'Would you switch out your MacBook for an iPad with an M4 chip and OLED display? With the increase in price, Apple seems to be arguing these are comparable but we’re curious to see if consumers will make the change.',
+        url: 'https://techcrunch.com/2024/05/08/techcrunch-minute-when-did-ipads-get-as-expensive-as-macbooks/',
         urlToImage:
-          'https://joythebaker.com/wp-content/uploads/2024/03/LemonPoppySeedKolaches-19.jpg',
-        publishedAt: '2024-03-26T07:54:38Z',
+          'https://techcrunch.com/wp-content/uploads/2024/05/ipad-noplay.png?resize=1200,675',
+        publishedAt: '2024-05-08T14:52:26Z',
         content:
-          'As you know, Ive entered my kolache era.  Heres a twist on a classic kolache recipe using an enriched dough with a lemon curd and poppy seed twist. They’re a perfect springtime Texas pastry.\r\nI have … [+7373 chars]',
-        keyword: 'Yellowstone',
+          'Apple’s iPad event had a lot to like. New iPads with new chips and new sizes, a new Apple Pencil, and even some software updates. If you are a big fan of Apple hardware, well, it was probably a good … [+1385 chars]',
+        keyword: 'Tech',
       },
       {
         id: '65f7368dfb74bd6a92114c85',
-        author: 'Joy the Baker',
-        title: 'Lemon Poppy Seed Kolache',
+        author: 'Rebecca Bellan',
+        title:
+          'Uber promises member exclusives as Uber One passes $1B run-rate | TechCrunch',
         description:
-          'As you know, I’ve entered my kolache era.  Here’s a twist on a classic kolache recipe using an enriched dough with a lemon curd and poppy seed twist. They’re a perfect springtime Texas pastry.\n\nI have this daydream that one day in the not so distant future I’…',
-        link: 'https://joythebaker.com/2024/03/lemon-poppy-seed-kolache/',
+          'Uber plans to deliver more perks to Uber One members, like member-exclusive events, in a bid to gain more revenue through subscriptions.  “You will see',
+        url: 'https://techcrunch.com/2024/05/08/uber-promises-member-exclusives-as-uber-one-passes-1b-run-rate/',
         urlToImage:
-          'https://joythebaker.com/wp-content/uploads/2024/03/LemonPoppySeedKolaches-19.jpg',
-        publishedAt: '2024-03-26T07:54:38Z',
+          'https://techcrunch.com/wp-content/uploads/2023/05/GettyImages-1142304853-a.jpg?resize=1200,675',
+        publishedAt: '2024-05-08T14:41:36Z',
         content:
-          'As you know, Ive entered my kolache era.  Heres a twist on a classic kolache recipe using an enriched dough with a lemon curd and poppy seed twist. They’re a perfect springtime Texas pastry.\r\nI have … [+7373 chars]',
-        keyword: 'Yellowstone',
+          'Uber plans to deliver more perks to Uber One members, like member-exclusive events, in a bid to gain more revenue through subscriptions. \r\nYou will see more member-exclusives coming up where members … [+4676 chars]',
+        keyword: 'Tech',
       },
     ]);
   });

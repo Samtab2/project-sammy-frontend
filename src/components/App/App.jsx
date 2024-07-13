@@ -33,7 +33,13 @@ function App() {
   const [savedArticles, setSavedArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  // const location = useLocation();
+  const location = useLocation();
+
+  useEffect(() => {
+    setCurrentPage(location.pathname);
+  }, [location.pathname]);
+
+
 
   const handleSignInModalClick = () => {
     setActiveModal('sign-in');
@@ -163,12 +169,16 @@ function App() {
               <div className="page">
                 <div className="page__content">
                   <Header />
-                  <Navigation onLoginClick={handleSignInModalClick} />
+                  <Navigation
+                    onLoginClick={handleSignInModalClick}
+                    onRegisterClick={handleRegisterModalClick}
+                  />
                   <Routes>
                     <Route
                       path="/"
                       element={
                         <Main
+                          onSignUp={handleRegisterModalClick}
                           handleSearch={handleSearch}
                           searchError={searchError}
                           isLoading={isLoading}

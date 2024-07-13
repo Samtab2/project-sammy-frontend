@@ -4,7 +4,7 @@ import NewsCard from '../NewsCard/NewsCard';
 import { savedArticlesContext } from '../../contexts/savedArticlesContext';
 import { currentUserContext } from '../../contexts/currentUserContext';
 
-function SavedNewsCardList({ handleRemoveArticle }) {
+function SavedNewsCardList({ handleRemoveArticle, handleSaveArticle }) {
   const { savedArticles } = useContext(savedArticlesContext);
   const { currentUser } = useContext(currentUserContext);
   return (
@@ -17,6 +17,7 @@ function SavedNewsCardList({ handleRemoveArticle }) {
               newsData={article}
               key={article.link}
               handleRemoveArticle={handleRemoveArticle}
+              handleSaveArticle={handleSaveArticle}
             />
           ))}
       </div>

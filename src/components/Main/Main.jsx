@@ -14,6 +14,7 @@ function Main({
   isLoading,
   handleRemoveArticle,
   handleSaveArticle,
+  onSignUp,
 }) {
   const { searchResult } = useContext(searchResultContext);
   const { hasSearched } = useContext(hasSearchedContext);
@@ -24,6 +25,7 @@ function Main({
       <div>
         {hasSearched && searchResult.length > 0 ? (
           <NewsCardList
+            onSignUp={onSignUp}
             handleSaveArticle={handleSaveArticle}
             handleRemoveArticle={handleRemoveArticle}
           />

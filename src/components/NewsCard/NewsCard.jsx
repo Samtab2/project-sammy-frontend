@@ -3,9 +3,15 @@ import { useLocation } from 'react-router-dom';
 import { keyWordContext } from '../../contexts/keyWordContext';
 import { savedArticlesContext } from '../../contexts/savedArticlesContext';
 import { currentPageContext } from '../../contexts/currentPageContext';
+import { currentUserContext } from '../../contexts/currentUserContext';
 import { useContext, useEffect, useState } from 'react';
 
-function NewsCard({ newsData, handleSaveArticle, handleRemoveArticle }) {
+function NewsCard({
+  newsData,
+  handleSaveArticle,
+  handleRemoveArticle,
+  onSignUp,
+}) {
   console.log('Rendering NewsCard', newsData);
 
   let formattedDate;
@@ -28,6 +34,7 @@ function NewsCard({ newsData, handleSaveArticle, handleRemoveArticle }) {
   const { currentPage, setCurrentPage } = useContext(currentPageContext);
   const { savedArticles } = useContext(savedArticlesContext);
   const { keyword } = useContext(keyWordContext);
+  const { isLoggedIn } = useContext(currentUserContext);
   const [isHovered, setIsHovered] = useState(false);
 
   const handleBookmarkClick = () => {
@@ -67,7 +74,7 @@ function NewsCard({ newsData, handleSaveArticle, handleRemoveArticle }) {
         </>
       )}
 
-      {currentPage === '/' ? (
+      {isLoggedIn && currentPage === '/' ? (
         <button
           className={`card__button-bookmark ${
             savedArticles.some(
@@ -78,7 +85,30 @@ function NewsCard({ newsData, handleSaveArticle, handleRemoveArticle }) {
           }`}
           onClick={handleBookmarkClick}
         />
-      ) : null}
+      ) : (
+        ''
+      )}
+      {!isLoggedIn && (
+        <>
+          <div
+            className={`card__popup-text ${
+              isHovered ? '' : 'card__popup-text_hidden'
+            }`}>
+            Sign in to save articles
+          </div>
+
+          <button
+            className="card__button-bookmark"
+            onClick={onSignUp}
+            onMouseEnter={() => {
+              setIsHovered(true);
+            }}
+            onMouseLeave={() => {
+              setIsHovered(false);
+            }}
+          />
+        </>
+      )}
 
       <a
         className="news-card__link"
