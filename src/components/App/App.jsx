@@ -8,6 +8,7 @@ import RegisterModal from '../ModalWithForm/RegisterModal';
 import Footer from '../Footer/Footer';
 import Navigation from '../Navigation/Navigation';
 import SavedNews from '../SavedNews/SavedNews';
+import MobileMenu from '../MobileMenu/MobileMenu';
 import {
   getSavedArticles,
   removeSavedArticle,
@@ -15,7 +16,7 @@ import {
 } from '../../utils/Api';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import { getSearchResult } from '../../utils/NewsApi';
-import { useLocation } from 'react-router-dom'; 
+import { useLocation } from 'react-router-dom';
 import { keyWordContext } from '../../contexts/keyWordContext';
 import { currentPageContext } from '../../contexts/currentPageContext';
 import { searchResultContext } from '../../contexts/searchResultContext';
@@ -33,7 +34,6 @@ function App() {
   const [searchResult, setSearchResult] = useState([]);
   const [savedArticles, setSavedArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
- 
 
   const location = useLocation();
 
@@ -48,9 +48,6 @@ function App() {
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
-
-
-
 
   const handleSignInModalClick = () => {
     if (mobileMenuOpen) {
@@ -69,9 +66,6 @@ function App() {
   const onClose = () => {
     setActiveModal('');
   };
-
-
-
 
   useEffect(() => {
     const handleEscClose = (e) => {
@@ -186,58 +180,61 @@ function App() {
           <savedArticlesContext.Provider
             value={{ savedArticles, setSavedArticles }}>
             <keyWordContext.Provider value={{ keyWord, setKeyWord }}>
-              <mobileContext.Provider value={{ mobileMenuOpen, openMobileMenu, closeMobileMenu }}>
-              <div className="page">
-                <div className="page__content">
-                  <Header />
-                  <Navigation
-                    onLoginClick={handleSignInModalClick}
-                    onRegisterClick={handleRegisterModalClick}
-                  />
-                  <Routes>
-                    <Route
-                      path="/"
-                      element={
-                        <Main
-                          onSignUp={handleRegisterModalClick}
-                          handleSearch={handleSearch}
-                          searchError={searchError}
-                          isLoading={isLoading}
-                          handleRemoveArticle={handleRemoveArticle}
-                          handleSaveArticle={handleSaveArticle}
-                        />
-                      }
+              <mobileContext.Provider
+                value={{ mobileMenuOpen, openMobileMenu, closeMobileMenu }}>
+                
+                <div className="page">
+                  <div className="page__content">
+                    <Header />
+                    <Navigation
+                      onLoginClick={handleSignInModalClick}
+                      onRegisterClick={handleRegisterModalClick}
                     />
-
-                    <Route
-                      path="/saved-news"
-                      element={
-                        <ProtectedRoute>
-                          <SavedNews
+                    <Routes>
+                      <Route
+                        path="/"
+                        element={
+                          <Main
+                            onSignUp={handleRegisterModalClick}
+                            handleSearch={handleSearch}
+                            searchError={searchError}
+                            isLoading={isLoading}
                             handleRemoveArticle={handleRemoveArticle}
+                            handleSaveArticle={handleSaveArticle}
                           />
-                        </ProtectedRoute>
-                      }
+                        }
+                      />
+
+                      <Route
+                        path="/saved-news"
+                        element={
+                          <ProtectedRoute>
+                            <SavedNews
+                              handleRemoveArticle={handleRemoveArticle}
+                            />
+                          </ProtectedRoute>
+                        }
+                      />
+                    </Routes>
+                    {mobileMenuOpen && <MobileMenu onLoginClick={handleSignInModalClick} />}
+                    <Footer />
+                    <SigninModal
+                      isOpen={activeModal === 'sign-in'}
+                      onClose={onClose}
+                      onRegisterClick={handleRegisterModalClick}
+                      OnLogInClick={handleSignInModalClick}
+                      activeModal={activeModal}
+                      isLoading={isLoading}
                     />
-                  </Routes>
-                  <Footer />
-                  <SigninModal
-                    isOpen={activeModal === 'sign-in'}
-                    onClose={onClose}
-                    onRegisterClick={handleRegisterModalClick}
-                    OnLogInClick={handleSignInModalClick}
-                    activeModal={activeModal}
-                    isLoading={isLoading}
-                  />
-                  <RegisterModal
-                    isOpen={activeModal === 'sign-up'}
-                    onClose={onClose}
-                    onLoginClick={handleSignInModalClick}
-                    onRegisterClick={handleRegisterModalClick}
-                    activeModal={activeModal}
-                    isLoading={isLoading}
-                  />
-                </div>
+                    <RegisterModal
+                      isOpen={activeModal === 'sign-up'}
+                      onClose={onClose}
+                      onLoginClick={handleSignInModalClick}
+                      onRegisterClick={handleRegisterModalClick}
+                      activeModal={activeModal}
+                      isLoading={isLoading}
+                    />
+                  </div>
                 </div>
               </mobileContext.Provider>
             </keyWordContext.Provider>

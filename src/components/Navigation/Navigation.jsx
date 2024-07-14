@@ -4,17 +4,14 @@ import { NavLink } from 'react-router-dom';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import { useContext } from 'react';
 import { currentPageContext } from '../../contexts/currentPageContext';
-// import { currentUserContext } from '../../contexts/currentUserContext';
 import { mobileContext } from '../../contexts/mobileContext';
 
 function Navigation({ onLoginClick, onRegisterClick }) {
   const { currentPage } = useContext(currentPageContext);
-  // const { currentUser } = useContext(currentUserContext);
-  const { mobileMenuOpen, openMobileMenu, closeMobileMenu } =
-    useContext(mobileContext);
+  const { mobileMenuOpen, openMobileMenu, closeMobileMenu } = useContext(mobileContext);
 
   const handleMobileMenu = () => {
-    if (mobileMenuOpen === false) {
+    if (mobileMenuOpen) {
       closeMobileMenu();
     } else {
       openMobileMenu();
@@ -22,47 +19,30 @@ function Navigation({ onLoginClick, onRegisterClick }) {
   };
 
   return (
-    <nav className={`nav ${mobileMenuOpen === true ? 'nav__menu-open' : ''}`}>
+    <nav className={`nav ${mobileMenuOpen ? 'nav__menu-open' : ''}`}>
       <NavLink to="/">
-        <img
-          src={headerBlackLogo}
-          alt="NewsExplorer  Black Logo"
-          className="nav__logo"
-        />
+        <img src={headerBlackLogo} alt="NewsExplorer Black Logo" className="nav__logo" />
       </NavLink>
       <button
-        className={`nav__menu-button ${
-          mobileMenuOpen === true ? 'nav__menu-button_open' : ''
-        }`}
+        className={`nav__menu-button ${mobileMenuOpen ? 'nav__menu-button_open' : ''}`}
         onClick={handleMobileMenu}
-      />
+      >
+        <span className="nav__menu-icon"></span>
+      </button>
 
-      {mobileMenuOpen && (
-        <MobileMenu
-          onLoginClick={onLoginClick}
-          onRegisterClick={onRegisterClick}
-          onClose={handleMobileMenu}
-        />
-      )}
+      {mobileMenuOpen && <MobileMenu onLoginClick={onLoginClick} />}
+      
       <div className="nav__user-container">
         {currentPage === '/' ? (
           <>
-            <NavLink
-              to="/"
-              type="text"
-              className="nav__button-home active">
+            <NavLink to="/" type="text" className="nav__button-home active">
               Home
             </NavLink>
-            <NavLink
-              to="/saved-news"
-              className="nav__button-saved-articles">
+            <NavLink to="/saved-news" className="nav__button-saved-articles">
               Saved Articles
             </NavLink>
-            <button
-              className="nav__button-signin"
-              type="text"
-              onClick={onLoginClick}>
-              Sign in{' '}
+            <button className="nav__button-signin" type="text" onClick={onLoginClick}>
+              Sign in
             </button>
           </>
         ) : (

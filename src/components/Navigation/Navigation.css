@@ -116,7 +116,6 @@
     .nav__button-home:hover::after {
       width: 100%;
       margin-bottom: -26px;
-      
     }
 
     .nav__button-signin {
@@ -131,45 +130,42 @@
   }
 }
 
-
 @media screen and (max-width: 320px) {
   .nav {
-    padding: 10px 15px;
-    max-width: 320px;
-    width: 100%;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+    padding: 10px 15px; /* Reduced padding */
   }
 
   .nav__logo {
-    margin-left: 20px;
-    margin-top: 5px;
+    margin-bottom: 10px; /* Space between logo and other elements */
   }
 
   .nav__user-container {
-    gap: 20px;
-    flex-direction: column; 
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px; /* Reduce gap */
   }
 
-  .nav__button-home {
-    font-size: 14px;
-    line-height: 18px;
+  .nav__button-home,
+  .nav__button-saved-articles,
+  .nav__button-signin {
+    font-size: 14px; /* Smaller font size */
+    padding: 8px; /* Reduced padding */
+    width: 100%; /* Full width for better touch targets */
+    text-align: center; /* Center text */
+  }
+
+  .nav__button-signin {
+    height: 36px; /* Reduced height */
+    font-size: 12px; /* Smaller font size */
   }
 
   .nav__button-home.active::after,
   .nav__button-home:hover::after {
-    width: 100%;
-    margin-bottom: -22px;
-  }
-
-
-  
-
-  .nav__button-signin {
-    padding: 8px;
-    width: 120px;
-    height: 36px;
-    font-size: 14px;
-    line-height: 18px;
-    margin-right: 15px;
-    margin-top: 5px;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Dynamic width for better fit */
+    height: 2px;
   }
 }

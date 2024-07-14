@@ -63,26 +63,32 @@
   }
 }
 
+/* Ensure navigation is correctly styled */
 @media screen and (max-width: 320px) {
   .header {
-    width: 320px;
-    height: 240px;
+    width: 100%;
+    height: 240px; 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin: 0 auto;
   }
 
   .header__logo {
-    padding: 10px 20px;
-    font-size: 14px;
-    margin-left: 150px;
+    justify-content: center; 
+    padding: 10px 5px; /* Less padding for smaller screens */
+    font-size: 14px; 
+    margin: 0 auto; 
   }
 
   .header__container {
     gap: 10px;
     flex-direction: column; 
+    align-items: center; 
   }
 
   .header__home-button {
     font-size: 14px;
-    padding: 10px 0;
+    padding: 10px 0; 
   }
-  
 }
