@@ -30,16 +30,13 @@ function Navigation({ onLoginClick, onRegisterClick }) {
         <span className="nav__menu-icon"></span>
       </button>
 
-      {mobileMenuOpen && <MobileMenu onLoginClick={onLoginClick} />}
+      {mobileMenuOpen && <MobileMenu onLoginClick={onLoginClick} onRegisterClick={onRegisterClick} />}
       
       <div className="nav__user-container">
         {currentPage === '/' ? (
           <>
             <NavLink to="/" className="nav__button-home active">
               Home
-            </NavLink>
-            <NavLink to="/saved-news" className="nav__button-saved-articles">
-              Saved Articles
             </NavLink>
             <button className="nav__button-signin" onClick={onLoginClick}>
               Sign in

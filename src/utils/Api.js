@@ -14,6 +14,7 @@ export function getSavedArticles() {
         publishedAt: '2024-05-08T15:14:57Z',
         content:
           'Autonomous, AI-based players are coming to a gaming experience near you, and a new startup, Altera, is joining the fray to build this new guard of AI agents.\r\nThe company announced Wednesday that it … [+6416 chars]',
+        source: 'TechCrunch',
         keyword: 'Tech',
       },
       {
@@ -28,6 +29,7 @@ export function getSavedArticles() {
         publishedAt: '2024-05-08T14:52:26Z',
         content:
           'Apple’s iPad event had a lot to like. New iPads with new chips and new sizes, a new Apple Pencil, and even some software updates. If you are a big fan of Apple hardware, well, it was probably a good … [+1385 chars]',
+        source: 'TechCrunch',
         keyword: 'Tech',
       },
       {
@@ -43,6 +45,7 @@ export function getSavedArticles() {
         publishedAt: '2024-05-08T14:41:36Z',
         content:
           'Uber plans to deliver more perks to Uber One members, like member-exclusive events, in a bid to gain more revenue through subscriptions. \r\nYou will see more member-exclusives coming up where members … [+4676 chars]',
+        source: 'TechCrunch',
         keyword: 'Tech',
       },
     ]);

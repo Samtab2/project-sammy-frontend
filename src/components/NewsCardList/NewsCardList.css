@@ -16,6 +16,7 @@
   font-weight: 400;
   font-style: normal;
   color: black;
+  padding-top: 20px;
 }
 
 .news__cards-container {
@@ -56,6 +57,7 @@
     padding: 20px 10px;
     gap: 16px;
     padding-top: 40px;
+    margin-left: -15px;
   }
 
   .news__cards-header {
@@ -78,9 +80,41 @@
     font-size: 16px;
     height: 48px;
     width: 240px;
+    margin-left: 40px;
   }
 
   .newscards__button:hover {
     background-color: #e8e8e8;
   }
+}
+
+
+@media screen and (max-width: 320px) {
+  .news__card-section {
+    width: 320px;
+    padding: 20px 10px;
+    gap: 16px;
+  }
+
+
+  .news__cards-header {
+    width: 288px;
+    height: 34px;
+    font-size: 30px;
+    line-height: 36px;
+    margin-top: 15px;
+    margin-left: 20px;  
+  }
+
+  .news__cards-container {
+    margin-left: -30px;
+  }
+
+  .newscards__button {
+    padding: 8px 16px;
+    font-size: 16px;
+    height: 48px;
+    width: 240px;
+  }
+  
 }

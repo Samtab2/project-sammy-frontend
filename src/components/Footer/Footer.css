@@ -84,3 +84,26 @@
     margin-right: 16px; 
   }
 }
+
+
+@media screen and (max-width: 320px) {
+  .footer {
+    width: 320px;
+    height: 176px;
+  }
+  
+  .footer__copyright {
+   position: absolute;
+   padding: 10px;
+   margin-top: 80px;
+  }
+
+  .footer__link-home,
+  .footer__link-triplenTen {
+     margin-left: -30px;
+     
+   }
+
+
+  }
+
