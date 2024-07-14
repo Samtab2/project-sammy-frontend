@@ -26,7 +26,7 @@ function App() {
   const [activeModal, setActiveModal] = useState('');
   const [keyWord, setKeyWord] = useState('');
   const [currentPage, setCurrentPage] = useState('');
-  const [openMobileMenu, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
   const [searchError, setSearchError] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
@@ -45,11 +45,15 @@ function App() {
     setMobileMenuOpen(true);
   };
 
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
 
 
 
   const handleSignInModalClick = () => {
-    if (setMobileMenuOpen) {
+    if (mobileMenuOpen) {
       closeMobileMenu();
     }
     setActiveModal('sign-in');
@@ -182,7 +186,7 @@ function App() {
           <savedArticlesContext.Provider
             value={{ savedArticles, setSavedArticles }}>
             <keyWordContext.Provider value={{ keyWord, setKeyWord }}>
-              <mobileContext.Provider value={{}}>
+              <mobileContext.Provider value={{ mobileMenuOpen, openMobileMenu, closeMobileMenu }}>
               <div className="page">
                 <div className="page__content">
                   <Header />
@@ -234,7 +238,8 @@ function App() {
                     isLoading={isLoading}
                   />
                 </div>
-              </div>
+                </div>
+              </mobileContext.Provider>
             </keyWordContext.Provider>
           </savedArticlesContext.Provider>
         </searchResultContext.Provider>
