@@ -21,16 +21,19 @@ import { currentPageContext } from '../../contexts/currentPageContext';
 import { searchResultContext } from '../../contexts/searchResultContext';
 import { hasSearchedContext } from '../../contexts/hasSearchedContext';
 import { savedArticlesContext } from '../../contexts/savedArticlesContext';
+import { mobileContext } from '../../contexts/mobileContext';
 function App() {
   const [activeModal, setActiveModal] = useState('');
   const [keyWord, setKeyWord] = useState('');
   const [currentPage, setCurrentPage] = useState('');
+  const [openMobileMenu, setMobileMenuOpen] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
   const [searchError, setSearchError] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
   const [savedArticles, setSavedArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+ 
 
   const location = useLocation();
 
@@ -38,17 +41,33 @@ function App() {
     setCurrentPage(location.pathname);
   }, [location.pathname]);
 
+  const openMobileMenu = () => {
+    setMobileMenuOpen(true);
+  };
+
+
+
+
   const handleSignInModalClick = () => {
+    if (setMobileMenuOpen) {
+      closeMobileMenu();
+    }
     setActiveModal('sign-in');
   };
 
   const handleRegisterModalClick = () => {
+    if (mobileMenuOpen) {
+      closeMobileMenu();
+    }
     setActiveModal('sign-up');
   };
 
   const onClose = () => {
     setActiveModal('');
   };
+
+
+
 
   useEffect(() => {
     const handleEscClose = (e) => {
@@ -163,6 +182,7 @@ function App() {
           <savedArticlesContext.Provider
             value={{ savedArticles, setSavedArticles }}>
             <keyWordContext.Provider value={{ keyWord, setKeyWord }}>
+              <mobileContext.Provider value={{}}>
               <div className="page">
                 <div className="page__content">
                   <Header />

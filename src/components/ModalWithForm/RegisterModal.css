@@ -36,3 +36,18 @@
 .Or-Login__button:hover {
   opacity: 60%;
 }
+
+
+@media screen and (max-width: 768px) {
+  .SignUp__button {
+    width: 358px;
+    height: 64px;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .Or-Login__button {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+}

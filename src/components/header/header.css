@@ -62,3 +62,27 @@
     gap: 15px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .header {
+    width: 320px;
+    height: 240px;
+  }
+
+  .header__logo {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-left: 150px;
+  }
+
+  .header__container {
+    gap: 10px;
+    flex-direction: column; 
+  }
+
+  .header__home-button {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+  
+}

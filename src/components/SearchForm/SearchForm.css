@@ -110,3 +110,44 @@
     right: -45px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .search__form {
+    padding: 0 20px;
+    margin-top: -250px;
+  }
+
+  .search__form-container {
+    margin: 20px auto 0;
+    max-width: 280px;
+  }
+
+  .search__form-header {
+    width: 280px;
+    font-size: 24px;
+    line-height: 28px;
+    padding-top: 5px;
+  }
+
+  .search__form-subHeader {
+    padding: 15px 0 30px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .search__form-input {
+    padding: 12px 10px;
+    width: 240px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .search__form-button {
+    padding: 12px 20px;
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 16px;
+    right: -20px;
+  }
+}

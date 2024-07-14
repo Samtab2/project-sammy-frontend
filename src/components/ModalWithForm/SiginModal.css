@@ -15,7 +15,7 @@
   font-weight: 500;
   line-height: 24px;
   font-style: normal;
-  transition: 0.25s ease-in-out;;
+  transition: 0.25s ease-in-out;
 }
 
 .Login__button:hover {
@@ -35,4 +35,18 @@
 
 .Or-Sign-Up__button:hover {
   opacity: 60%;
+}
+
+@media screen and (max-width: 768px) {
+  .Login__button {
+    width: 358px;
+    height: 64px;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .Or-Sign-Up__button {
+    font-size: 12px;
+    margin-top: 15px;
+  }
 }

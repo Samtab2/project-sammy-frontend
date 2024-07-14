@@ -116,3 +116,43 @@
     }
   }
 }
+
+
+@media screen and (max-width: 320px) {
+  .nav {
+    padding: 10px 15px;
+    max-width: 320px;
+    width: 100%;
+  }
+
+  .nav__logo {
+    margin-left: 20px;
+    margin-top: 5px;
+  }
+
+  .nav__user-container {
+    gap: 20px;
+    flex-direction: column; /* Changed to column layout for smaller screen */
+  }
+
+  .nav__button-home {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .nav__button-home.active::after,
+  .nav__button-home:hover::after {
+    width: 100%;
+    margin-bottom: -22px;
+  }
+
+  .nav__button-signin {
+    padding: 8px;
+    width: 120px;
+    height: 36px;
+    font-size: 14px;
+    line-height: 18px;
+    margin-right: 15px;
+    margin-top: 5px;
+  }
+}
