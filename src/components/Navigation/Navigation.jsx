@@ -35,13 +35,13 @@ function Navigation({ onLoginClick, onRegisterClick }) {
       <div className="nav__user-container">
         {currentPage === '/' ? (
           <>
-            <NavLink to="/" type="text" className="nav__button-home active">
+            <NavLink to="/" className="nav__button-home active">
               Home
             </NavLink>
             <NavLink to="/saved-news" className="nav__button-saved-articles">
               Saved Articles
             </NavLink>
-            <button className="nav__button-signin" type="text" onClick={onLoginClick}>
+            <button className="nav__button-signin" onClick={onLoginClick}>
               Sign in
             </button>
           </>

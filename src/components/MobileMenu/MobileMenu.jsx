@@ -1,39 +1,25 @@
+// MobileMenu.js
 import './MobileMenu.css';
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { currentPageContext } from '../../contexts/currentPageContext';
-// import { currentUserContext } from '../../contexts/currentUserContext';
 
 const MobileMenu = ({ onLoginClick }) => {
   const { currentPage } = useContext(currentPageContext);
-  //const { currentUser } = useContext(currentUserContext);
 
-  return currentPage === '/' ? (
+  return (
     <div className="mobile">
       <div className="mobile__content">
         <nav className="mobile__links">
-          <NavLink
-            to="/"
-            className="mobile__link">
+          <NavLink to="/" className="mobile__link">
             Home
           </NavLink>
+          {currentPage === '/' && (
+            <button className="mobile__button" onClick={onLoginClick}>
+              Sign in
+            </button>
+          )}
         </nav>
-      </div>
-    </div>
-  ) : (
-    <div className="mobile">
-      <div className="mobile__content">
-        <nav className="mobile__links">
-          <NavLink
-            to="/"
-            className="mobile__link"
-            activeClassName="mobile__link_active">
-            Home
-          </NavLink>
-        </nav>
-        <button
-          className="mobile__button"
-          onClick={onLoginClick}></button>
       </div>
     </div>
   );
