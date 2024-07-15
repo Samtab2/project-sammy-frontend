@@ -50,3 +50,9 @@
     margin-top: 15px;
   }
 }
+
+
+@media screen and (max-width: 320px) {
+  .Login__button {
+  }
+}

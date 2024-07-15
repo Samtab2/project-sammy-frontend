@@ -20,9 +20,11 @@ function Navigation({ onLoginClick, onRegisterClick }) {
 
   return (
     <nav className={`nav ${mobileMenuOpen ? 'nav__menu-open' : ''}`}>
+      <div>
       <NavLink to="/">
         <img src={headerBlackLogo} alt="NewsExplorer Black Logo" className="nav__logo" />
-      </NavLink>
+        </NavLink>
+      </div>
       <button
         className={`nav__menu-button ${mobileMenuOpen ? 'nav__menu-button_open' : ''}`}
         onClick={handleMobileMenu}

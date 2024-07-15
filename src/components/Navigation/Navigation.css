@@ -14,9 +14,28 @@
   margin: 0 auto;
 }
 
+.nav__menu-open {
+  background-color: #1a1b22;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .nav__logo {
   display: flex;
   align-items: center;
+}
+
+.nav__menu-button {
+  display: none;
+}
+
+.nav__menu-button_open {
+  background: transparent url(../../assets/close-button-mobile.svg) center
+    no-repeat;
 }
 
 .nav__user-container {
@@ -91,53 +110,53 @@
 }
 
 @media screen and (max-width: 768px) {
-    .nav {
-      padding: 15px 30px;
-    }
-
-    .nav__logo {
-      margin-left: 35px;
-      margin-top: 10px;
-    }
-
-    .nav__user-container {
-      gap: 38px;
-    }
-
-    .nav__button-home {
-      font-size: 16px;
-      line-height: 20px;
-    }
-
-    .nav__button-home.active::after,
-    .nav__button-home:hover::after {
-      width: 100%;
-      margin-bottom: -26px;
-    }
-
-    .nav__button-saved-articles {
-      width: 152px;
-      height: 40px;
-      font-size: 16px;
-      line-height: 20px;
-    }
-
-    .nav__button-signin {
-      padding: 10px;
-      width: 152px;
-      height: 40px;
-      font-size: 16px;
-      line-height: 20px;
-      margin-right: 25px;
-      margin-top: 5px;
-    }
+  .nav {
+    padding: 15px 30px;
   }
 
+  .nav__logo {
+    margin-left: 35px;
+    margin-top: 10px;
+  }
+
+  .nav__user-container {
+    gap: 38px;
+  }
+
+  .nav__button-home {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .nav__button-home.active::after,
+  .nav__button-home:hover::after {
+    width: 100%;
+    margin-bottom: -26px;
+  }
+
+  .nav__button-saved-articles {
+    width: 152px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .nav__button-signin {
+    padding: 10px;
+    width: 152px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 20px;
+    margin-right: 25px;
+    margin-top: 5px;
+  }
+}
 
 @media screen and (max-width: 320px) {
-
   .nav {
     padding: 15px 10px;
+    width: 320px;
+    height: 50px;
   }
 
   .nav__logo {
@@ -145,4 +164,30 @@
     margin-top: 10px;
   }
 
+  .nav__menu-button {
+    display: flex;
+    background: transparent url(../../assets/mobile-Menu.svg) center no-repeat;
+    width: 24px;
+    height: 24px;
+    border: none;
+    cursor: pointer;
+    margin-left: 100px;
+  }
+
+  .nav__button-home,
+  .nav__button-saved-articles,
+  .nav__button-signin {
+    display: none;
+  }
+
+  .nav__menu-button_open {
+    display: flex;
+    background: transparent url(../../assets/close-button-mobile.svg) center
+      no-repeat;
+  }
+
+
+  .nav__menu-button_open + .nav__menu-open {
+    display: block;
+  }
 }
