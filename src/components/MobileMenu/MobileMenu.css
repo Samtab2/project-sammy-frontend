@@ -1,11 +1,9 @@
 .mobile {
   position: fixed;
   top: 56px;
-  right: 0;
-  left: 0;
-  height: 100vh;
+  height: 568px;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  width: 310px;
 }
 
 .mobile__content {
@@ -13,7 +11,8 @@
   flex-direction: column;
   width: 100%;
   background-color: #1a1b22;
-  padding: 16px 16px 24px;
+  padding: 16px 0 24px;
+  border-radius: 0 0 10px 10px;
 }
 
 .mobile__links {
@@ -31,6 +30,7 @@
   color: white;
   text-decoration: none;
   max-width: 288px;
+  margin-left: 10px;
 }
 
 
@@ -48,6 +48,7 @@
   padding: 16px 0;
   margin-top: 22px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .mobile__button:hover {

@@ -6,9 +6,9 @@ import { useContext } from 'react';
 import { currentPageContext } from '../../contexts/currentPageContext';
 import { mobileContext } from '../../contexts/mobileContext';
 
-function Navigation({ onLoginClick, onRegisterClick, activeModal }) {
+function Navigation({ onLoginClick, onRegisterClick }) {
   const { currentPage } = useContext(currentPageContext);
-  const { mobileMenuOpen, openMobileMenu, closeMobileMenu, mobileMenuOpenIsOpen } =
+  const { mobileMenuOpen, openMobileMenu, closeMobileMenu } =
     useContext(mobileContext);
 
   const handleMobileMenu = () => {
@@ -38,7 +38,7 @@ function Navigation({ onLoginClick, onRegisterClick, activeModal }) {
         <span className="nav__menu-icon"></span>
       </button>
 
-      {mobileMenuOpenIsOpen && activeModal !== '' && (
+      {mobileMenuOpen && (
         <MobileMenu
           onLoginClick={onLoginClick}
           onRegisterClick={onRegisterClick}
@@ -48,20 +48,16 @@ function Navigation({ onLoginClick, onRegisterClick, activeModal }) {
       <div className="nav__user-container">
         {currentPage === '/' ? (
           <>
-            {mobileMenuOpenIsOpen && activeModal !== '' && (
-              <>
-                <NavLink
-                  to="/"
-                  className="nav__button-home active">
-                  Home
-                </NavLink>
-                <button
-                  className="nav__button-signin"
-                  onClick={onLoginClick}>
-                  Sign in
-                </button>
-              </>
-            )}
+            <NavLink
+              to="/"
+              className="nav__button-home active">
+              Home
+            </NavLink>
+            <button
+              className="nav__button-signin"
+              onClick={onLoginClick}>
+              Sign in
+            </button>
           </>
         ) : (
           <header>{/* Add your saved news header content here */}</header>
