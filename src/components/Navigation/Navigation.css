@@ -155,8 +155,6 @@
 @media screen and (max-width: 320px) {
   .nav {
     padding: 15px 10px;
-    width: 320px;
-    height: 50px;
   }
 
   .nav__logo {

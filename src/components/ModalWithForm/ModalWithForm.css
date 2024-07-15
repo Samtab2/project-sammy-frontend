@@ -124,35 +124,27 @@
 
 @media screen and (max-width: 320px) {
   .modal__content {
-    width: 320px;
+    width: 280px;
     height: 440px;
-    padding: 25px 20px 30px;
-    margin-top: 10px;
+    padding: 20px;
+    margin-left: -15px;
   }
 
   .modal__close-button {
-    top: -25px;
-    right: -25px;
-    width: 25px;
-    height: 25px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
   }
 
   .modal__title {
     font-size: 18px;
-    line-height: 22px;
-    margin-left: 5px;
   }
 
   .modal__input {
     font-size: 12px;
-    margin-bottom: 10px;
-    padding: 10px 0 10px 1px;
   }
 
   .modal__label {
-    font-size: 10px;
-    line-height: 14px;
-    margin-bottom: 2px;
-    margin-left: 8px;
+    font-size: 12px;
   }
 }
