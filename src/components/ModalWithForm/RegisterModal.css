@@ -51,3 +51,19 @@
     margin-top: 15px;
   }
 }
+
+
+@media screen and (max-width: 320px) {
+  .SignUp__button {
+    width: 288px;
+    height: 56px;
+    font-size: 16px;
+    margin-left: auto;
+    margin-top: auto;
+  }
+
+  .Or-Login__button {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+}

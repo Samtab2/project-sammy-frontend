@@ -54,5 +54,15 @@
 
 @media screen and (max-width: 320px) {
   .Login__button {
+    width: 288px;
+    height: 56px;
+    font-size: 16px;
+    margin-left: auto;
+    margin-top: auto;
+  }
+
+  .Or-Sign-Up__button {
+    font-size: 14px;
+    margin-top: 10px;
   }
 }

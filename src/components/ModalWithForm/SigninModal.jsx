@@ -33,7 +33,7 @@ const SigninModal = ({
 
   return (
     <ModalWithForm
-      isOpen={true}
+      isOpen={isOpen}
       onSubmit={handleSubmit}
       onClose={onClose}
       title="Sign in"

@@ -30,7 +30,7 @@
 }
 
 .nav__menu-button {
-  display: none;
+  display: flex;
 }
 
 .nav__menu-button_open {
