@@ -217,7 +217,7 @@ function App() {
                       />
                     </Routes>
                     {mobileMenuOpen && <MobileMenu onLoginClick={handleSignInModalClick} />}
-                    <Footer />
+                    
                     <SigninModal
                       isOpen={activeModal === 'sign-in'}
                       onClose={onClose}
@@ -236,6 +236,7 @@ function App() {
                     />
                   </div>
                 </div>
+                <Footer />
               </mobileContext.Provider>
             </keyWordContext.Provider>
           </savedArticlesContext.Provider>
