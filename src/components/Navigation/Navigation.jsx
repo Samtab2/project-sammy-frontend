@@ -20,8 +20,8 @@ function Navigation({ onLoginClick, onRegisterClick }) {
   };
 
   return (
-    <nav className={`nav ${mobileMenuOpen ? 'nav__menu-open' : ''}`}>
-      <div>
+    <header className={`nav ${mobileMenuOpen ? 'nav__menu-open' : ''}`}>
+      <nav>
         <NavLink to="/">
           <img
             src={headerBlackLogo}
@@ -29,7 +29,7 @@ function Navigation({ onLoginClick, onRegisterClick }) {
             className="nav__logo"
           />
         </NavLink>
-      </div>
+      </nav>
       <button
         className={`nav__menu-button ${
           activeModal !== '' ? 'nav__menu-button_hidden' : ''
@@ -44,7 +44,7 @@ function Navigation({ onLoginClick, onRegisterClick }) {
         />
       )}
 
-      <div className="nav__user-container">
+      <nav className="nav__user-container">
         {currentPage === '/' ? (
           <>
             <NavLink
@@ -61,8 +61,8 @@ function Navigation({ onLoginClick, onRegisterClick }) {
         ) : (
           <header>{/* Add your saved news header content here */}</header>
         )}
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
 

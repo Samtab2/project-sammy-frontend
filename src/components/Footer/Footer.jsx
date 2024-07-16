@@ -5,7 +5,7 @@ import facebookLogo from "../../assets/facebookLogo.svg";
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer__content">
+      <ul className="footer__content">
         <p className="footer__copyright">
           © {new Date().getFullYear()} Supersite, Powered by News API
         </p>
@@ -27,7 +27,7 @@ function Footer() {
             />
           </li>
         </ul>
-      </div>
+      </ul>
     </footer>
   );
 }

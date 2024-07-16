@@ -22,7 +22,7 @@ const NewsCardList = ({ handleSaveArticle, handleRemoveArticle, onSignUp }) => {
       {hasSearched ? (
         <>
           <h2 className="news__cards-header">Search results</h2>
-          <div className="news__cards-container">
+          <ul className="news__cards-container">
             {searchResult.slice(0, cardsDisplayed).map((result) => (
               <article
                 key={result.url}
@@ -35,7 +35,7 @@ const NewsCardList = ({ handleSaveArticle, handleRemoveArticle, onSignUp }) => {
                 />
               </article>
             ))}
-          </div>
+          </ul>
           <button
             className={`news__cards-button ${
               cardsDisplayed >= searchResult.length

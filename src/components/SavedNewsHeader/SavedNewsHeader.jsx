@@ -59,19 +59,19 @@ function SavedNewsHeader() {
   };
   const KeywordString = getKeywordsString(KeywordArray);
   return (
-    <div className="saved__news">
-      <div className="saved__news-container">
+    <nav className="saved__news">
+      <h1 className="saved__news-container">
         <div className="saved__news-title">Saved Articles</div>
-        <h1 className="saved__news-header">
+        <h2 className="saved__news-header">
           {currentUser.name}, you {userArticles.length} saved article{' '}
           {userArticles.length === 1 ? 's' : ''}{' '}
-        </h1>
+        </h2>
         <div className="saved__news-Keyword-container">
           <p className="saved__news-Keywords-title">By Keywords:</p>
           <p className="saved__news-Keywords">{KeywordString}</p>
         </div>
-      </div>
-    </div>
+      </h1>
+    </nav>
   );
 }
 
