@@ -1,10 +1,13 @@
 .mobile {
   position: fixed;
   top: 56px;
-  height: 568px;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   width: 310px;
+  display: block;
+  margin-top: 9px;
 }
+
 
 .mobile__content {
   display: flex;

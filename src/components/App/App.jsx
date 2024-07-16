@@ -189,7 +189,6 @@ function App() {
                     <Navigation
                       onLoginClick={handleSignInModalClick}
                       onRegisterClick={handleRegisterModalClick}
-                      activeModal={activeModal}
                     />
                     <Routes>
                       <Route

@@ -7,7 +7,7 @@ import { currentPageContext } from '../../contexts/currentPageContext';
 import { mobileContext } from '../../contexts/mobileContext';
 
 function Navigation({ onLoginClick, onRegisterClick }) {
-  const { currentPage } = useContext(currentPageContext);
+  const { currentPage, activeModal } = useContext(currentPageContext);
   const { mobileMenuOpen, openMobileMenu, closeMobileMenu } =
     useContext(mobileContext);
 
@@ -32,10 +32,9 @@ function Navigation({ onLoginClick, onRegisterClick }) {
       </div>
       <button
         className={`nav__menu-button ${
-          mobileMenuOpen ? 'nav__menu-button_open' : ''
-        }`}
+          activeModal !== '' ? 'nav__menu-button_hidden' : ''
+        } ${mobileMenuOpen === true ? 'nav__menu-button_open' : ''}`}
         onClick={handleMobileMenu}>
-        <span className="nav__menu-icon"></span>
       </button>
 
       {mobileMenuOpen && (
