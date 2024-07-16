@@ -23,22 +23,23 @@ const NewsCardList = ({ handleSaveArticle, handleRemoveArticle, onSignUp }) => {
         <>
           <h2 className="news__cards-header">Search results</h2>
           <div className="news__cards-container">
-            {searchResult.slice(0, cardsDisplayed).map((result) => {
-              return (
+            {searchResult.slice(0, cardsDisplayed).map((result) => (
+              <article
+                key={result.url}
+                className="news__card-list">
                 <NewsCard
                   newsData={result}
-                  key={result.url}
                   handleSaveArticle={handleSaveArticle}
                   handleRemoveArticle={handleRemoveArticle}
                   onSignUp={onSignUp}
                 />
-              );
-            })}
+              </article>
+            ))}
           </div>
           <button
-            className={`newscards__button ${
+            className={`news__cards-button ${
               cardsDisplayed >= searchResult.length
-                ? 'newscards__button_hidden'
+                ? 'news__cards-button_hidden'
                 : ''
             }`}
             onClick={increaseVisibleCards}>
@@ -46,7 +47,7 @@ const NewsCardList = ({ handleSaveArticle, handleRemoveArticle, onSignUp }) => {
           </button>
         </>
       ) : (
-        ""
+        ''
       )}
     </section>
   );

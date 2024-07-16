@@ -9,7 +9,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card__keyword {
+.news__keyword {
   background-color: white;
   padding: 8px 22px;
   text-align: center;
@@ -24,7 +24,7 @@
   left: 24px;
 }
 
-.card__popup-text {
+.news__popup-text {
   background-color: white;
   padding: 8px 22px;
   border-radius: 8px;
@@ -39,11 +39,11 @@
   margin-top: 24px;
 }
 
-.card__popup-text_hidden {
+.news__popup-text_hidden {
   display: none;
 }
 
-.card__button-delete {
+.news__button-delete {
   background: url(../../assets/Delete-button.svg);
   width: 48px;
   height: 48px;
@@ -55,12 +55,12 @@
   cursor: pointer;
 }
 
-.card__button-delete:hover {
+.news__button-delete:hover {
   background: url(../../assets/Delete-button-hover.svg);
   cursor: pointer;
 }
 
-.card__button-bookmark {
+.news__button-bookmark {
   background: transparent url(../../assets/BookMark.svg);
   width: 40px;
   height: 40px;
@@ -72,12 +72,12 @@
   cursor: pointer;
 }
 
-.card__button-bookmark:hover {
+.news__button-bookmark:hover {
   background: transparent url(../../assets/BookMark-Hover.svg);
   cursor: pointer;
 }
 
-.card__button-bookmark_marked {
+.news__button-bookmark_marked {
   background: transparent url(../../assets/BookMark-Clicked.svg);
 }
 
@@ -156,12 +156,15 @@
     height: 150px;
   }
 
-  .card__keyword {
+
+
+
+  .news__keyword {
     top: 18px;
     left: 18px;
   }
 
-  .card__button-bookmark {
+  .news__button-bookmark {
     margin-left: 175px;
     margin-top: 10px;
   }
@@ -188,40 +191,38 @@
   }
 }
 
-
 @media screen and (max-width: 320px) {
   .news-card {
     width: 288px;
   }
-
 
   .news-card__image {
     width: 288px;
     height: 196px;
   }
 
-  .card__keyword {
+
+
+  .news__keyword {
     top: 18px;
     left: 18px;
   }
 
-
-  .card__button-bookmark {
-   margin-left: 230px;
-   margin-top: 15px;
+  .news__button-bookmark {
+    margin-left: 230px;
+    margin-top: 15px;
   }
-  
 
   .news-card__title {
     font-size: 22px;
     line-height: 24px;
-    height: 5.4em;
+    height: 50px;
   }
 
   .news-card__description {
     font-size: 16px;
     line-height: 22px;
-    height: 5.4em;
+    height: auto;
   }
 
   .news-card__source {

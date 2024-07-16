@@ -53,16 +53,16 @@ function NewsCard({
     <div className="news-card">
       {currentPage === '/saved-news' && (
         <>
-          <div className="card__keyword">{newsData.keyword}</div>
+          <div className="news__keyword">{newsData.keyword}</div>
 
           <div
-            className={`card__popup-text ${
-              isHovered ? '' : 'card__popup-text_hidden'
+            className={`news__popup-text ${
+              isHovered ? '' : 'news__popup-text_hidden'
             }`}>
             Remove from saved
           </div>
           <button
-            className="card__button-delete"
+            className="news__button-delete"
             onClick={handleRemoveClick}
             onMouseEnter={() => {
               setIsHovered(true);
@@ -76,11 +76,11 @@ function NewsCard({
 
       {isLoggedIn && currentPage === '/' ? (
         <button
-          className={`card__button-bookmark ${
+          className={`news__button-bookmark ${
             savedArticles.some(
               (savedArticles) => savedArticles.link === newsData.url
             )
-              ? 'card__button-bookmark_marked'
+              ? 'news__button-bookmark_marked'
               : ''
           }`}
           onClick={handleBookmarkClick}
@@ -91,14 +91,14 @@ function NewsCard({
       {!isLoggedIn && (
         <>
           <div
-            className={`card__popup-text ${
-              isHovered ? '' : 'card__popup-text_hidden'
+            className={`news__popup-text ${
+              isHovered ? '' : 'news__popup-text_hidden'
             }`}>
             Sign in to save articles
           </div>
 
           <button
-            className="card__button-bookmark"
+            className="news__button-bookmark"
             onClick={onSignUp}
             onMouseEnter={() => {
               setIsHovered(true);
