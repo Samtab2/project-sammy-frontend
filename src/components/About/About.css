@@ -48,12 +48,14 @@
     width: 768px;
     height: 354px;
     margin-bottom: -105px; 
+    margin-left: -15px;
   }
 
   .about__image {
     width: 232px;
     height: 232px;
     margin: 80px 0 0;
+    margin-left: 60px;
   }
 
   .about__content {
@@ -72,6 +74,7 @@
     width: 424px;
     font-size: 16px;
     line-height: 20px;
+    margin-right: 10px;
   }
 }
 
@@ -81,7 +84,8 @@
     padding: 0px;
     width: 320px;
     height: 752px;
-    margin-bottom: -80px; 
+    margin-bottom: -80px;
+    margin-left: 2px; 
   }
 
 
@@ -91,7 +95,6 @@
     margin: 40px 0 0;
     position: absolute;
     margin-top: 20px;
-    margin-right: 20px;
   }
   .about__content {
     padding: 0 20px;

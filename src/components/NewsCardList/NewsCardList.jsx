@@ -39,8 +39,6 @@ const NewsCardList = ({ handleSaveArticle, handleRemoveArticle, onSignUp }) => {
           <button
             className={`news__cards-button ${
               cardsDisplayed >= searchResult.length
-                ? 'news__cards-button_hidden'
-                : ''
             }`}
             onClick={increaseVisibleCards}>
             Show more

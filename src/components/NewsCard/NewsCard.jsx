@@ -50,10 +50,10 @@ function NewsCard({
   }, [location.pathname, setCurrentPage]);
 
   return (
-    <div className="news-card">
+    <section className="news-card">
       {currentPage === '/saved-news' && (
         <>
-          <div className="news__keyword">{newsData.keyword}</div>
+          <h2 className="news__keyword">{newsData.keyword}</h2>
 
           <div
             className={`news__popup-text ${
@@ -123,7 +123,7 @@ function NewsCard({
           />
         )}
         
-        <div className="news-card__text">
+        <header className="news-card__text">
           <p className="news-card__date">{formattedDate}</p>
           <h3 className="news-card__title">{newsData.title}</h3>
           <p className="news-card__description">
@@ -134,9 +134,9 @@ function NewsCard({
               {newsData.source.name || newsData.source}
             </p>
           )}
-        </div>
+        </header>
       </a>
-    </div>
+    </section>
   );
 }
 

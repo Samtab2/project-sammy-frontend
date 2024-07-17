@@ -147,17 +147,14 @@
 
 @media screen and (max-width: 768px) {
   .news-card {
-    width: 224px;
+    width: 200px;
     min-height: 420px;
   }
 
   .news-card__image {
-    width: 224px;
+    width: 200px;
     height: 150px;
   }
-
-
-
 
   .news__keyword {
     top: 18px;
@@ -165,7 +162,7 @@
   }
 
   .news__button-bookmark {
-    margin-left: 175px;
+    margin-left: 145px;
     margin-top: 10px;
   }
 
@@ -200,8 +197,6 @@
     width: 288px;
     height: 196px;
   }
-
-
 
   .news__keyword {
     top: 18px;

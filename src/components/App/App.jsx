@@ -23,10 +23,12 @@ import { searchResultContext } from '../../contexts/searchResultContext';
 import { hasSearchedContext } from '../../contexts/hasSearchedContext';
 import { savedArticlesContext } from '../../contexts/savedArticlesContext';
 import { mobileContext } from '../../contexts/mobileContext';
+import { currentUserContext } from '../../contexts/currentUserContext';
 function App() {
   const [activeModal, setActiveModal] = useState('');
   const [keyWord, setKeyWord] = useState('');
   const [currentPage, setCurrentPage] = useState('');
+  const [currentUser, setCurrentUser] = useState({});
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
   const [searchError, setSearchError] = useState(false);
@@ -34,6 +36,7 @@ function App() {
   const [searchResult, setSearchResult] = useState([]);
   const [savedArticles, setSavedArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const location = useLocation();
 
@@ -156,6 +159,11 @@ function App() {
     }
   };
 
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setCurrentUser({});
+  };
+
   useEffect(() => {
     setIsLoading(true);
     getSavedArticles()
@@ -175,73 +183,78 @@ function App() {
 
   return (
     <currentPageContext.Provider value={{ currentPage, setCurrentPage }}>
-      <hasSearchedContext.Provider value={{ hasSearched, setHasSearched }}>
-        <searchResultContext.Provider value={{ searchResult, setSearchResult }}>
-          <savedArticlesContext.Provider
-            value={{ savedArticles, setSavedArticles }}>
-            <keyWordContext.Provider value={{ keyWord, setKeyWord }}>
-              <mobileContext.Provider
-                value={{ mobileMenuOpen, openMobileMenu, closeMobileMenu }}>
-                
-                <div className="page">
-                  <div className="page__content">
-                    <Header />
-                    <Navigation
-                      onLoginClick={handleSignInModalClick}
-                      onRegisterClick={handleRegisterModalClick}
-                    />
-                    <Routes>
-                      <Route
-                        path="/"
-                        element={
-                          <Main
-                            onSignUp={handleRegisterModalClick}
-                            handleSearch={handleSearch}
-                            searchError={searchError}
-                            isLoading={isLoading}
-                            handleRemoveArticle={handleRemoveArticle}
-                            handleSaveArticle={handleSaveArticle}
-                          />
-                        }
+      <currentUserContext.Provider value={{ isLoggedIn, currentUser }}>
+        <hasSearchedContext.Provider value={{ hasSearched, setHasSearched }}>
+          <searchResultContext.Provider
+            value={{ searchResult, setSearchResult }}>
+            <savedArticlesContext.Provider
+              value={{ savedArticles, setSavedArticles }}>
+              <keyWordContext.Provider value={{ keyWord, setKeyWord }}>
+                <mobileContext.Provider
+                  value={{ mobileMenuOpen, openMobileMenu, closeMobileMenu }}>
+                  <div className="page">
+                    <div className="page__content">
+                      <Header />
+                      <Navigation
+                        onLoginClick={handleSignInModalClick}
+                        onRegisterClick={handleRegisterModalClick}
+                        onLogout={handleLogout}
                       />
-
-                      <Route
-                        path="/saved-news"
-                        element={
-                          <ProtectedRoute>
-                            <SavedNews
+                      <Routes>
+                        <Route
+                          path="/"
+                          element={
+                            <Main
+                              onSignUp={handleRegisterModalClick}
+                              handleSearch={handleSearch}
+                              searchError={searchError}
+                              isLoading={isLoading}
                               handleRemoveArticle={handleRemoveArticle}
+                              handleSaveArticle={handleSaveArticle}
                             />
-                          </ProtectedRoute>
-                        }
+                          }
+                        />
+
+                        <Route
+                          path="/saved-news"
+                          element={
+                            <ProtectedRoute>
+                              <SavedNews
+                                handleRemoveArticle={handleRemoveArticle}
+                              />
+                            </ProtectedRoute>
+                          }
+                        />
+                      </Routes>
+                      {mobileMenuOpen && (
+                        <MobileMenu onLoginClick={handleSignInModalClick} />
+                      )}
+
+                      <SigninModal
+                        isOpen={activeModal === 'sign-in'}
+                        onClose={onClose}
+                        onRegisterClick={handleRegisterModalClick}
+                        OnLogInClick={handleSignInModalClick}
+                        activeModal={activeModal}
+                        isLoading={isLoading}
                       />
-                    </Routes>
-                    {mobileMenuOpen && <MobileMenu onLoginClick={handleSignInModalClick} />}
-                    
-                    <SigninModal
-                      isOpen={activeModal === 'sign-in'}
-                      onClose={onClose}
-                      onRegisterClick={handleRegisterModalClick}
-                      OnLogInClick={handleSignInModalClick}
-                      activeModal={activeModal}
-                      isLoading={isLoading}
-                    />
-                    <RegisterModal
-                      isOpen={activeModal === 'sign-up'}
-                      onClose={onClose}
-                      onLoginClick={handleSignInModalClick}
-                      onRegisterClick={handleRegisterModalClick}
-                      activeModal={activeModal}
-                      isLoading={isLoading}
-                    />
+                      <RegisterModal
+                        isOpen={activeModal === 'sign-up'}
+                        onClose={onClose}
+                        onLoginClick={handleSignInModalClick}
+                        onRegisterClick={handleRegisterModalClick}
+                        activeModal={activeModal}
+                        isLoading={isLoading}
+                      />
+                    </div>
                   </div>
-                </div>
-                <Footer />
-              </mobileContext.Provider>
-            </keyWordContext.Provider>
-          </savedArticlesContext.Provider>
-        </searchResultContext.Provider>
-      </hasSearchedContext.Provider>
+                  <Footer />
+                </mobileContext.Provider>
+              </keyWordContext.Provider>
+            </savedArticlesContext.Provider>
+          </searchResultContext.Provider>
+        </hasSearchedContext.Provider>
+      </currentUserContext.Provider>
     </currentPageContext.Provider>
   );
 }
