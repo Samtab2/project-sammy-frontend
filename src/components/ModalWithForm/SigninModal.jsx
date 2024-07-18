@@ -9,6 +9,7 @@ const SigninModal = ({
   onRegisterClick,
   OnLogInClick,
   IsLoading,
+  onLogIn,
 }) => {
   const currentUser = useContext(currentUserContext);
   const inputValues = {
@@ -24,7 +25,7 @@ const SigninModal = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isValid) {
-      onLogin(values);
+      onLogIn(values);
     }
   };
 

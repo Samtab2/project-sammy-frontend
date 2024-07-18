@@ -141,7 +141,7 @@ function App() {
   const handleSignIn = ({ email, password }) => {
     authorize({ email, password })
       .then((res) => {
-        setCurrentUser({ name: res.name, _id: res._id });
+        setCurrentUser({ name: res.data_id, _id: res.data._id });
         setIsLoggedIn(true);
       })
       .catch((err) => {
@@ -268,7 +268,9 @@ function App() {
                         <Route
                           path="/saved-news"
                           element={
-                            <ProtectedRoute>
+                            <ProtectedRoute
+                              isLoggedIn={isLoggedIn}
+                              isLoggedInLoading={isLoading}>
                               <SavedNews
                                 handleRemoveArticle={handleRemoveArticle}
                               />
