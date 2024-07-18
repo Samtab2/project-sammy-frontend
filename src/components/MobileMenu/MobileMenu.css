@@ -5,8 +5,9 @@
   left: 0;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  width: 315px;
+  width: 320px;
   display: block;
+  margin-left: 10px;
 }
 
 

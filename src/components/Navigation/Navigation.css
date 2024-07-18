@@ -17,17 +17,19 @@
 .nav__menu-open {
   background-color: #1a1b22;
   position: fixed;
-  min-width: 315px;
+  min-width: 320px;
   min-height: 10px;
   height: 56px;
   box-sizing: border-box;
   margin-left: 0px;
 }
 
-.nav__logo {
+.nav__logo-white {
   display: flex;
   align-items: center;
-  margin-left: 300px;
+  margin-top: 16px;
+  margin-left: 10px;
+  margin-bottom: 11px;
 }
 
 .nav__menu-button {
@@ -47,6 +49,13 @@
   display: flex;
   align-items: center;
   gap: 42px;
+}
+
+.nav__buttons {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-left: -80px;
 }
 
 .nav__button-home {
@@ -105,6 +114,7 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
+  margin-right: 20px;
 }
 
 .nav__button-signin.active,
@@ -115,17 +125,22 @@
 @media screen and (max-width: 768px) {
   .nav {
     padding: 15px 30px;
-    width: 720px;
+    width: 730px;
     margin-left: -30px;
   }
 
-  .nav__logo {
-    margin-left: 15px;
+  .nav__logo-white {
+    margin-left: 30px;
     margin-top: 10px;
   }
 
   .nav__user-container {
     gap: 38px;
+  }
+
+  .nav__buttons {
+    gap: 30px;
+    margin-left: -570px;
   }
 
   .nav__button-home {
@@ -161,11 +176,12 @@
     padding: 15px;
     max-width: 290px;
     margin-left: 10px;
+    margin-bottom: 41px;
+    margin-top: 10px;
   }
 
-  .nav__logo {
+  .nav__logo-white {
     margin-left: 10px;
-    margin-top: 10px;
   }
 
   .nav__menu-button {
@@ -175,7 +191,7 @@
     height: 24px;
     border: none;
     cursor: pointer;
-    margin-left: 100px;
+    margin-left: -490px;
   }
 
   .nav__button-home,

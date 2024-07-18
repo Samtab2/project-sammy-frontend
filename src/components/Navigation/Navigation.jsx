@@ -24,77 +24,31 @@ function Navigation({ onLoginClick, onRegisterClick, onLogout }) {
     }
   };
 
-  return isLoggedIn && currentPage === '/' ? (
-    <header className={`nav ${mobileMenuOpen ? 'nav__menu-open' : ''}`}>
+  return (
+    <nav className={`nav ${mobileMenuOpen ? 'nav__menu-open' : ''}`}>
       <nav>
-        <NavLink to="/">
-          <img
-            src={headerWhiteLogo}
-            alt="NewsExplorer White Logo"
-            className="nav__logo"
-          />
-        </NavLink>
+        {currentPage === '/' ? (
+          <NavLink to="/">
+            <img
+              src={headerWhiteLogo}
+              alt="NewsExplorer White Logo"
+              className="nav__logo-white"
+            />
+          </NavLink>
+        ) : (
+          <NavLink to="/">
+            <img
+              src={headerBlackLogo}
+              alt="NewsExplorer Black Logo"
+              className="nav__logo-black"
+            />
+          </NavLink>
+        )}
       </nav>
       <button
         className={`nav__menu-button ${
           activeModal !== '' ? 'nav__menu-button_hidden' : ''
         } ${mobileMenuOpen === true ? 'nav__menu-button_open' : ''}`}
-        onClick={handleMobileMenu}></button>
-
-      {mobileMenuOpen && (
-        <MobileMenu
-          onLoginClick={onLoginClick}
-          onLogout={onLogout}
-        />
-      )}
-
-      <nav className="nav__user-container">
-        <NavLink
-          to="/"
-          className="nav__button-home"
-          activeClassName="nav__button-home.active">
-          Home
-        </NavLink>
-        <NavLink
-          to="/saved-news"
-          className="nav__button-saved-articles">
-          Saved Articles
-        </NavLink>
-
-        <button
-          className="nav__saved__news-username"
-          type="text"
-          onClick={onLogout}></button>
-        <p className="nav__username">{currentUser.name}</p>
-        <img
-          src={logoutWhite}
-          alt="Logout White"
-          className="nav__logout"
-        />
-      </nav>
-    </header>
-  ) : isLoggedIn && currentPage === 'saved news' ? (
-    <header
-      className={`nav nav_page_saved-news ${
-        mobileMenuOpen ? 'nav__saved-news-open' : ''
-      }`}>
-      <nav>
-        <NavLink to="/">
-          <img
-            src={headerBlackLogo}
-            alt="NewsExplorer Black Logo"
-            className="nav__logo"
-          />
-        </NavLink>
-        <NavLink
-          to="/"
-          className="nav__saved__news-button-home"
-          type="text">
-          Home
-        </NavLink>
-      </nav>
-      <button
-        className="nav__saved__news-menu-button"
         onClick={handleMobileMenu}
       />
 
@@ -105,49 +59,73 @@ function Navigation({ onLoginClick, onRegisterClick, onLogout }) {
         />
       )}
 
-      <nav className="nav__user-container">
-        <NavLink
-          to="/"
-          className="nav__saved__news-button-home"
-          type="text">
-          Home
-        </NavLink>
-        <NavLink
-          to="/saved-news"
-          className="nav__button-saved-articles">
-          Saved Articles
-        </NavLink>
-        <button
-          className="nav__saved__news-username"
-          type="text"
-          onClick={onLogout}></button>
-        <p className="nav__username">{currentUser.name}</p>
-        <img
-          src={logoutBlack}
-          alt="Logout Black"
-          className="nav__logout"
-        />
-      </nav>
-    </header>
-  ) : (
-    <nav className={`nav ${mobileMenuOpen ? 'nav__menu-open' : ''}`}>
-      <button
-        className={`nav__menu-button ${
-          activeModal !== '' ? 'nav__menu-button_hidden' : ''
-        } ${mobileMenuOpen === true ? 'nav__menu-button_open' : ''}`}
-        onClick={handleMobileMenu}></button>
+      {isLoggedIn && currentPage === '/' ? (
+        <nav className="nav__user-container">
+          <NavLink
+            to="/"
+            className="nav__button-home"
+            activeClassName="nav__button-home.active">
+            Home
+          </NavLink>
+          <NavLink
+            to="/saved-news"
+            className="nav__button-saved-articles">
+            Saved Articles
+          </NavLink>
 
-      <NavLink
-        to="/"
-        className="nav__button-home"
-        activeClassName="nav__button-home.active">
-        Home
-      </NavLink>
-      <button
-        className="nav__button-signin"
-        onClick={onLoginClick}>
-        Sign in
-      </button>
+          <button
+            className="nav__saved__news-username"
+            type="text"
+            onClick={onLogout}></button>
+          <p className="nav__username">{currentUser.name}</p>
+          <img
+            src={logoutWhite}
+            alt="Logout White"
+            className="nav__logout"
+          />
+        </nav>
+      ) : isLoggedIn && currentPage === 'saved news' ? (
+        <nav
+          className={`nav__user-container nav_page_saved-news ${
+            mobileMenuOpen ? 'nav__saved-news-open' : ''
+          }`}>
+          <NavLink
+            to="/"
+            className="nav__saved__news-button-home"
+            type="text">
+            Home
+          </NavLink>
+          <NavLink
+            to="/saved-news"
+            className="nav__button-saved-articles">
+            Saved Articles
+          </NavLink>
+          <button
+            className="nav__saved__news-username"
+            type="text"
+            onClick={onLogout}></button>
+          <p className="nav__username">{currentUser.name}</p>
+          <img
+            src={logoutBlack}
+            alt="Logout Black"
+            className="nav__logout"
+          />
+        </nav>
+      ) : (
+        <div className={`nav__buttons ${mobileMenuOpen ? 'nav__menu-open' : ''}`}>
+          <NavLink
+            to="/"
+            className="nav__button-home"
+            activeClassName="nav__button-home.active">
+            Home
+          </NavLink>
+          <button
+            className="nav__button-signin"
+            onClick={onLoginClick}>
+            Sign in
+          </button>
+        </div>
+      )}
     </nav>
   );
 }
