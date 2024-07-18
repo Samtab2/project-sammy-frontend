@@ -1,40 +1,38 @@
-import "./RegisterModal.css";
-import ModalWithForm from "./ModalWithForm";
-import { useState, useEffect } from "react";
+import './RegisterModal.css';
+import ModalWithForm from './ModalWithForm';
+import { useEffect, useContext } from 'react';
+import { useForm } from '../../Hooks/useForm';
+import { currentUserContext } from '../../contexts/currentUserContext';
 
 function RegisterModal({
   onClose,
   isOpen,
-  onRegisterClick,
   onLoginClick,
   IsLoading,
+  onRegister,
 }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUserName] = useState("");
+  const currentUser = useContext(currentUserContext);
+  const inputValues = {
+    email: '',
+    password: '',
+    username: '',
+  };
+
+  const { values, handleChange, errors, isValid, resetForm } = useForm(
+    inputValues,
+    currentUser
+  );
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isValid) {
+      onRegister(values);
+    }
+  };
 
   useEffect(() => {
-    if (isOpen) {
-      setEmail("");
-      setPassword("");
-      setUserName("");
-    }
+    resetForm(inputValues);
   }, [isOpen]);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onRegisterClick({ email, password, username });
-  };
-
-  const handleEmail = (event) => {
-    setEmail(event.target.value);
-  };
-  const handlePassword = (event) => {
-    setPassword(event.target.value);
-  };
-  const handleUserName = (event) => {
-    setUserName(event.target.value);
-  };
 
   return (
     <ModalWithForm
@@ -43,22 +41,27 @@ function RegisterModal({
       onClose={onClose}
       title="Sign up"
       name="signup"
-      buttonText={IsLoading ? "Loading..." : "Sign up"}
-      buttonText2={"or Log in"}>
-      <label htmlFor="email2" className="modal__label">
+      buttonText={IsLoading ? 'Loading...' : 'Sign up'}
+      buttonText2={'or Log in'}>
+      <label
+        htmlFor="email2"
+        className="modal__label">
         Email
         <input
-          className="modal__input"
+          className={`modal__input ${errors.email ? 'modal__input-error' : ''}`}
           type="email"
           name="email"
           id="email2"
           placeholder="Email"
-          value={email}
-          onChange={handleEmail}
+          value={values.email}
+          onChange={handleChange}
           required
         />
+        <span className="modal__error">{errors.email}</span>
       </label>
-      <label htmlFor="password2" className="modal__label">
+      <label
+        htmlFor="password2"
+        className="modal__label">
         Password
         <input
           className="modal__input"
@@ -66,12 +69,15 @@ function RegisterModal({
           name="password"
           id="password2"
           placeholder="Password"
-          value={password}
-          onChange={handlePassword}
+          value={values.password}
+          onChange={handleChange}
           required
         />
+        <span className="modal__error">{errors.password}</span>
       </label>
-      <label htmlFor="username" className="modal__label">
+      <label
+        htmlFor="username"
+        className="modal__label">
         Username
         <input
           className="modal__input"
@@ -79,16 +85,22 @@ function RegisterModal({
           name="username"
           id="username"
           placeholder="Username"
-          value={username}
-          onChange={handleUserName}
+          value={values.username}
+          onChange={handleChange}
           required
         />
+        <span className="modal__error">{errors.username}</span>
       </label>
-      <button type="submit" className="SignUp__button">
+      <button
+        type="submit"
+        className="SignUp__button">
         Sign up
       </button>
-      <button onClick={onLoginClick} type="button" className="Or-Login__button">
-        {" "}
+      <button
+        onClick={onLoginClick}
+        type="button"
+        className="Or-Login__button">
+        {' '}
         or Log in
       </button>
     </ModalWithForm>

@@ -14,6 +14,7 @@ import {
   removeSavedArticle,
   addSavedArticle,
 } from '../../utils/Api';
+import { checkToken, authorize, register } from '../../utils/Auth';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import { getSearchResult } from '../../utils/NewsApi';
 import { useLocation } from 'react-router-dom';
@@ -28,7 +29,10 @@ function App() {
   const [activeModal, setActiveModal] = useState('');
   const [keyWord, setKeyWord] = useState('');
   const [currentPage, setCurrentPage] = useState('');
-  const [currentUser, setCurrentUser] = useState({});
+  const [currentUser, setCurrentUser] = useState({
+    name: '',
+    _id: '',
+  });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
   const [searchError, setSearchError] = useState(false);
@@ -37,6 +41,7 @@ function App() {
   const [savedArticles, setSavedArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedInLoading, setIsLoggedInLoading] = useState(true);
 
   const location = useLocation();
 
@@ -66,6 +71,10 @@ function App() {
     setActiveModal('sign-up');
   };
 
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   const onClose = () => {
     setActiveModal('');
   };
@@ -93,6 +102,52 @@ function App() {
       document.removeEventListener('click', handleOverlayClick);
     };
   }, []);
+
+  useEffect(() => {
+    setIsLoggedInLoading(true);
+    checkToken()
+      .then((res) => {
+        if (res) {
+          setIsLoggedIn(false);
+          setCurrentUser(res);
+          getSavedArticles()
+            .then((res) => {
+              setSavedArticles(res);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setIsLoggedInLoading(false);
+      });
+  }, []);
+
+  const handleSignUp = ({ name, email, password }) => {
+    register({ name, email, password })
+      .then((res) => {
+        setCurrentUser({ name: res.name, _id: res._id });
+        setIsLoggedIn(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleSignIn = ({ email, password }) => {
+    authorize({ email, password })
+      .then((res) => {
+        setCurrentUser({ name: res.name, _id: res._id });
+        setIsLoggedIn(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const handleSearch = (keyWord) => {
     setKeyWord(keyWord);
@@ -157,11 +212,6 @@ function App() {
         })
         .catch((err) => console.error(err));
     }
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setCurrentUser({});
   };
 
   useEffect(() => {
@@ -235,6 +285,7 @@ function App() {
                         onClose={onClose}
                         onRegisterClick={handleRegisterModalClick}
                         OnLogInClick={handleSignInModalClick}
+                        onLogIn={handleSignIn}
                         activeModal={activeModal}
                         isLoading={isLoading}
                       />
@@ -243,6 +294,7 @@ function App() {
                         onClose={onClose}
                         onLoginClick={handleSignInModalClick}
                         onRegisterClick={handleRegisterModalClick}
+                        onRegister={handleSignUp}
                         activeModal={activeModal}
                         isLoading={isLoading}
                       />

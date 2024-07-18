@@ -10,7 +10,7 @@ import { currentPageContext } from '../../contexts/currentPageContext';
 import { mobileContext } from '../../contexts/mobileContext';
 import { currentUserContext } from '../../contexts/currentUserContext';
 
-function Navigation({ onLoginClick, onRegisterClick, onLogout }) {
+function Navigation({ onLoginClick, onLogout }) {
   const { currentPage, activeModal } = useContext(currentPageContext);
   const { currentUser, isLoggedIn } = useContext(currentUserContext);
   const { mobileMenuOpen, openMobileMenu, closeMobileMenu } =
@@ -116,7 +116,7 @@ function Navigation({ onLoginClick, onRegisterClick, onLogout }) {
           <NavLink
             to="/"
             className="nav__button-home"
-            activeClassName="nav__button-home.active">
+            >
             Home
           </NavLink>
           <button
