@@ -1,5 +1,8 @@
 .main {
-  background: #f9f9f9;
+  min-height: 496px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .error-message {

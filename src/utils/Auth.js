@@ -9,12 +9,7 @@ export const checkToken = () => {
 
 export const authorize = () => {
   return new Promise((resolve, reject) => {
-   if (email === 'test@example.com' && password === 'password') {
-       resolve({ token: 'fake token' });
-       
-   } else {
-       reject(new Error('Invalid email or password'));
-   }
+    resolve({ token: 'fake token' });
   });
 };
 

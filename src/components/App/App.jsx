@@ -141,7 +141,7 @@ function App() {
   const handleSignIn = ({ email, password }) => {
     authorize({ email, password })
       .then((res) => {
-        setCurrentUser({ name: res.data_id, _id: res.data._id });
+        setCurrentUser({ name: res.name, _id: res._id });
         setIsLoggedIn(true);
       })
       .catch((err) => {
@@ -232,24 +232,24 @@ function App() {
   }, []);
 
   return (
-    <currentPageContext.Provider value={{ currentPage, setCurrentPage }}>
-      <currentUserContext.Provider value={{ isLoggedIn, currentUser }}>
-        <hasSearchedContext.Provider value={{ hasSearched, setHasSearched }}>
-          <searchResultContext.Provider
-            value={{ searchResult, setSearchResult }}>
-            <savedArticlesContext.Provider
-              value={{ savedArticles, setSavedArticles }}>
-              <keyWordContext.Provider value={{ keyWord, setKeyWord }}>
-                <mobileContext.Provider
-                  value={{ mobileMenuOpen, openMobileMenu, closeMobileMenu }}>
-                  <div className="page">
+    <div className="page">
+      <currentPageContext.Provider value={{ currentPage, setCurrentPage }}>
+        <currentUserContext.Provider value={{ isLoggedIn, currentUser }}>
+          <hasSearchedContext.Provider value={{ hasSearched, setHasSearched }}>
+            <searchResultContext.Provider
+              value={{ searchResult, setSearchResult }}>
+              <savedArticlesContext.Provider
+                value={{ savedArticles, setSavedArticles }}>
+                <keyWordContext.Provider value={{ keyWord, setKeyWord }}>
+                  <mobileContext.Provider
+                    value={{ mobileMenuOpen, openMobileMenu, closeMobileMenu }}>
                     <div className="page__content">
-                      <Header />
                       <Navigation
                         onLoginClick={handleSignInModalClick}
                         onRegisterClick={handleRegisterModalClick}
                         onLogout={handleLogout}
                       />
+                      <Header />
                       <Routes>
                         <Route
                           path="/"
@@ -301,15 +301,16 @@ function App() {
                         isLoading={isLoading}
                       />
                     </div>
-                  </div>
-                  <Footer />
-                </mobileContext.Provider>
-              </keyWordContext.Provider>
-            </savedArticlesContext.Provider>
-          </searchResultContext.Provider>
-        </hasSearchedContext.Provider>
-      </currentUserContext.Provider>
-    </currentPageContext.Provider>
+
+                    <Footer />
+                  </mobileContext.Provider>
+                </keyWordContext.Provider>
+              </savedArticlesContext.Provider>
+            </searchResultContext.Provider>
+          </hasSearchedContext.Provider>
+        </currentUserContext.Provider>
+      </currentPageContext.Provider>
+    </div>
   );
 }
 
