@@ -1,11 +1,13 @@
 import "./header.css";
 import Navigation from "../Navigation/Navigation";
 
-function Header() {
+function Header({ onLoginClick, onLogout, onRegisterClick }) {
+
+
   return (
     <>
       <header className="header">
-        <Navigation />
+        <Navigation onLoginClick={onLoginClick} onLogout={onLogout} onRegisterClick={onRegisterClick} />
       </header>
     </>
   );

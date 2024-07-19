@@ -7,7 +7,7 @@ const SigninModal = ({
   isOpen,
   onClose,
   onRegisterClick,
-  OnLogInClick,
+  onLogInClick,
   IsLoading,
   onLogIn,
 }) => {
@@ -75,7 +75,7 @@ const SigninModal = ({
       </label>
       <button
         type="submit"
-        onClick={OnLogInClick}
+        onClick={onLogInClick}
         className="Login__button">
         Sign in
       </button>

@@ -6,7 +6,6 @@ import Main from '../Main/Main';
 import SigninModal from '../ModalWithForm/SigninModal';
 import RegisterModal from '../ModalWithForm/RegisterModal';
 import Footer from '../Footer/Footer';
-import Navigation from '../Navigation/Navigation';
 import SavedNews from '../SavedNews/SavedNews';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import {
@@ -244,13 +243,12 @@ function App() {
                   <mobileContext.Provider
                     value={{ mobileMenuOpen, openMobileMenu, closeMobileMenu }}>
                     <div className="page__content">
-                      <Header>
-                      <Navigation
+                      <Header
                         onLoginClick={handleSignInModalClick}
-                        onRegisterClick={handleRegisterModalClick}
                         onLogout={handleLogout}
+                        onRegisterClick={handleRegisterModalClick}
                       />
-                      </Header> 
+
                       <Routes>
                         <Route
                           path="/"
@@ -287,7 +285,7 @@ function App() {
                         isOpen={activeModal === 'sign-in'}
                         onClose={onClose}
                         onRegisterClick={handleRegisterModalClick}
-                        OnLogInClick={handleSignInModalClick}
+                        onLogInClick={handleSignInModalClick}
                         onLogIn={handleSignIn}
                         activeModal={activeModal}
                         isLoading={isLoading}
