@@ -11,22 +11,22 @@ function SavedNewsHeader() {
     (article) => article.owner === currentUser._id
   );
 
-  const KeywordArray = userArticles.map((article) => article.Keyword);
-  const capitalizedFirstLetter = KeywordArray.map((string) => {
+  const keyWordArray = userArticles.map((article) => article.keyword);
+  const capitalizedFirstLetter = keyWordArray.map((string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   });
 
-  const getKeywordsString = (Keywords) => {
-    if (Keywords.length === 0) {
+  const getKeywordsString = (keyWords) => {
+    if (keyWords.length === 0) {
       return '';
     }
-    if (Keywords.length === 1) {
+    if (keyWords.length === 1) {
       const count = {};
-      for (let Keyword of Keywords) {
-        if (count[Keyword]) {
-          count[Keyword]++;
+      for (let keyWord of keyWords) {
+        if (count[keyWord]) {
+          count[keyWord]++;
         } else {
-          count[Keyword] = 1;
+          count[keyWord] = 1;
         }
       }
 
@@ -57,7 +57,7 @@ function SavedNewsHeader() {
       return null;
     }
   };
-  const KeywordString = getKeywordsString(KeywordArray);
+  const keyWordString = getKeywordsString(keyWordArray);
   return (
     <nav className="saved__news">
       <h1 className="saved__news-container">
@@ -68,7 +68,7 @@ function SavedNewsHeader() {
         </h2>
         <div className="saved__news-Keyword-container">
           <p className="saved__news-Keywords-title">By Keywords:</p>
-          <p className="saved__news-Keywords">{KeywordString}</p>
+          <p className="saved__news-Keywords">{keyWordString}</p>
         </div>
       </h1>
     </nav>

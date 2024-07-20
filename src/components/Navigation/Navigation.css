@@ -10,11 +10,7 @@
 
 .nav__menu-open {
   background-color: #1a1b22;
-  min-width: 320px;
   min-height: 10px;
-  height: 56px;
-  box-sizing: border-box;
-  margin-left: 0px;
 }
 
 .nav__logo-white {
@@ -63,7 +59,6 @@
   line-height: 24px;
   text-decoration: none;
   position: relative;
-  margin-left: 900px;
 }
 
 .nav__button-home.active::after {
@@ -133,7 +128,6 @@
 
   .nav__buttons {
     gap: 30px;
-    margin-left: -570px;
   }
 
   .nav__button-home {
@@ -166,11 +160,11 @@
 
 @media screen and (max-width: 320px) {
   .nav {
-    padding: 15px;
-    max-width: 290px;
-    margin-left: 10px;
+    padding: 10px ;
+    width: 320px;
+    height: 56px;
+    margin-left: auto;
     margin-bottom: 41px;
-    margin-top: 10px;
   }
 
   .nav__logo-white {
@@ -184,7 +178,7 @@
     height: 24px;
     border: none;
     cursor: pointer;
-    margin-left: -490px;
+    
   }
 
   .nav__button-home,
