@@ -92,27 +92,20 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+/* Tested on My Samsung S24 Ultra */
+@media screen and (max-width: 430px) {
   .news__card-section {
-    width: 300px;
+    width: 460px;
     padding: 20px 10px;
     gap: 16px;
-    margin-left: 2px;
   }
 
   .news__cards-header {
     height: 34px;
     font-size: 30px;
     line-height: 36px;
-    margin-top: 15px;
-    margin-left: 10px;
     margin-right: -30px;
-  }
-
-  .news__cards-container {
-    margin-right: 60px;
-    margin-left: -39px;
-    margin-bottom: -10px;
+    margin-left: 70px;
   }
 
   .news__cards-button {
@@ -120,6 +113,13 @@
     font-size: 16px;
     height: 48px;
     width: 240px;
-    margin-left: 30px;
+    margin-left: auto;
+  }
+
+  .news__cards-container {
+    gap: 12px;
+    margin-bottom: 40px;
+    margin-left: -35px;
+    margin-top: -20px;
   }
 }

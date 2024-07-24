@@ -242,19 +242,19 @@ function App() {
                   <mobileContext.Provider
                     value={{ mobileMenuOpen, openMobileMenu, closeMobileMenu }}>
                     <div className="page__content">
-                  
-
                       <Routes>
                         <Route
                           path="/"
                           element={
                             <Main
-                              onSignUp={handleRegisterModalClick}
                               handleSearch={handleSearch}
                               searchError={searchError}
                               isLoading={isLoading}
                               handleRemoveArticle={handleRemoveArticle}
                               handleSaveArticle={handleSaveArticle}
+                              onLoginClick={handleSignInModalClick}
+                              onLogout={handleLogout}
+                              onRegisterClick={handleRegisterModalClick}
                             />
                           }
                         />

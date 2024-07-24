@@ -16,9 +16,9 @@ function Main({
   handleRemoveArticle,
   handleSaveArticle,
   onSignUp,
-  handleSignInModalClick,
-  handleRegisterModalClick,
-  handleLogout,
+  onLoginClick,
+  onLogout,
+  onRegisterClick,
 }) {
   const { searchResult } = useContext(searchResultContext);
   const { hasSearched } = useContext(hasSearchedContext);
@@ -26,9 +26,9 @@ function Main({
   return (
     <>
       <Header
-      onLoginClick={handleSignInModalClick}
-      onLogout={handleLogout}
-      onRegisterClick={handleRegisterModalClick}
+      onLoginClick={onLoginClick}
+      onLogout={onLogout}
+      onRegisterClick={onRegisterClick}
       />
       <main className="main">
         <SearchForm handleSearch={handleSearch} />

@@ -1,13 +1,14 @@
+/* Tested on My Samsung S24 Ultra */
 .mobile {
   position: fixed;
-  top: 56px;
+  top: 85px;
   right: 0;
   left: 0;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  width: 320px;
+  width: 453px;
   display: block;
-  margin-left: 10px;
+  overflow: hidden;
 }
 
 
@@ -36,6 +37,8 @@
   text-decoration: none;
   max-width: 288px;
   margin-left: 10px;
+  cursor: pointer;
+  margin-bottom: 16px;
 }
 
 
@@ -49,11 +52,11 @@
   border: 1px solid white;
   background-color: transparent;
   color: white;
-  width: 288px;
+  width: 400px;
   padding: 16px 0;
   margin-top: 22px;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 25px;
 }
 
 .mobile__button:hover {

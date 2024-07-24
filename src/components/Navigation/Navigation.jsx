@@ -1,8 +1,6 @@
 import './Navigation.css';
 import headerWhiteLogo from '../../assets/NewsExplorer.WhiteLogoHeader.svg';
 import headerBlackLogo from '../../assets/NewsExplorer.BlackLogoHeader.svg';
-import logoutBlack from '../../assets/logout-Black.svg';
-import logoutWhite from '../../assets/logout-White.svg';
 import { NavLink } from 'react-router-dom';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import { useContext } from 'react';

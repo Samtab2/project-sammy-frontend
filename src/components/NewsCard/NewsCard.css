@@ -57,7 +57,6 @@
 }
 
 .news__button-delete:hover {
-  background: url(../../assets/Delete-button-hover.svg);
   cursor: pointer;
 }
 
@@ -74,7 +73,6 @@
 }
 
 .news__button-bookmark:hover {
-  background: transparent url(../../assets/BookMark-Hover.svg);
   cursor: pointer;
 }
 
@@ -189,14 +187,16 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+
+/* Tested on My Samsung S24 Ultra */
+@media screen and (max-width: 430px) {
   .news-card {
-    width: 288px;
+    width: 350px;
   }
 
   .news-card__image {
-    width: 288px;
-    height: 196px;
+    width: 350px;
+    height: 200px;
   }
 
   .news__keyword {
@@ -205,7 +205,7 @@
   }
 
   .news__button-bookmark {
-    margin-left: 230px;
+    margin-left: 290px;
     margin-top: 15px;
   }
 
