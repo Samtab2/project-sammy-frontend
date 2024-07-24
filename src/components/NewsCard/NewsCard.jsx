@@ -51,8 +51,10 @@ function NewsCard({
 
   return (
     <section className="news-card">
-      {currentPage === '/saved-news' && (
+      {/* TODO: add position relative to news-card to position keyword correctly */}
+      {currentPage  === '/saved-news' && (
         <>
+        
           <h2 className="news__keyword">{newsData.keyword}</h2>
 
           <div

@@ -3,9 +3,11 @@
   flex-direction: column;
   background-color: #f5f6f7;
   padding: 62px 102px;
+  width: 1440px;
+  height: 1392px;
 }
 
-.saved__newscards-container {
+.saved__news-cards-container {
   display: flex;
   flex-direction: row;
   gap: 16px;

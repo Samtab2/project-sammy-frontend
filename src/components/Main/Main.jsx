@@ -1,5 +1,6 @@
 import './Main.css';
 import About from '../About/About';
+import Header from '../header/header';
 import NewsCardList from '../NewsCardList/NewsCardList';
 import SearchForm from '../SearchForm/SearchForm';
 import Preloader from '../Preloader/Preloader';
@@ -15,35 +16,46 @@ function Main({
   handleRemoveArticle,
   handleSaveArticle,
   onSignUp,
+  handleSignInModalClick,
+  handleRegisterModalClick,
+  handleLogout,
 }) {
   const { searchResult } = useContext(searchResultContext);
   const { hasSearched } = useContext(hasSearchedContext);
-
+  // TODO: implement onFoo handlers for header
   return (
-    <main className="main">
-      <SearchForm handleSearch={handleSearch} />
-      <div>
-        {hasSearched && searchResult.length > 0 ? (
-          <NewsCardList
-            onSignUp={onSignUp}
-            handleSaveArticle={handleSaveArticle}
-            handleRemoveArticle={handleRemoveArticle}
-          />
-        ) : hasSearched && searchResult.length === 0 ? (
-          <NotFound />
-        ) : isLoading ? (
-          <Preloader />
-        ) : searchError === true ? (
-          <p>
-            Sorry, something went wrong during the request. There may be a
-            connection issue or the server may be down. Please try again later.
-          </p>
-        ) : (
-          ''
-        )}
-      </div>
-      <About />
-    </main>
+    <>
+      <Header
+      onLoginClick={handleSignInModalClick}
+      onLogout={handleLogout}
+      onRegisterClick={handleRegisterModalClick}
+      />
+      <main className="main">
+        <SearchForm handleSearch={handleSearch} />
+        <div>
+          {hasSearched && searchResult.length > 0 ? (
+            <NewsCardList
+              onSignUp={onSignUp}
+              handleSaveArticle={handleSaveArticle}
+              handleRemoveArticle={handleRemoveArticle}
+            />
+          ) : hasSearched && searchResult.length === 0 ? (
+            <NotFound />
+          ) : isLoading ? (
+            <Preloader />
+          ) : searchError === true ? (
+            <p>
+              Sorry, something went wrong during the request. There may be a
+              connection issue or the server may be down. Please try again
+              later.
+            </p>
+          ) : (
+            ''
+          )}
+        </div>
+        <About />
+      </main>
+    </>
   );
 }
 

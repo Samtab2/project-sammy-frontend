@@ -24,6 +24,8 @@ function Navigation({ onLoginClick, onLogout }) {
     }
   };
 
+  // TODO: style buttons in /saved-news Navigation differently
+  // use modifiers
   return (
     <nav className={`nav ${mobileMenuOpen ? 'nav__menu-open' : ''}`}>
       <nav>
@@ -72,18 +74,14 @@ function Navigation({ onLoginClick, onLogout }) {
             Saved Articles
           </NavLink>
 
+          {/* TODO: wrap logout button and username in a div and style the div like a lozenge */}
+          <p className="nav__username">{currentUser.name}</p>
           <button
-            className="nav__saved__news-username"
+            className="nav__saved__news-username_white"
             type="text"
             onClick={onLogout}></button>
-          <p className="nav__username">{currentUser.name}</p>
-          <img
-            src={logoutWhite}
-            alt="Logout White"
-            className="nav__logout"
-          />
         </nav>
-      ) : isLoggedIn && currentPage === 'saved news' ? (
+      ) : isLoggedIn && currentPage === '/saved-news' ? (
         <nav
           className={`nav__user-container nav_page_saved-news ${
             mobileMenuOpen ? 'nav__saved-news-open' : ''
@@ -96,19 +94,14 @@ function Navigation({ onLoginClick, onLogout }) {
           </NavLink>
           <NavLink
             to="/saved-news"
-            className="nav__button-saved-articles">
+            className="nav__button-saved-articles-user">
             Saved Articles
-          </NavLink>
+            </NavLink>
+            <p className="nav__username">{currentUser.name}</p>
           <button
-            className="nav__saved__news-username"
+            className="nav__saved__news-username_black"
             type="text"
             onClick={onLogout}></button>
-          <p className="nav__username">{currentUser.name}</p>
-          <img
-            src={logoutBlack}
-            alt="Logout Black"
-            className="nav__logout"
-          />
         </nav>
       ) : (
         <div

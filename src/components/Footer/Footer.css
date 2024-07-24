@@ -6,7 +6,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 104px 26px;
+  padding: 32px 104px;
+  width: 1645px;
 }
 
 .footer__copyright {
@@ -17,6 +18,7 @@
   font-family: Roboto;
   font-style: normal;
   line-height: 22px;
+  margin-left: 25px;
 }
 
 .footer__links {

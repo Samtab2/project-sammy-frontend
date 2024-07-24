@@ -7,6 +7,7 @@
   width: 400px;
   min-height: 576px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .news__keyword {
@@ -20,7 +21,7 @@
   color: black;
   border-radius: 10px;
   position: absolute;
-  top: 24px;
+  top: 11px;
   left: 24px;
 }
 
@@ -45,8 +46,8 @@
 
 .news__button-delete {
   background: url(../../assets/Delete-button.svg);
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 8px;
   border: none;
   position: absolute;

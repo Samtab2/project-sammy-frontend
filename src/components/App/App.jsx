@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Header from '../header/header';
 import Main from '../Main/Main';
 import SigninModal from '../ModalWithForm/SigninModal';
 import RegisterModal from '../ModalWithForm/RegisterModal';
@@ -243,11 +242,7 @@ function App() {
                   <mobileContext.Provider
                     value={{ mobileMenuOpen, openMobileMenu, closeMobileMenu }}>
                     <div className="page__content">
-                      <Header
-                        onLoginClick={handleSignInModalClick}
-                        onLogout={handleLogout}
-                        onRegisterClick={handleRegisterModalClick}
-                      />
+                  
 
                       <Routes>
                         <Route

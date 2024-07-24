@@ -2,7 +2,6 @@ import './SavedNewsHeader.css';
 import { useContext } from 'react';
 import { currentUserContext } from '../../contexts/currentUserContext';
 import { savedArticlesContext } from '../../contexts/savedArticlesContext';
-
 function SavedNewsHeader() {
   const { currentUser } = useContext(currentUserContext);
   const { savedArticles } = useContext(savedArticlesContext);
@@ -10,7 +9,6 @@ function SavedNewsHeader() {
   const userArticles = savedArticles.filter(
     (article) => article.owner === currentUser._id
   );
-
   const keyWordArray = userArticles.map((article) => article.keyword);
   const capitalizedFirstLetter = keyWordArray.map((string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -60,17 +58,15 @@ function SavedNewsHeader() {
   const keyWordString = getKeywordsString(keyWordArray);
   return (
     <nav className="saved__news">
-      <h1 className="saved__news-container">
-        <div className="saved__news-title">Saved Articles</div>
-        <h2 className="saved__news-header">
-          {currentUser.name}, you {userArticles.length} saved article{' '}
-          {userArticles.length === 1 ? 's' : ''}{' '}
-        </h2>
-        <div className="saved__news-Keyword-container">
-          <p className="saved__news-Keywords-title">By Keywords:</p>
-          <p className="saved__news-Keywords">{keyWordString}</p>
-        </div>
-      </h1>
+      <h1 className="saved__news-title">Saved Articles</h1>
+      <h2 className="saved__news-header">
+        {currentUser.name}, you {userArticles.length} saved articles
+        {userArticles.length === 1 ? 's' : ''}
+      </h2>
+      <div className="saved__news-Keyword-container">
+        <p className="saved__news-Keywords-title">By Keywords:</p>
+        <p className="saved__news-Keywords">{keyWordArray}</p>
+      </div>
     </nav>
   );
 }
