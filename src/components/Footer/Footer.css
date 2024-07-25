@@ -7,7 +7,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 32px 104px;
-  width: 1645px;
 }
 
 .footer__copyright {
@@ -65,12 +64,17 @@
 
   .footer__content {
     align-items: flex-start;
+    width: 615px;
   }
 
   .footer__copyright {
     font-size: 14px;
     line-height: 18px;
     margin-left: -80px;
+  }
+
+  .footer__links {
+    margin-right: -40px;
   }
 
   .footer__link-home,

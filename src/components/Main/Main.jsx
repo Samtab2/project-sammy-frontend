@@ -15,7 +15,6 @@ function Main({
   isLoading,
   handleRemoveArticle,
   handleSaveArticle,
-  onSignUp,
   onLoginClick,
   onLogout,
   onRegisterClick,
@@ -35,7 +34,7 @@ function Main({
         <div>
           {hasSearched && searchResult.length > 0 ? (
             <NewsCardList
-              onSignUp={onSignUp}
+              onClick={onLoginClick}
               handleSaveArticle={handleSaveArticle}
               handleRemoveArticle={handleRemoveArticle}
             />

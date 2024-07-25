@@ -10,7 +10,7 @@ function NewsCard({
   newsData,
   handleSaveArticle,
   handleRemoveArticle,
-  onSignUp,
+  onLoginClick,
 }) {
   console.log('Rendering NewsCard', newsData);
 
@@ -101,7 +101,7 @@ function NewsCard({
 
           <button
             className="news__button-bookmark"
-            onClick={onSignUp}
+            onClick={onLoginClick}
             onMouseEnter={() => {
               setIsHovered(true);
             }}

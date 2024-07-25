@@ -146,22 +146,21 @@
 
 @media screen and (max-width: 768px) {
   .news-card {
-    width: 200px;
+    width: 220px;
     min-height: 420px;
   }
 
   .news-card__image {
-    width: 200px;
+    width: 224px;
     height: 150px;
   }
 
   .news__keyword {
-    top: 18px;
     left: 18px;
   }
 
   .news__button-bookmark {
-    margin-left: 145px;
+    margin-left: 165px;
     margin-top: 10px;
   }
 
