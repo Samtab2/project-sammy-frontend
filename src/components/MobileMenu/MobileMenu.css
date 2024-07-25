@@ -1,24 +1,26 @@
 /* Tested on My Samsung S24 Ultra */
 .mobile {
   position: fixed;
-  top: 85px;
+  top: 0;
   right: 0;
   left: 0;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  width: 453px;
   display: block;
   overflow: hidden;
+  margin-top: 85px;
+  z-index: 1;
 }
 
 
 .mobile__content {
   display: flex;
   flex-direction: column;
-  width: 100%;
   background-color: #1a1b22;
   padding: 16px 0 24px;
   border-radius: 0 0 10px 10px;
+  position: relative;
+  max-width: 453px;
 }
 
 .mobile__links {
@@ -52,7 +54,7 @@
   border: 1px solid white;
   background-color: transparent;
   color: white;
-  width: 400px;
+  max-width: 400px;
   padding: 16px 0;
   margin-top: 22px;
   cursor: pointer;

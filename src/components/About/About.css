@@ -45,7 +45,7 @@
 @media screen and (max-width: 768px) {
   .about {
     padding: 0px;
-    width: 768px;
+    max-width: 768px;
     height: 354px;
     margin-bottom: -105px; 
     margin-left: -15px;
@@ -82,7 +82,7 @@
 @media screen and (max-width: 430px) {
   .about {
     padding: 0px;
-    width: 460px;
+    max-width: 460px;
     height: 752px;
     margin-bottom: -80px;
     margin-left: 2px; 

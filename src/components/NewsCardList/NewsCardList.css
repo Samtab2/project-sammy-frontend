@@ -58,14 +58,14 @@
 
 @media screen and (max-width: 768px) {
   .news__card-section {
-    width: 768px;
+    max-width: 768px;
     padding: 20px 10px;
     gap: 16px;
     margin-left: -35px;
   }
 
   .news__cards-header {
-    width: 336px;
+    max-width: 336px;
     height: 34px;
     font-size: 30px;
     line-height: 36px;

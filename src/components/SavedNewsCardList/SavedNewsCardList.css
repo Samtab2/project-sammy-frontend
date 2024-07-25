@@ -14,13 +14,13 @@
 
 @media screen and (max-width: 768px) {
   .saved__news-card {
-    width: 600px;
+    max-width: 600px;
     height: 912px;
     
   }
 
   .saved__news-cards-container {
-    width: 950px;
+    max-width: 950px;
     margin-left: -60px;
 
   }
