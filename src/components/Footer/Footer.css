@@ -17,7 +17,7 @@
   font-family: Roboto;
   font-style: normal;
   line-height: 22px;
-  margin-left: 350px;
+  margin-left: 50px;
 }
 
 .footer__links {
@@ -25,7 +25,7 @@
   padding: 0;
   margin: 0;
   list-style: none;
-  margin-right: 400px;
+  margin-right: 80px;
 }
 
 .footer__link-home {
@@ -90,30 +90,29 @@
   }
 }
 
-/* Tested on My Samsung S24 Ultra */
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 320px) {
   .footer {
-    width: 460px;
+    max-width: 320px;
     height: auto;
     display: flex;
     align-items: center;
     position: relative;
-    padding: 10px;
   }
 
   .footer__copyright {
     position: absolute;
     padding: 10px;
     margin-top: 80px;
-    margin-left: -50px;
+    margin-left: -100px;
   }
 
   .footer__links {
-    margin-left: 30px;
-  } 
+    margin-left: -10px;
+  }
+
 
   .footer__link-home {
-    margin-left: -70px;
+    margin-left: -80px;
   }
 
   .footer__link-triplenTen {

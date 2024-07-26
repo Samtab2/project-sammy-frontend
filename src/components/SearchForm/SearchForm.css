@@ -113,8 +113,7 @@
 }
 
 
-/* Tested on My Samsung S24 Ultra */
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 320px) {
   .search__form {
     padding: 0 10px;
     margin-top: -250px;
@@ -129,36 +128,36 @@
     font-size: 36px;
     line-height: 40px;
     margin-top: -180px;
-    width: 400px;
-    margin-left: 50px;
+    width: 285px;
+    margin-left: 20px;
     
   }
 
   .search__form-subHeader {
     font-size: 18px;
     line-height: 24px;
-    margin-left: 50px;
-    width: 400px;
+    margin-left: 20px;
+    width: 285px;
   }
 
   .search__form-input {
     padding: 12px 15px;
-    width: 370px;
+    width: 270px;
     font-size: 12px;
     line-height: 16px;
-    margin-top: 100px;
-    margin-left: 60px;
+    margin-top: 90px;
+    margin-left: -10px;
   }
 
   .search__form-button {
     padding: 12px 20px;
-    width: 400px;
+    width: 300px;
     height: 40px;
     font-size: 14px;
     line-height: 16px;
     position: relative;
     right: 0;
     top: 10px;
-    margin-left: 60px;
+    margin-left: -10px;
   }
 }

@@ -92,10 +92,10 @@
   }
 }
 
-/* Tested on My Samsung S24 Ultra */
-@media screen and (max-width: 430px) {
+
+@media screen and (max-width: 320px) {
   .news__card-section {
-    width: 460px;
+    width: 320px;
     padding: 20px 10px;
     gap: 16px;
   }

@@ -28,6 +28,8 @@
   display: none;
 }
 
+
+
 .nav__menu-button_open {
   background: transparent url(../../assets/close-button-mobile.svg) center
     no-repeat;
@@ -36,7 +38,7 @@
 .nav__user-container {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 70px;
 }
 
 .nav__buttons {
@@ -67,7 +69,13 @@
   height: 2px;
   border-bottom: 3px solid #ffffff;
   left: -5px;
-  bottom: -33px;
+  bottom: -45px;
+}
+
+.nav__saved-news {
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
 .nav__button-saved-articles {
@@ -81,7 +89,6 @@
   font-family: Roboto;
   line-height: 24px;
   text-decoration: none;
-  margin-right: -50px;
 }
 
 .nav__saved__news-button-home {
@@ -121,7 +128,50 @@
   width: 178px;
   height: 2px;
   border-bottom: 3px solid black;
-  top: 85px;
+  margin-bottom: -95px;
+}
+
+.nav__username-white {
+  font-family: Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 35px;
+  margin-right: -50px;
+}
+
+.nav__button-logout-white {
+  width: 112px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #ffffff;
+  margin-left: -90px;
+  background-color: transparent;
+}
+
+.nav__username-black {
+  font-family: Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  margin-right: -140px;
+}
+
+.nav__button-logout-black {
+  width: 112px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #000;
+  background-color: transparent;
+}
+
+.nav__saved__news-username_black {
+  display: flex;
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  margin-left: -205px;
 }
 
 .nav__button-signin {
@@ -149,36 +199,28 @@
 }
 
 .nav__logout {
+  width: 24px;
+  height: 24px;
+  border-radius: 20px;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
+  margin-left: -100px;
 }
 
-.nav__saved__news-username_white {
-  width: 112px;
-  height: 40px;
+.nav__logout-black {
+  width: 24px;
+  height: 24px;
   border-radius: 20px;
-  border: 1px solid #ffffff;
-  background-color: transparent;
-  background-image: url(../../assets/logout-White.svg);
-  background-repeat: no-repeat;
-  background-position: right 20px center;
   cursor: pointer;
-}
-
-.nav__saved__news-username_black {
-  width: 112px;
-  height: 40px;
-  border-radius: 20px;
-  border: 1px solid black;
+  border: none;
   background-color: transparent;
-  background-image: url(../../assets/logout-Black.svg);
-  background-repeat: no-repeat;
-  background-position: right 20px center;
-  cursor: pointer;
+  margin-left: -100px;
 }
 
 @media screen and (max-width: 768px) {
   .nav {
-    padding: 15px 30px;
+    padding: 5px 30px;
     max-width: 768px;
   }
 
@@ -187,34 +229,42 @@
     margin-top: 10px;
   }
 
-  .nav__logo-black {
-    margin-left: 30px;
-  }
 
-  .nav__user-container {
-    gap: 20px;
-  }
 
   .nav__button-home {
     font-size: 16px;
     line-height: 20px;
+    margin-right: -10px;
   }
 
   .nav__button-home.active::after {
     width: 60px;
     left: -5px;
-    bottom: -28px;
+    bottom: -30px;
+  }
+
+
+  .nav__saved__news-button-home {
+    margin-left: -100px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .nav__button-saved-articles-user {
+    font-size: 16px;
+    line-height: 20px;
+   
   }
 
   .nav__button-saved-articles {
-    width: 152px;
+    margin-right: -20px;
     font-size: 16px;
     line-height: 20px;
   }
 
   .nav__button-saved-articles-user.active::after {
-    top: 75px;
-  }
+    margin-top: -30px;
+}
 
   .nav__saved__news-username_white {
     margin-right: 30px;
@@ -222,7 +272,13 @@
 
   .nav__saved__news-username_black {
     margin-right: 30px;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    margin-right: -35px;
   }
+
+ 
 
   .nav__button-signin {
     padding: 10px;
@@ -236,13 +292,11 @@
 }
 
 /* Tested on My Samsung S24 Ultra */
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 320px) {
   .nav {
     padding: 10px;
-    width: 435px;
+    max-width: 320px;
     height: 56px;
-    margin-left: 5px;
-    margin-bottom: 41px;
   }
 
   .nav__logo-white {
@@ -260,18 +314,36 @@
   }
 
   .nav__button-home,
+  .nav__button-signin,
+  .nav__saved__news-button-home,
+  .nav__button-saved-articles-user,
   .nav__button-saved-articles,
-  .nav__button-signin {
+  .nav__logout-black,
+  .nav__logout,
+  .nav__saved__news-username_black,
+  .nav__username-black,
+  .nav__username-white,
+  .nav__saved__news-username_white,
+  .nav__button-logout-white,
+  .nav__button-logout-black {
     display: none;
   }
+
+
+
 
   .nav__menu-button_open {
     display: flex;
     background: transparent url(../../assets/close-button-mobile.svg) center
       no-repeat;
+    
   }
 
-  .nav__saved__news-username_white {
-    margin-right: 20px;
+  .nav__menu-saved-news_open {
+    display: flex;
+    background: transparent url(../../assets/Mobile-menu-black.svg) center
+      no-repeat;
   }
+
+
 }

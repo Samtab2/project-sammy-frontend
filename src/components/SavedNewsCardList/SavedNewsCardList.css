@@ -20,8 +20,25 @@
   }
 
   .saved__news-cards-container {
-    max-width: 950px;
-    margin-left: -60px;
+    width: 950px;
+    margin-left: -75px;
 
   }
+}
+
+/* Tested on My Samsung S24 Ultra */
+@media screen and (max-width: 320px) {
+  .saved__news-card {
+    max-width: 320px;
+    height: 3000px;
+    padding: 20px 10px;
+    
+  }
+
+  .saved__news-cards-container {
+    max-width: 320px;
+    margin-left: 0px;
+    flex-direction: column;
+  }
+  
 }

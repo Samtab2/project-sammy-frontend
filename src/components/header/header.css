@@ -65,10 +65,10 @@
 }
 
 /* Tested on My Samsung S24 Ultra */
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 320px) {
   .header {
-    width: 460px;
-    height: 500px;
+    max-width: 320px;
+    height: 540px;
     background-size: cover;
     background-position: center;
     position: relative;

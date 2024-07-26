@@ -146,17 +146,23 @@
 
 @media screen and (max-width: 768px) {
   .news-card {
-    max-width: 220px;
-    min-height: 420px;
+    width: 220px;
+    min-height: 440px;
   }
 
   .news-card__image {
-    max-width: 224px;
+    width: 224px;
     height: 150px;
   }
 
   .news__keyword {
-    left: 18px;
+    left: 10px;
+    top: 0;
+  }
+
+  .news__button-delete {
+    top: 10px;
+    right: 10px;
   }
 
   .news__button-bookmark {
@@ -190,11 +196,12 @@
 /* Tested on My Samsung S24 Ultra */
 @media screen and (max-width: 430px) {
   .news-card {
-    width: 350px;
+    width: 288px;
+    height: 420px;
   }
 
   .news-card__image {
-    width: 350px;
+    width: 288px;
     height: 200px;
   }
 
@@ -204,8 +211,7 @@
   }
 
   .news__button-bookmark {
-    margin-left: 290px;
-    margin-top: 15px;
+    margin-left: 230px;
   }
 
   .news-card__title {

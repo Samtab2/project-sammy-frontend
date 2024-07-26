@@ -1,6 +1,8 @@
 import './Navigation.css';
 import headerWhiteLogo from '../../assets/NewsExplorer.WhiteLogoHeader.svg';
 import headerBlackLogo from '../../assets/NewsExplorer.BlackLogoHeader.svg';
+import logOutBlack from '../../assets/logout-Black.svg';
+import logOutWhite from '../../assets/logout-White.svg';
 import { NavLink } from 'react-router-dom';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import { useContext } from 'react';
@@ -73,17 +75,28 @@ function Navigation({ onLoginClick, onLogout }) {
           </NavLink>
 
           {/* TODO: wrap logout button and username in a div and style the div like a lozenge */}
-          <p className="nav__username">{currentUser.name}</p>
+          <p className="nav__username-white">sammy{currentUser.name}</p>
+
           <button
-            className="nav__saved__news-username_white"
-            type="text"
-            onClick={onLogout}></button>
+            className="nav__button-logout-white"
+            type="button"
+            onClick={onLogout}
+            button
+          />
+
+          <img
+            src={logOutWhite}
+            onClick={onLogout}
+            alt="logout"
+            className="nav__logout"
+          />
         </nav>
       ) : isLoggedIn && currentPage === '/saved-news' ? (
         <nav
-          className={`nav__user-container nav_page_saved-news ${
-            mobileMenuOpen ? 'nav__saved-news-open' : ''
-          }`}>
+          className={`nav nav__menu-saved-news_open ${
+            mobileMenuOpen ? '' : ''
+              }`}>
+            <button className='nav__menu-button-saved-news_hidden' onClick={handleMobileMenu}></button>
           <NavLink
             to="/"
             className="nav__saved__news-button-home"
@@ -94,12 +107,19 @@ function Navigation({ onLoginClick, onLogout }) {
             to="/saved-news"
             className="nav__button-saved-articles-user">
             Saved Articles
-            </NavLink>
-            <p className="nav__username">{currentUser.name}</p>
+          </NavLink>
+          <p className="nav__username-black">sammy{currentUser.name}</p>
           <button
-            className="nav__saved__news-username_black"
-            type="text"
-            onClick={onLogout}></button>
+            className="nav__button-logout-black"
+            type="button"
+            onClick={onLogout}
+            button
+          />
+          <img
+            src={logOutBlack}
+            alt="logout"
+            className="nav__logout-black"
+          />
         </nav>
       ) : (
         <div
