@@ -27,7 +27,7 @@ function Navigation({ onLoginClick, onLogout }) {
   // TODO: style buttons in /saved-news Navigation differently
   // use modifiers
   return (
-    <nav className={`nav ${mobileMenuOpen ? 'nav__menu-open' : ''}`}>
+    <nav className={`nav ${mobileMenuOpen ? 'nav__menu-open'  : ''} `}>
       <nav>
         {currentPage === '/' ? (
           <NavLink to="/">
@@ -92,11 +92,14 @@ function Navigation({ onLoginClick, onLogout }) {
           />
         </nav>
       ) : isLoggedIn && currentPage === '/saved-news' ? (
-        <nav
-          className={`nav nav__menu-saved-news_open ${
-            mobileMenuOpen ? '' : ''
-              }`}>
-            <button className='nav__menu-button-saved-news_hidden' onClick={handleMobileMenu}></button>
+        <nav className="nav__user-container">
+          <button
+            className={`nav__saved-news-menu-button ${
+              activeModal !== '' ? 'nav__saved-news-menu-button_hidden' : ''
+            } ${
+              mobileMenuOpen === true ? 'nav__saved-news-menu-button_open' : ''
+            } `} onClick={handleMobileMenu}
+          />
           <NavLink
             to="/"
             className="nav__saved__news-button-home"

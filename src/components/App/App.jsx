@@ -273,7 +273,11 @@ function App() {
                         />
                       </Routes>
                       {mobileMenuOpen && (
-                        <MobileMenu onLoginClick={handleSignInModalClick} />
+                        <MobileMenu
+                          onLoginClick={handleSignInModalClick}
+                          onLogout={handleLogout}
+                          onCloseMenu={closeMobileMenu}
+                        />
                       )}
 
                       <SigninModal

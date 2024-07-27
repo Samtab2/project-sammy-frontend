@@ -5,9 +5,14 @@ import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { currentPageContext } from '../../contexts/currentPageContext';
 import { currentUserContext } from '../../contexts/currentUserContext';
-const MobileMenu = ({ onLoginClick, onLogout }) => {
+
+const MobileMenu = ({ onLoginClick, onLogout, onCloseMenu }) => {
   const { currentPage } = useContext(currentPageContext);
   const { isLoggedIn, currentUser } = useContext(currentUserContext);
+
+  const handleCloseMenu = () => {
+    onCloseMenu();
+  };
 
   return isLoggedIn && currentPage === '/' ? (
     <div className="mobile">
@@ -15,20 +20,27 @@ const MobileMenu = ({ onLoginClick, onLogout }) => {
         <nav className="mobile__links">
           <NavLink
             to="/"
-            className="mobile__link">
+            className="mobile__link"
+            onClick={handleCloseMenu}>
             Home
           </NavLink>
           <NavLink
             to="/saved-news"
-            className="mobile__link">
+            className="mobile__link"
+            onClick={handleCloseMenu}>
             Saved articles
           </NavLink>
         </nav>
         <p className="mobile__user-loggedin-white">sammy{currentUser.name}</p>
         <button
-          className="mobile__button-loggedin-white" onClick={onLogout}></button>
+          className="mobile__button-loggedin-white"
+          onClick={onLogout}></button>
+        <img
+          src={logOutWhite}
+          alt="logout"
+          className="mobile__logout-white"
+        />
       </nav>
-      <img src={logOutWhite} alt="logout" className="mobile__logout-white"/>
     </div>
   ) : isLoggedIn && currentPage === '/saved-news' ? (
     <div className="mobile">
@@ -36,20 +48,26 @@ const MobileMenu = ({ onLoginClick, onLogout }) => {
         <nav className="mobile__links">
           <NavLink
             to="/"
-            className="mobile__link-saved-news">
+            className="mobile__link"
+            onClick={handleCloseMenu}>
             Home
           </NavLink>
           <NavLink
             to="/saved-news"
-            className="mobile__link-saved-news">
+            className="mobile__link"
+            onClick={handleCloseMenu}>
             Saved articles
           </NavLink>
         </nav>
-        <p className="mobile__user-loggedin-black">sammy{currentUser.name}</p>
+        <p className="mobile__user-loggedin-white">sammy{currentUser.name}</p>
         <button
-          className="mobile__button-loggedin-black"
-            onClick={onLogout}></button>
-          <img src={logOutBlack} alt="logout" className="mobile__logout-black" />
+          className="mobile__button-loggedin-white"
+          onClick={onLogout}></button>
+        <img
+          src={logOutWhite}
+          alt="logout"
+          className="mobile__logout-white"
+        />
       </nav>
     </div>
   ) : (
@@ -58,12 +76,14 @@ const MobileMenu = ({ onLoginClick, onLogout }) => {
         <nav className="mobile__links">
           <NavLink
             to="/"
-            className="mobile__link">
+            className="mobile__link"
+            onClick={handleCloseMenu}>
             Home
           </NavLink>
           <NavLink
             to="/saved-news"
-            className="mobile__link">
+            className="mobile__link"
+            onClick={handleCloseMenu}>
             Saved articles
           </NavLink>
           <button

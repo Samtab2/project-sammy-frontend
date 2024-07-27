@@ -193,8 +193,8 @@
 }
 
 
-/* Tested on My Samsung S24 Ultra */
-@media screen and (max-width: 430px) {
+
+@media screen and (max-width: 320px) {
   .news-card {
     width: 288px;
     height: 420px;
@@ -206,8 +206,7 @@
   }
 
   .news__keyword {
-    top: 18px;
-    left: 18px;
+    left: 10px;
   }
 
   .news__button-bookmark {
