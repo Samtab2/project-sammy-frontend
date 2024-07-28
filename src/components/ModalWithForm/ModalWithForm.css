@@ -122,14 +122,14 @@
   }
 }
 
-/* Tested on My Samsung S24 Ultra */
-@media screen and (max-width: 430px) {
+
+@media screen and (max-width: 320px) {
   .modal__content {
-    width: 420px;
-    height: 520px;
+    width: 280px;
+    height: 450px;
     padding: 20px;
-    margin-left: -30px;
-    margin-bottom: 80px;
+    margin-left: -50px;
+    margin-bottom: 60px;
   }
 
   .modal__close-button {

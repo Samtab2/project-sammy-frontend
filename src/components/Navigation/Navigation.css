@@ -273,11 +273,11 @@
   }
 }
 
-/* Tested on My Samsung S24 Ultra */
+
 @media screen and (max-width: 320px) {
   .nav {
     padding: 10px;
-    max-width: 320px;
+    max-width: 100%;
     height: 56px;
   }
 
@@ -292,7 +292,7 @@
     height: 24px;
     border: none;
     cursor: pointer;
-    margin-left: 130px;
+    margin-left: 80px;
   }
 
   .nav__button-home,

@@ -78,14 +78,12 @@
   }
 }
 
-/* Tested on My Samsung S24 Ultra */
+
 @media screen and (max-width: 320px) {
   .about {
-    padding: 0px;
-    max-width: 320px;
-    height: 752px;
-    margin-bottom: -80px;
-    margin-left: 50px; 
+    max-width: 100%;
+    height: 680px;
+    margin-left: auto; 
   }
 
 
@@ -94,18 +92,18 @@
     height: 272px;
     position: absolute;
     margin-top: 20px;
-    margin-left: -55px;
+    margin-left: auto;
   }
   .about__content {
     padding: 0 20px;
-    margin-top: 320px;
+    margin-top: auto;
   }
 
  .about__title {
     padding: 40px 0 16px;
     font-size: 24px;
     line-height: 32px;
-    margin-top: -40px;
+    margin-top: auto;
     margin-left: 10px;
   }
 

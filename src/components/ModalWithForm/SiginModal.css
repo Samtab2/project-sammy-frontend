@@ -51,19 +51,18 @@
   }
 }
 
-/* Tested on My Samsung S24 Ultra */
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 320px) {
   .Login__button {
     width: 288px;
     height: 56px;
     font-size: 16px;
-    margin-left: 60px;
+    margin-left: -10px;
     margin-top: auto;
   }
 
   .Or-Sign-Up__button {
     font-size: 14px;
     margin-top: 10px;
-    margin-left: -10px;
+    margin-left: -15px;
   }
 }

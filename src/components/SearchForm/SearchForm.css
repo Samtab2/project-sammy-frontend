@@ -72,11 +72,10 @@
 @media screen and (max-width: 768px) {
   .search__form {
     padding: 0 40px;
-    margin-top: -350px;
   }
 
   .search__form-container {
-    margin: 40px auto 0;
+    margin: 200px auto 0;
     max-width: 400px;
   }
 
@@ -116,48 +115,45 @@
 @media screen and (max-width: 320px) {
   .search__form {
     padding: 0 10px;
-    margin-top: -250px;
+    
   }
 
   .search__form-container {
-    margin: 20px auto 0;
-    max-width: 280px;
+    margin: 70px auto 0;
+    width: 280px;
   }
 
   .search__form-header {
     font-size: 36px;
     line-height: 40px;
-    margin-top: -180px;
     width: 285px;
-    margin-left: 20px;
-    
+    margin-left: auto;
   }
 
   .search__form-subHeader {
     font-size: 18px;
     line-height: 24px;
-    margin-left: 20px;
+    margin-left: auto;
     width: 285px;
   }
 
   .search__form-input {
     padding: 12px 15px;
-    width: 270px;
+    width: 250px;
     font-size: 12px;
     line-height: 16px;
     margin-top: 90px;
-    margin-left: -10px;
+    margin-left: auto;
   }
 
   .search__form-button {
     padding: 12px 20px;
-    width: 300px;
+    width: 285px;
     height: 40px;
     font-size: 14px;
     line-height: 16px;
     position: relative;
     right: 0;
     top: 10px;
-    margin-left: -10px;
   }
 }
