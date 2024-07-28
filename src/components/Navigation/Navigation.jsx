@@ -29,7 +29,7 @@ function Navigation({ onLoginClick, onLogout }) {
   return (
     <nav className={`nav ${mobileMenuOpen ? 'nav__menu-open'  : ''} `}>
       <nav>
-        {currentPage === '/' ? (
+        {currentPage  === '/' ? (
           <NavLink to="/">
             <img
               src={headerWhiteLogo}
@@ -44,7 +44,8 @@ function Navigation({ onLoginClick, onLogout }) {
               alt="NewsExplorer Black Logo"
               className="nav__logo-black"
             />
-          </NavLink>
+            </NavLink>
+            
         )}
       </nav>
       <button

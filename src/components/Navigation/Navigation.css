@@ -36,6 +36,10 @@
   display: none;
 }
 
+.nav__saved-news-menu-button_hidden {
+  display: none;
+}
+
 .nav__button-home {
   border: none;
   background: none;
@@ -292,7 +296,7 @@
     height: 24px;
     border: none;
     cursor: pointer;
-    margin-left: 80px;
+    margin-left: auto;
   }
 
   .nav__button-home,
@@ -324,5 +328,10 @@
     height: 24px;
     border: none;
     cursor: pointer;
+    margin-left: 20px;
   }
+
+  
+  
+
 }
