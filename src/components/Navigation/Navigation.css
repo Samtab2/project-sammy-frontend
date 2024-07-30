@@ -55,7 +55,7 @@
 }
 
 .nav__button-home.active::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 60px;
   height: 2px;
@@ -115,7 +115,7 @@
 }
 
 .nav__button-saved-articles-user.active::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 178px;
   height: 2px;
@@ -277,8 +277,7 @@
   }
 }
 
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .nav {
     padding: 10px;
     max-width: 100%;
@@ -288,6 +287,12 @@
   .nav__logo-white {
     margin-left: 10px;
   }
+
+  .nav__user-container {
+    display: none;
+  }
+
+  
 
   .nav__menu-button {
     display: flex;
@@ -332,6 +337,4 @@
   }
 
   
-  
-
 }

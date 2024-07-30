@@ -85,7 +85,7 @@
 }
 
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .news__card-section {
     padding: 20px 10px;
     gap: 16px;

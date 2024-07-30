@@ -1,14 +1,14 @@
-import './Navigation.css';
-import headerWhiteLogo from '../../assets/NewsExplorer.WhiteLogoHeader.svg';
-import headerBlackLogo from '../../assets/NewsExplorer.BlackLogoHeader.svg';
-import logOutBlack from '../../assets/logout-Black.svg';
-import logOutWhite from '../../assets/logout-White.svg';
-import { NavLink } from 'react-router-dom';
-import MobileMenu from '../MobileMenu/MobileMenu';
-import { useContext } from 'react';
-import { currentPageContext } from '../../contexts/currentPageContext';
-import { mobileContext } from '../../contexts/mobileContext';
-import { currentUserContext } from '../../contexts/currentUserContext';
+import "./Navigation.css";
+import headerWhiteLogo from "../../assets/NewsExplorer.WhiteLogoHeader.svg";
+import headerBlackLogo from "../../assets/NewsExplorer.BlackLogoHeader.svg";
+import logOutBlack from "../../assets/logout-Black.svg";
+import logOutWhite from "../../assets/logout-White.svg";
+import { NavLink } from "react-router-dom";
+import MobileMenu from "../MobileMenu/MobileMenu";
+import { useContext } from "react";
+import { currentPageContext } from "../../contexts/currentPageContext";
+import { mobileContext } from "../../contexts/mobileContext";
+import { currentUserContext } from "../../contexts/currentUserContext";
 
 function Navigation({ onLoginClick, onLogout }) {
   const { currentPage, activeModal } = useContext(currentPageContext);
@@ -27,9 +27,9 @@ function Navigation({ onLoginClick, onLogout }) {
   // TODO: style buttons in /saved-news Navigation differently
   // use modifiers
   return (
-    <nav className={`nav ${mobileMenuOpen ? 'nav__menu-open'  : ''} `}>
+    <nav className={`nav ${mobileMenuOpen ? "nav__menu-open" : ""} `}>
       <nav>
-        {currentPage  === '/' ? (
+        {currentPage === "/" ? (
           <NavLink to="/">
             <img
               src={headerWhiteLogo}
@@ -44,34 +44,26 @@ function Navigation({ onLoginClick, onLogout }) {
               alt="NewsExplorer Black Logo"
               className="nav__logo-black"
             />
-            </NavLink>
-            
+          </NavLink>
         )}
       </nav>
       <button
         className={`nav__menu-button ${
-          activeModal !== '' ? 'nav__menu-button_hidden' : ''
-        } ${mobileMenuOpen === true ? 'nav__menu-button_open' : ''}`}
+          activeModal !== "" ? "nav__menu-button_hidden" : ""
+        } ${mobileMenuOpen === true ? "nav__menu-button_open" : ""}`}
         onClick={handleMobileMenu}
       />
 
       {mobileMenuOpen && (
-        <MobileMenu
-          onLoginClick={onLoginClick}
-          onLogout={onLogout}
-        />
+        <MobileMenu onLoginClick={onLoginClick} onLogout={onLogout} />
       )}
 
-      {isLoggedIn && currentPage === '/' ? (
+      {isLoggedIn && currentPage === "/" ? (
         <nav className="nav__user-container">
-          <NavLink
-            to="/"
-            className="nav__button-home">
+          <NavLink to="/" className="nav__button-home">
             Home
           </NavLink>
-          <NavLink
-            to="/saved-news"
-            className="nav__button-saved-articles">
+          <NavLink to="/saved-news" className="nav__button-saved-articles">
             Saved Articles
           </NavLink>
 
@@ -92,24 +84,24 @@ function Navigation({ onLoginClick, onLogout }) {
             className="nav__logout"
           />
         </nav>
-      ) : isLoggedIn && currentPage === '/saved-news' ? (
+      ) : isLoggedIn && currentPage === "/saved-news" ? (
         <nav className="nav__user-container">
           <button
             className={`nav__saved-news-menu-button ${
-              activeModal !== '' ? 'nav__saved-news-menu-button_hidden' : ''
+              activeModal !== "" ? "nav__saved-news-menu-button_hidden" : ""
             } ${
-              mobileMenuOpen === true ? 'nav__saved-news-menu-button_open' : ''
-            } `} onClick={handleMobileMenu}
+              mobileMenuOpen === true ? "nav__saved-news-menu-button_open" : ""
+            } `}
+            onClick={handleMobileMenu}
           />
-          <NavLink
-            to="/"
-            className="nav__saved__news-button-home"
-            type="text">
+
+          {mobileMenuOpen && (
+            <MobileMenu onLoginClick={onLoginClick} onLogout={onLogout} />
+          )}
+          <NavLink to="/" className="nav__saved__news-button-home" type="text">
             Home
           </NavLink>
-          <NavLink
-            to="/saved-news"
-            className="nav__button-saved-articles-user">
+          <NavLink to="/saved-news" className="nav__button-saved-articles-user">
             Saved Articles
           </NavLink>
           <p className="nav__username-black">sammy{currentUser.name}</p>
@@ -119,23 +111,16 @@ function Navigation({ onLoginClick, onLogout }) {
             onClick={onLogout}
             button
           />
-          <img
-            src={logOutBlack}
-            alt="logout"
-            className="nav__logout-black"
-          />
+          <img src={logOutBlack} alt="logout" className="nav__logout-black" />
         </nav>
       ) : (
         <div
-          className={`nav__buttons ${mobileMenuOpen ? 'nav__menu-open' : ''}`}>
-          <NavLink
-            to="/"
-            className="nav__button-home">
+          className={`nav__buttons ${mobileMenuOpen ? "nav__menu-open" : ""}`}
+        >
+          <NavLink to="/" className="nav__button-home">
             Home
           </NavLink>
-          <button
-            className="nav__button-signin"
-            onClick={onLoginClick}>
+          <button className="nav__button-signin" onClick={onLoginClick}>
             Sign in
           </button>
         </div>
