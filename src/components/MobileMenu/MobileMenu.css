@@ -17,6 +17,7 @@
   padding: 16px 0 24px;
   border-radius: 0 0 10px 10px;
   position: relative;
+  max-width: 390px;
 }
 
 .mobile__links {

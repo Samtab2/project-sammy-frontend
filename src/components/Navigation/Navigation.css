@@ -292,11 +292,10 @@
     display: none;
   }
 
-  
-
   .nav__menu-button {
     display: flex;
-    background: transparent url(../../assets/mobile-Menu.svg) center no-repeat;
+    background:  url(../../assets/Mobile-menu-black.svg) center no-repeat;
+    background-color:  #ffffff;
     width: 24px;
     height: 24px;
     border: none;
@@ -327,7 +326,7 @@
 
   .nav__saved-news-menu-button {
     display: flex;
-    background: transparent url(../../assets/Mobile-menu-black.svg) center
+    background: transparent url(../../assets/mobile-Menu.svg) center
       no-repeat;
     width: 24px;
     height: 24px;
@@ -335,6 +334,4 @@
     cursor: pointer;
     margin-left: 20px;
   }
-
-  
 }

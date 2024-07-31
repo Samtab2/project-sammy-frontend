@@ -6,9 +6,6 @@ function Footer() {
   return (
     <footer className="footer">
       <ul className="footer__content">
-        <p className="footer__copyright">
-          © {new Date().getFullYear()} Supersite, Powered by News API
-        </p>
         <ul className="footer__links">
           <li className="footer__link-home">Home</li>
           <li className="footer__link-triplenTen">TriplenTen</li>
@@ -25,6 +22,9 @@ function Footer() {
               alt="Facebook Logo"
               className="footer__link-icon"
             />
+            <p className="footer__copyright">
+              © {new Date().getFullYear()} Supersite, Powered by News API
+            </p>
           </li>
         </ul>
       </ul>
