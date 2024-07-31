@@ -5,6 +5,9 @@ import facebookLogo from "../../assets/facebookLogo.svg";
 function Footer() {
   return (
     <footer className="footer">
+      <p className="footer__copyright">
+        © {new Date().getFullYear()} Supersite, Powered by News API
+      </p>
       <ul className="footer__content">
         <ul className="footer__links">
           <li className="footer__link-home">Home</li>
@@ -22,9 +25,6 @@ function Footer() {
               alt="Facebook Logo"
               className="footer__link-icon"
             />
-            <p className="footer__copyright">
-              © {new Date().getFullYear()} Supersite, Powered by News API
-            </p>
           </li>
         </ul>
       </ul>
