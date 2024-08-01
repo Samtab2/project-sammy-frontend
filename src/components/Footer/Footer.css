@@ -1,13 +1,13 @@
 .footer {
-  height: 64px;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 550px;
+  flex-direction: row;
+  max-width: 1440px;
+  margin: 0 auto;
   gap: 46px;
 }
-
-
 
 .footer__copyright {
   font-weight: 400;
@@ -19,6 +19,16 @@
   line-height: 22px;
 }
 
+.footer__links-wrapper {
+  display: flex;
+}
+
+.footer__content {
+  display: flex;
+ gap: 40px;
+}
+
+
 .footer__links {
   display: flex;
   gap: 40px;
@@ -28,6 +38,7 @@
 
 .footer__link-triplenTen,
 .footer__link-home {
+  display: flex;
   font-weight: 400;
   font-size: 18px;
   cursor: pointer;
@@ -41,7 +52,7 @@
   cursor: pointer;
 }
 
-.footer__-link-github {
+.footer__link-github {
   padding: 0 24px;
 }
 
@@ -78,21 +89,28 @@
 
   .footer__copyright {
     text-align: center;
-    margin-top: 20px;
+    order: 2;
     font-size: 14px;
     line-height: 18px;
   }
 
+  .footer__content {
+  }
+
+  .footer__links-wrapper {
+    flex-direction: column;
+  }
+
   .footer__links {
     align-items: center;
-    flex-direction: column;
-    margin-top: 20px;
   }
 
   .footer__link-home,
-  .footer__link-triplenTen,
-  .footer__link-github,
-  .footer__link-icon {
+  .footer__link-triplenTen {
     margin: 5px 0;
   }
+
+  
+
 }
+

@@ -10,8 +10,10 @@ function Footer() {
       </p>
       <ul className="footer__content">
         <ul className="footer__links">
+          <div className="footer__links-wrapper">
           <li className="footer__link-home">Home</li>
           <li className="footer__link-triplenTen">TriplenTen</li>
+          </div>
           <li className="footer__link-github">
             <img
               src={githubLogo}
