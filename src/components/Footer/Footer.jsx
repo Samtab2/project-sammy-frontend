@@ -14,6 +14,7 @@ function Footer() {
           <li className="footer__link-home">Home</li>
           <li className="footer__link-triplenTen">TriplenTen</li>
           </div>
+          <ul className="footer__social-links">
           <li className="footer__link-github">
             <img
               src={githubLogo}
@@ -28,6 +29,7 @@ function Footer() {
               className="footer__link-icon"
             />
           </li>
+          </ul>
         </ul>
       </ul>
     </footer>
