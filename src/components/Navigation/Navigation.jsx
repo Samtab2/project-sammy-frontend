@@ -72,7 +72,7 @@ function Navigation({ onLoginClick, onLogout }) {
             }`}
             onClick={onLogout}
           >
-            <p className="nav__username">Sammy{currentUser.name}</p>
+            <p className="nav__username">{currentUser.name}</p>
             <img
               src={currentPage === "/" ? logOutWhite : logOutBlack}
               alt="logout"
@@ -101,7 +101,7 @@ function Navigation({ onLoginClick, onLogout }) {
             Saved Articles
           </NavLink>
           <button
-            className={`nav__button-loggedin-black ${currentPage === "/"}`}
+            className={`nav__button-loggedin ${currentPage === "/"}`}
             onClick={onLogout}
           >
             <p className="nav__username">Sammy{currentUser.name}</p>

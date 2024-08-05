@@ -29,7 +29,7 @@
 .nav__buttons {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 70px;
 }
 
 .nav__menu-button_hidden {
@@ -54,6 +54,25 @@
   position: relative;
 }
 
+.nav__button-signin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 100px;
+  padding: 12px;
+  width: 176px;
+  height: 48px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .nav__button-home.active::after {
   content: "";
   position: absolute;
@@ -61,7 +80,7 @@
   height: 2px;
   border-bottom: 3px solid #ffffff;
   left: -5px;
-  bottom: -35px;
+  bottom: -34px;
 }
 
 .nav__saved-news {
@@ -123,14 +142,19 @@
   margin-bottom: -95px;
 }
 
+.nav__button-loggedin {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-radius: 25px;
+  height: 50px;
+  cursor: pointer;
+}
+
 .nav__button-loggedin-white {
   background-color: transparent;
   border: 2px solid #fff;
-  border-radius: 20px;
   color: #fff;
-  margin-left: 10px;
-  width: 100px;
-  height: 50px;
   font-family: 'Roboto', Arial, sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -138,27 +162,12 @@
   cursor: pointer;
 }
 
-.nav__button-loggedin-black {
-  background-color: transparent;
-  border: 1px solid #000;
-  color: #000;
-  border-radius: 20px;
-  margin-left: 10px;
-  width: 100px;
-  height: 50px;
-  font-family: 'Roboto', Arial, sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.3;
-  cursor: pointer;
-}
 
 .nav__username {
   font-family: 'Roboto', Arial, sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.3;
-  margin-right: 10px;
 }
 
 .nav__button-signin.active,
@@ -169,7 +178,8 @@
 .nav__logout-icon {
   width: 24px;
   height: 24px;
-  margin-bottom: 20px;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 

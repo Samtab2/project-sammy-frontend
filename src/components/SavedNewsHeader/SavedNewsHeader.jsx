@@ -60,7 +60,7 @@ function SavedNewsHeader() {
     <nav className="saved__news">
       <h1 className="saved__news-title">Saved Articles</h1>
       <h2 className="saved__news-header">
-        {currentUser.name}, you {userArticles.length} saved articles
+        {currentUser.name}, you have {userArticles.length} saved articles
         {userArticles.length === 1 ? 's' : ''}
       </h2>
       <div className="saved__news-Keyword-container">
