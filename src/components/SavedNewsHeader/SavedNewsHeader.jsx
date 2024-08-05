@@ -10,8 +10,8 @@ function SavedNewsHeader() {
   const userArticles = savedArticles.filter(
     (article) => article.owner === currentUser._id
   );
-  const keyWordArray = userArticles.map((article) => article?.keyword);
-  const capitalizedFirstLetter = keyWordArray.map((string) => {
+  const keywordArray = userArticles.map((article) => article?.keyword);
+  const capitalizedFirstLetter = keywordArray.map((string) => {
     return string?.charAt(0).toUpperCase() + string?.slice(1);
   });
 
@@ -21,11 +21,11 @@ function SavedNewsHeader() {
     }
     if (keyWords.length === 1) {
       const count = {};
-      for (let keyWord of keyWords) {
-        if (count[keyWord]) {
-          count[keyWord]++;
+      for (let keyword of keyWords) {
+        if (count[keyword]) {
+          count[keyword]++;
         } else {
-          count[keyWord] = 1;
+          count[keyword] = 1;
         }
       }
 
@@ -56,7 +56,7 @@ function SavedNewsHeader() {
       return null;
     }
   };
-  const keyWordString = getKeywordsString(keyWordArray);
+  const keyWordString = getKeywordsString(keywordArray);
   return (
     <nav className="saved__news">
       <h1 className="saved__news-title">Saved Articles</h1>
@@ -66,7 +66,7 @@ function SavedNewsHeader() {
       </h2>
       <div className="saved__news-Keyword-container">
         <p className="saved__news-Keywords-title">By Keywords:</p>
-        <p className="saved__news-Keywords">{keyWordArray}</p>
+        <p className="saved__news-Keywords">{keywordArray}</p>
       </div>
     </nav>
   );

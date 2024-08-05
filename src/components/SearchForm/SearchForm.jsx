@@ -1,17 +1,17 @@
 import './SearchForm.css';
 import { useContext } from 'react';
-import { keyWordContext } from '../../contexts/keyWordContext';
+import { keywordContext } from '../../contexts/keyWordContext';
 
 function SearchForm({ handleSearch }) {
-  const { keyWord, setKeyWord } = useContext(keyWordContext);
+  const { keyword, setkeyword } = useContext(keywordContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleSearch(keyWord);
+    handleSearch(keyword);
   };
 
   const handleKeyWord = (event) => {
-    setKeyWord(event.target.value);
+    setkeyword(event.target.value);
   };
 
   return (
@@ -29,7 +29,7 @@ function SearchForm({ handleSearch }) {
             className="search__form-input"
             type="text"
             id="search"
-            value={keyWord}
+            value={keyword}
             placeholder="Enter Topic"
             onChange={handleKeyWord}
           />

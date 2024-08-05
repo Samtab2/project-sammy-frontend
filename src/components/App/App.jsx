@@ -16,7 +16,7 @@ import { checkToken, authorize, register } from '../../utils/Auth';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import { getSearchResult } from '../../utils/NewsApi';
 import { useLocation } from 'react-router-dom';
-import { keyWordContext } from '../../contexts/keyWordContext';
+import { keywordContext } from '../../contexts/keyWordContext';
 import { currentPageContext } from '../../contexts/currentPageContext';
 import { searchResultContext } from '../../contexts/searchResultContext';
 import { hasSearchedContext } from '../../contexts/hasSearchedContext';
@@ -25,7 +25,7 @@ import { mobileContext } from '../../contexts/mobileContext';
 import { currentUserContext } from '../../contexts/currentUserContext';
 function App() {
   const [activeModal, setActiveModal] = useState('');
-  const [keyWord, setKeyWord] = useState('');
+  const [keyword, setkeyword] = useState('');
   const [currentPage, setCurrentPage] = useState('');
   const [currentUser, setCurrentUser] = useState({
     name: '',
@@ -147,11 +147,11 @@ function App() {
       });
   };
 
-  const handleSearch = (keyWord) => {
-    setKeyWord(keyWord);
+  const handleSearch = (keyword) => {
+    setkeyword(keyword);
     setIsSearching(true);
     setIsLoading(true);
-    getSearchResult(keyWord)
+    getSearchResult(keyword)
       .then((res) => {
         setSearchResult(res.articles);
         setHasSearched(true);
@@ -181,9 +181,9 @@ function App() {
       });
   };
 
-  const handleSaveArticle = ({ newsData, keyWord }) => {
+  const handleSaveArticle = ({ newsData, keyword }) => {
     if (!savedArticles.find((article) => article.link === newsData.url)) {
-      addSavedArticle(newsData, keyWord)
+      addSavedArticle(newsData, keyword)
         .then((res) => {
           setSavedArticles([res, ...savedArticles]);
           const savedArticlesId = res.data_id;
@@ -238,7 +238,7 @@ function App() {
               value={{ searchResult, setSearchResult }}>
               <savedArticlesContext.Provider
                 value={{ savedArticles, setSavedArticles }}>
-                <keyWordContext.Provider value={{ keyWord, setKeyWord }}>
+                <keywordContext.Provider value={{ keyword, setkeyword }}>
                   <mobileContext.Provider
                     value={{ mobileMenuOpen, openMobileMenu, closeMobileMenu }}>
                     <div className="page__content">
@@ -302,7 +302,7 @@ function App() {
 
                     <Footer />
                   </mobileContext.Provider>
-                </keyWordContext.Provider>
+                </keywordContext.Provider>
               </savedArticlesContext.Provider>
             </searchResultContext.Provider>
           </hasSearchedContext.Provider>

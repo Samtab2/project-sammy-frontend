@@ -1,6 +1,6 @@
 import './NewsCard.css';
 import { useLocation } from 'react-router-dom';
-import { keyWordContext } from '../../contexts/keyWordContext';
+import { keywordContext } from '../../contexts/keyWordContext';
 import { savedArticlesContext } from '../../contexts/savedArticlesContext';
 import { currentPageContext } from '../../contexts/currentPageContext';
 import { currentUserContext } from '../../contexts/currentUserContext';
@@ -33,7 +33,7 @@ function NewsCard({
 
   const { currentPage, setCurrentPage } = useContext(currentPageContext);
   const { savedArticles } = useContext(savedArticlesContext);
-  const { keyword } = useContext(keyWordContext);
+  const { keyword } = useContext(keywordContext);
   const { isLoggedIn } = useContext(currentUserContext);
   const [isHovered, setIsHovered] = useState(false);
 
