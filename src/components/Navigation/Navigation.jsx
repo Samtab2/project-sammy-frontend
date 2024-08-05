@@ -66,23 +66,19 @@ function Navigation({ onLoginClick, onLogout }) {
           <NavLink to="/saved-news" className="nav__button-saved-articles">
             Saved Articles
           </NavLink>
-
-          {/* TODO: wrap logout button and username in a div and style the div like a lozenge */}
-          <p className="nav__username-white">sammy{currentUser.name}</p>
-
           <button
-            className="nav__button-logout-white"
-            type="button"
+            className={`nav__button-loggedin ${
+              currentPage === "/" ? "nav__button-loggedin-white" : ""
+            }`}
             onClick={onLogout}
-            button
-          />
-
-          <img
-            src={logOutWhite}
-            onClick={onLogout}
-            alt="logout"
-            className="nav__logout"
-          />
+          >
+            <p className="nav__username">Sammy{currentUser.name}</p>
+            <img
+              src={currentPage === "/" ? logOutWhite : logOutBlack}
+              alt="logout"
+              className="nav__logout-icon"
+            />
+          </button>
         </nav>
       ) : isLoggedIn && currentPage === "/saved-news" ? (
         <nav className="nav__user-container">
@@ -104,14 +100,17 @@ function Navigation({ onLoginClick, onLogout }) {
           <NavLink to="/saved-news" className="nav__button-saved-articles-user">
             Saved Articles
           </NavLink>
-          <p className="nav__username-black">sammy{currentUser.name}</p>
           <button
-            className="nav__button-logout-black"
-            type="button"
+            className={`nav__button-loggedin-black ${currentPage === "/"}`}
             onClick={onLogout}
-            button
-          />
-          <img src={logOutBlack} alt="logout" className="nav__logout-black" />
+          >
+            <p className="nav__username">Sammy{currentUser.name}</p>
+            <img
+              src={currentPage === "/" ? logOutWhite : logOutBlack}
+              alt="logout"
+              className="nav__logout-icon"
+            />
+          </button>
         </nav>
       ) : (
         <div

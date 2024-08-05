@@ -61,7 +61,7 @@
   height: 2px;
   border-bottom: 3px solid #ffffff;
   left: -5px;
-  bottom: -45px;
+  bottom: -35px;
 }
 
 .nav__saved-news {
@@ -123,66 +123,42 @@
   margin-bottom: -95px;
 }
 
-.nav__username-white {
-  font-family: Roboto, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 35px;
-  margin-right: -50px;
-}
-
-.nav__button-logout-white {
-  width: 112px;
-  height: 40px;
+.nav__button-loggedin-white {
+  background-color: transparent;
+  border: 2px solid #fff;
   border-radius: 20px;
-  border: 1px solid #ffffff;
-  margin-left: -90px;
-  background-color: transparent;
-}
-
-.nav__username-black {
-  font-family: Roboto, Arial, sans-serif;
-  font-style: normal;
+  color: #fff;
+  margin-left: 10px;
+  width: 100px;
+  height: 50px;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 500;
-  font-size: 18px;
-  color: #000;
-  margin-right: -140px;
-}
-
-.nav__button-logout-black {
-  width: 112px;
-  height: 40px;
-  border-radius: 20px;
-  border: 1px solid #000;
-  background-color: transparent;
-}
-
-.nav__saved__news-username_black {
-  display: flex;
-  font-size: 16px;
-  border: none;
-  background-color: transparent;
-  margin-left: -205px;
-}
-
-.nav__button-signin {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 14px;
+  line-height: 1.3;
   cursor: pointer;
-  background: transparent;
-  border-radius: 100px;
-  padding: 12px;
-  width: 176px;
-  height: 48px;
-  color: #ffffff;
-  border: 1px solid #ffffff;
-  font-family: Roboto;
-  font-style: normal;
+}
+
+.nav__button-loggedin-black {
+  background-color: transparent;
+  border: 1px solid #000;
+  color: #000;
+  border-radius: 20px;
+  margin-left: 10px;
+  width: 100px;
+  height: 50px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.nav__username {
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 500;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 1.3;
+  margin-right: 10px;
 }
 
 .nav__button-signin.active,
@@ -190,25 +166,12 @@
   border: 1px solid #ffffff;
 }
 
-.nav__logout {
+.nav__logout-icon {
   width: 24px;
   height: 24px;
-  border-radius: 20px;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  margin-left: -100px;
+  margin-bottom: 20px;
 }
 
-.nav__logout-black {
-  width: 24px;
-  height: 24px;
-  border-radius: 20px;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  margin-left: -100px;
-}
 
 @media screen and (max-width: 768px) {
   .nav {
@@ -294,8 +257,8 @@
 
   .nav__menu-button {
     display: flex;
-    background:  url(../../assets/Mobile-menu-black.svg) center no-repeat;
-    background-color:  #ffffff;
+    background: url(../../assets/Mobile-menu-black.svg) center no-repeat;
+    background-color: #ffffff;
     width: 24px;
     height: 24px;
     border: none;
@@ -326,8 +289,7 @@
 
   .nav__saved-news-menu-button {
     display: flex;
-    background: transparent url(../../assets/mobile-Menu.svg) center
-      no-repeat;
+    background: transparent url(../../assets/mobile-Menu.svg) center no-repeat;
     width: 24px;
     height: 24px;
     border: none;
