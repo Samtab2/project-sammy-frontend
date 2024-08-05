@@ -2,6 +2,7 @@ import './SavedNewsHeader.css';
 import { useContext } from 'react';
 import { currentUserContext } from '../../contexts/currentUserContext';
 import { savedArticlesContext } from '../../contexts/savedArticlesContext';
+
 function SavedNewsHeader() {
   const { currentUser } = useContext(currentUserContext);
   const { savedArticles } = useContext(savedArticlesContext);
@@ -9,9 +10,9 @@ function SavedNewsHeader() {
   const userArticles = savedArticles.filter(
     (article) => article.owner === currentUser._id
   );
-  const keyWordArray = userArticles.map((article) => article.keyword);
+  const keyWordArray = userArticles.map((article) => article?.keyword);
   const capitalizedFirstLetter = keyWordArray.map((string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    return string?.charAt(0).toUpperCase() + string?.slice(1);
   });
 
   const getKeywordsString = (keyWords) => {

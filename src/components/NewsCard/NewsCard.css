@@ -5,7 +5,6 @@
   background-color: white;
   border-radius: 8px;
   width: 400px;
-  min-height: 576px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
 }
