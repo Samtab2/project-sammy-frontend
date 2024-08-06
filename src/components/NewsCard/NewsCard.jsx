@@ -38,6 +38,7 @@ function NewsCard({
   const [isHovered, setIsHovered] = useState(false);
 
   const handleBookmarkClick = () => {
+    debugger
     handleSaveArticle({ newsData, keyword });
   };
 
