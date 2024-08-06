@@ -101,7 +101,7 @@ function Navigation({ onLoginClick, onLogout }) {
             Saved Articles
           </NavLink>
           <button
-            className={`nav__button-loggedin ${currentPage === "/"}`}
+            className={`nav__button-loggedin-black ${currentPage === "/"  ? "nav__button-loggedin" : ""}`}
             onClick={onLogout}
           >
             <p className="nav__username">Sammy{currentUser.name}</p>

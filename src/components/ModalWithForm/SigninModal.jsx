@@ -42,14 +42,14 @@ const SigninModal = ({
       buttonText={IsLoading ? 'Loading...' : 'Sign in'}
       ButtonText2="or Sign up">
       <label
-        htmlFor="email"
+        htmlFor="email1"
         className="modal__label">
         Email
         <input
           className={`modal__input ${errors.email ? 'modal__input-error' : ''}`}
           type="email"
           name="email"
-          id="email"
+          id="email1"
           placeholder="Email"
           value={values.email}
           onChange={handleChange}

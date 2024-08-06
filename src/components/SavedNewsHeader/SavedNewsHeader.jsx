@@ -56,7 +56,7 @@ function SavedNewsHeader() {
       return null;
     }
   };
-  const keyWordString = getKeywordsString(keywordArray);
+ 
   return (
     <nav className="saved__news">
       <h1 className="saved__news-title">Saved Articles</h1>

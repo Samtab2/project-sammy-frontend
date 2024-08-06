@@ -76,14 +76,14 @@ function RegisterModal({
         <span className="modal__error">{errors.password}</span>
       </label>
       <label
-        htmlFor="username"
+        htmlFor="username1"
         className="modal__label">
         Username
         <input
           className="modal__input"
-          type="text"
+          type="username"
           name="username"
-          id="username"
+          id="username1"
           placeholder="Username"
           value={values.username}
           onChange={handleChange}
