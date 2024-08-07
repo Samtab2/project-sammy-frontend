@@ -129,7 +129,7 @@ function App() {
       .finally(() => {
         setIsLoggedInLoading(false);
       });
-  }, []);
+  }, [isLoggedIn]);
 
   const handleSignUp = ({ name, email, password }) => {
     register({ name, email, password })
@@ -150,14 +150,19 @@ function App() {
 
   const handleSignIn = ({ email, password }) => {
     authorize({ email, password })
-      .then((res) => {
-        setCurrentUser({
-          email: res.data.email,
-          password: res.data.password,
-          _id: res.data._id,
-        });
-        setIsLoggedIn(true);
-        onClose();
+      .then(() => {
+        checkToken()
+          .then((res) => {
+            setCurrentUser({
+              email: res.data.email,
+              _id: res.data._id,
+            });
+            setIsLoggedIn(true);
+            onClose();
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
       .catch((err) => {
         console.log(err);

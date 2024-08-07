@@ -18,9 +18,6 @@ const NewsCardList = ({
     setCardsDisplayed(cardsDisplayed + 3);
   };
 
-  console.log("search Results context", searchResult);
-  console.log("has Searched context", hasSearched);
-
   return (
     <section className="news__card-section">
       {hasSearched ? (

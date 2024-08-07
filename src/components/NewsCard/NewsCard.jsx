@@ -12,8 +12,6 @@ function NewsCard({
   handleRemoveArticle,
   onClick,
 }) {
-  console.log("Rendering NewsCard", newsData);
-
   let formattedDate;
 
   if (newsData.publishedAt) {
