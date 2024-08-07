@@ -106,7 +106,7 @@ function Navigation({ onLoginClick, onLogout }) {
             }`}
             onClick={onLogout}
           >
-            <p className="nav__username">Sammy{currentUser.name}</p>
+            <p className="nav__username">{currentUser.name}</p>
             <img
               src={currentPage === "/" ? logOutWhite : logOutBlack}
               alt="logout"

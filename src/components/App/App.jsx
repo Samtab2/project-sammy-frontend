@@ -4,6 +4,7 @@ import "./App.css";
 import Main from "../Main/Main";
 import SigninModal from "../ModalWithForm/SigninModal";
 import RegisterModal from "../ModalWithForm/RegisterModal";
+import SuccessfulModal from "../ModalWithForm/SuccessfulModal";
 import Footer from "../Footer/Footer";
 import SavedNews from "../SavedNews/SavedNews";
 import MobileMenu from "../MobileMenu/MobileMenu";
@@ -40,6 +41,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoggedInLoading, setIsLoggedInLoading] = useState(true);
+  const [isSuccessful, setIsSuccessful] = useState(false);
 
   const location = useLocation();
 
@@ -77,6 +79,10 @@ function App() {
     setActiveModal("");
   };
 
+  const openSuccessModal = () => {
+    setIsSuccessful(true);
+  };
+
   useEffect(() => {
     const handleEscClose = (e) => {
       if (e.key === "Escape") {
@@ -107,7 +113,7 @@ function App() {
       .then((res) => {
         if (res) {
           setIsLoggedIn(false);
-          setCurrentUser(res);
+          setCurrentUser(res.data);
           getSavedArticles()
             .then((res) => {
               setSavedArticles(res);
@@ -128,8 +134,14 @@ function App() {
   const handleSignUp = ({ name, email, password }) => {
     register({ name, email, password })
       .then((res) => {
-        setCurrentUser({ name: res.name, _id: res._id });
+        setCurrentUser({
+          name: res.data.name,
+          email: res.data.email,
+          _id: res.data._id,
+        });
         setIsLoggedIn(true);
+        openSuccessModal(true);
+        onClose();
       })
       .catch((err) => {
         console.log(err);
@@ -139,8 +151,13 @@ function App() {
   const handleSignIn = ({ email, password }) => {
     authorize({ email, password })
       .then((res) => {
-        setCurrentUser({ name: res.name, _id: res._id });
+        setCurrentUser({
+          email: res.data.email,
+          password: res.data.password,
+          _id: res.data._id,
+        });
         setIsLoggedIn(true);
+        onClose();
       })
       .catch((err) => {
         console.log(err);
@@ -301,6 +318,11 @@ function App() {
                         onRegister={handleSignUp}
                         activeModal={activeModal}
                         isLoading={isLoading}
+                      />
+                      <SuccessfulModal
+                        onClose={onClose}
+                        isOpen={isSuccessful}
+                        onLogInClick={handleSignInModalClick}
                       />
                     </div>
 

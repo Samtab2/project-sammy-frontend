@@ -31,6 +31,9 @@
   transition: 0.25s ease-in-out;
   padding: 0;
   margin-top: 20px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .Or-Login__button:hover {
