@@ -6,4 +6,3 @@ function ProtectedRoute({ isLoggedIn, isLoggedInLoading, children }) {
 }
 
 export default ProtectedRoute;
-

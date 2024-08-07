@@ -16,13 +16,11 @@
   .saved__news-card {
     max-width: 600px;
     height: 912px;
-    
   }
 
   .saved__news-cards-container {
     width: 950px;
     margin-left: -75px;
-
   }
 }
 
@@ -31,13 +29,11 @@
     width: 390px;
     height: auto;
     padding: 20px 10px;
-    
   }
 
   .saved__news-cards-container {
-   width: auto;
+    width: auto;
     margin-left: auto;
     flex-direction: column;
   }
-  
 }

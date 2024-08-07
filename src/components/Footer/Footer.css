@@ -26,9 +26,8 @@
 
 .footer__content {
   display: flex;
- gap: 40px;
+  gap: 40px;
 }
-
 
 .footer__links {
   display: flex;
@@ -51,7 +50,6 @@
   font-style: normal;
   line-height: 24px;
   color: #1a1b22;
-
 }
 
 .footer__link-home {
@@ -107,12 +105,10 @@
     order: 2;
     font-size: 14px;
     line-height: 18px;
-    
   }
 
   .footer__content {
     margin-right: 20px;
-    
   }
 
   .footer__links-wrapper {
@@ -124,8 +120,8 @@
   }
 
   .footer__link-home {
-   display: flex;
-   gap: 10px;
+    display: flex;
+    gap: 10px;
   }
 
   .footer__link-triplenTen {
@@ -135,8 +131,4 @@
     list-style: none;
     gap: 10px;
   }
-
-  
-
 }
-

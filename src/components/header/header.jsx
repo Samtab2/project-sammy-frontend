@@ -1,5 +1,5 @@
-import './header.css';
-import Navigation from '../Navigation/Navigation';
+import "./header.css";
+import Navigation from "../Navigation/Navigation";
 
 function Header({ onLoginClick, onLogout, onRegisterClick }) {
   return (

@@ -1,4 +1,4 @@
-import { APIKey, parsePreviousWeek } from './constants';
+import { APIKey, parsePreviousWeek } from "./constants";
 
 export const getSearchResult = (keyWord) => {
   if (!keyWord) {
@@ -20,7 +20,7 @@ export const getSearchResult = (keyWord) => {
       return {
         ...res,
         articles: res.articles.filter(
-          (article) => article.title != '[Removed]'
+          (article) => article.title != "[Removed]"
         ),
       };
     });

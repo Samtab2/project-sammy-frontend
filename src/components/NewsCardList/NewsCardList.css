@@ -38,7 +38,7 @@
   border: none;
   border-radius: 64px;
   background-color: white;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 500;
   font-style: normal;
   height: 64px;
@@ -68,7 +68,6 @@
   }
 
   .news__cards-container {
-
   }
 
   .news__cards-button {
@@ -84,7 +83,6 @@
   }
 }
 
-
 @media screen and (max-width: 400px) {
   .news__card-section {
     padding: 20px 10px;
@@ -93,9 +91,7 @@
 
   .news__cards-container {
     width: 288px;
-   margin: 0 auto;
-  
-    
+    margin: 0 auto;
   }
 
   .news__cards-header {
@@ -113,6 +109,4 @@
     width: 240px;
     margin-left: auto;
   }
-
-
 }

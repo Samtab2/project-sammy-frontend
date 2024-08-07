@@ -1,32 +1,32 @@
-import './NewsCard.css';
-import { useLocation } from 'react-router-dom';
-import { keywordContext } from '../../contexts/keyWordContext';
-import { savedArticlesContext } from '../../contexts/savedArticlesContext';
-import { currentPageContext } from '../../contexts/currentPageContext';
-import { currentUserContext } from '../../contexts/currentUserContext';
-import { useContext, useEffect, useState } from 'react';
+import "./NewsCard.css";
+import { useLocation } from "react-router-dom";
+import { keywordContext } from "../../contexts/keyWordContext";
+import { savedArticlesContext } from "../../contexts/savedArticlesContext";
+import { currentPageContext } from "../../contexts/currentPageContext";
+import { currentUserContext } from "../../contexts/currentUserContext";
+import { useContext, useEffect, useState } from "react";
 
 function NewsCard({
   newsData,
   handleSaveArticle,
   handleRemoveArticle,
-  onLoginClick,
+  onClick,
 }) {
-  console.log('Rendering NewsCard', newsData);
+  console.log("Rendering NewsCard", newsData);
 
   let formattedDate;
 
   if (newsData.publishedAt) {
     formattedDate = new Date(newsData.publishedAt).toLocaleDateString(
-      'default',
+      "default",
       {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
+        day: "numeric",
+        month: "long",
+        year: "numeric",
       }
     );
   } else {
-    formattedDate = '';
+    formattedDate = "";
   }
 
   const location = useLocation();
@@ -38,7 +38,7 @@ function NewsCard({
   const [isHovered, setIsHovered] = useState(false);
 
   const handleBookmarkClick = () => {
-    debugger
+    debugger;
     handleSaveArticle({ newsData, keyword });
   };
 
@@ -53,15 +53,15 @@ function NewsCard({
   return (
     <section className="news-card">
       {/* TODO: add position relative to news-card to position keyword correctly */}
-      {currentPage  === '/saved-news' && (
+      {currentPage === "/saved-news" && (
         <>
-        
           <h2 className="news__keyword">{newsData.keyword}</h2>
 
           <div
             className={`news__popup-text ${
-              isHovered ? '' : 'news__popup-text_hidden'
-            }`}>
+              isHovered ? "" : "news__popup-text_hidden"
+            }`}
+          >
             Remove from saved
           </div>
           <button
@@ -77,32 +77,33 @@ function NewsCard({
         </>
       )}
 
-      {isLoggedIn && currentPage === '/' ? (
+      {isLoggedIn && currentPage === "/" ? (
         <button
           className={`news__button-bookmark ${
             savedArticles.some(
               (savedArticles) => savedArticles.link === newsData.url
             )
-              ? 'news__button-bookmark_marked'
-              : ''
+              ? "news__button-bookmark_marked"
+              : ""
           }`}
           onClick={handleBookmarkClick}
         />
       ) : (
-        ''
+        ""
       )}
       {!isLoggedIn && (
         <>
           <div
             className={`news__popup-text ${
-              isHovered ? '' : 'news__popup-text_hidden'
-            }`}>
+              isHovered ? "" : "news__popup-text_hidden"
+            }`}
+          >
             Sign in to save articles
           </div>
 
           <button
             className="news__button-bookmark"
-            onClick={onLoginClick}
+            onClick={onClick}
             onMouseEnter={() => {
               setIsHovered(true);
             }}
@@ -117,7 +118,8 @@ function NewsCard({
         className="news-card__link"
         href={newsData.url}
         target="_blank"
-        rel="noreferrer">
+        rel="noreferrer"
+      >
         {newsData.urlToImage && (
           <img
             className="news-card__image"
@@ -125,7 +127,7 @@ function NewsCard({
             alt={newsData.title}
           />
         )}
-        
+
         <header className="news-card__text">
           <p className="news-card__date">{formattedDate}</p>
           <h3 className="news-card__title">{newsData.title}</h3>

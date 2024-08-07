@@ -13,7 +13,7 @@
   background-color: white;
   padding: 8px 22px;
   text-align: center;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.7;
@@ -30,7 +30,7 @@
   border-radius: 8px;
   text-align: center;
   position: absolute;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.7;
@@ -190,8 +190,6 @@
     line-height: 18px;
   }
 }
-
-
 
 @media screen and (max-width: 400px) {
   .news-card {

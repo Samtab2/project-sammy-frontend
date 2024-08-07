@@ -8,7 +8,8 @@ const ModalWithForm = ({ children, onClose, isOpen, title, onSubmit }) => {
         <button
           className="modal__close-button"
           type="button"
-          onClick={onClose}></button>
+          onClick={onClose}
+        ></button>
         <form className="modal__form" onSubmit={onSubmit}>
           {children}
         </form>

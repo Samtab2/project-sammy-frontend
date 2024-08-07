@@ -1,6 +1,6 @@
 .header {
   margin: 0 auto;
-  background-image: url('../../assets/background.svg');
+  background-image: url("../../assets/background.svg");
   height: 576px;
   background-size: cover;
   background-position: center;
@@ -46,7 +46,7 @@
   padding: 20px 0;
 }
 
-@media screen and (max-width: 768px)  {
+@media screen and (max-width: 768px) {
   .header {
     max-width: 768px;
     height: 400px;
@@ -63,27 +63,26 @@
   }
 }
 
-
 @media screen and (max-width: 400px) {
   .header {
     height: 500px;
   }
 
   .header__logo {
-    justify-content: center; 
-    padding: 10px 5px; 
-    font-size: 14px; 
-    margin: 0 auto; 
+    justify-content: center;
+    padding: 10px 5px;
+    font-size: 14px;
+    margin: 0 auto;
   }
 
   .header__container {
     gap: 10px;
-    flex-direction: column; 
-    align-items: center; 
+    flex-direction: column;
+    align-items: center;
   }
 
   .header__home-button {
     font-size: 14px;
-    padding: 10px 0; 
+    padding: 10px 0;
   }
 }

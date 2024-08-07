@@ -32,17 +32,14 @@
   margin: 0;
 }
 
-
 @media screen and (max-width: 768px) {
   .not-found {
     width: 768px;
   }
 }
 
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .not-found {
-    width: 320px;
+    width: 400px;
   }
 }
-

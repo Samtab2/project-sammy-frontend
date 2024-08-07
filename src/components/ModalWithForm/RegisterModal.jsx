@@ -1,8 +1,8 @@
-import './RegisterModal.css';
-import ModalWithForm from './ModalWithForm';
-import { useEffect, useContext } from 'react';
-import { useForm } from '../../Hooks/useForm';
-import { currentUserContext } from '../../contexts/currentUserContext';
+import "./RegisterModal.css";
+import ModalWithForm from "./ModalWithForm";
+import { useEffect, useContext } from "react";
+import { useForm } from "../../Hooks/useForm";
+import { currentUserContext } from "../../contexts/currentUserContext";
 
 function RegisterModal({
   onClose,
@@ -13,9 +13,9 @@ function RegisterModal({
 }) {
   const currentUser = useContext(currentUserContext);
   const inputValues = {
-    email: '',
-    password: '',
-    username: '',
+    email: "",
+    password: "",
+    username: "",
   };
 
   const { values, handleChange, errors, isValid, resetForm } = useForm(
@@ -41,14 +41,13 @@ function RegisterModal({
       onClose={onClose}
       title="Sign up"
       name="signup"
-      buttonText={IsLoading ? 'Loading...' : 'Sign up'}
-      buttonText2={'or Log in'}>
-      <label
-        htmlFor="email2"
-        className="modal__label">
+      buttonText={IsLoading ? "Loading..." : "Sign up"}
+      buttonText2={"or Log in"}
+    >
+      <label htmlFor="email2" className="modal__label">
         Email
         <input
-          className={`modal__input ${errors.email ? 'modal__input-error' : ''}`}
+          className={`modal__input ${errors.email ? "modal__input-error" : ""}`}
           type="email"
           name="email"
           id="email2"
@@ -59,9 +58,7 @@ function RegisterModal({
         />
         <span className="modal__error">{errors.email}</span>
       </label>
-      <label
-        htmlFor="password2"
-        className="modal__label">
+      <label htmlFor="password2" className="modal__label">
         Password
         <input
           className="modal__input"
@@ -75,9 +72,7 @@ function RegisterModal({
         />
         <span className="modal__error">{errors.password}</span>
       </label>
-      <label
-        htmlFor="username1"
-        className="modal__label">
+      <label htmlFor="username1" className="modal__label">
         Username
         <input
           className="modal__input"
@@ -91,16 +86,11 @@ function RegisterModal({
         />
         <span className="modal__error">{errors.username}</span>
       </label>
-      <button
-        type="submit"
-        className="SignUp__button">
+      <button type="submit" className="SignUp__button">
         Sign up
       </button>
-      <button
-        onClick={onLoginClick}
-        type="button"
-        className="Or-Login__button">
-        {' '}
+      <button onClick={onLoginClick} type="button" className="Or-Login__button">
+        {" "}
         or Log in
       </button>
     </ModalWithForm>

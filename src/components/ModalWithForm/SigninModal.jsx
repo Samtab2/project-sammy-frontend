@@ -1,8 +1,8 @@
-import { useEffect, useContext } from 'react';
-import './SiginModal.css';
-import ModalWithForm from './ModalWithForm';
-import { useForm } from '../../Hooks/useForm';
-import { currentUserContext } from '../../contexts/currentUserContext';
+import { useEffect, useContext } from "react";
+import "./SiginModal.css";
+import ModalWithForm from "./ModalWithForm";
+import { useForm } from "../../Hooks/useForm";
+import { currentUserContext } from "../../contexts/currentUserContext";
 const SigninModal = ({
   isOpen,
   onClose,
@@ -13,8 +13,8 @@ const SigninModal = ({
 }) => {
   const currentUser = useContext(currentUserContext);
   const inputValues = {
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   };
 
   const { values, handleChange, errors, isValid, resetForm } = useForm(
@@ -39,14 +39,13 @@ const SigninModal = ({
       onSubmit={handleSubmit}
       onClose={onClose}
       title="Sign in"
-      buttonText={IsLoading ? 'Loading...' : 'Sign in'}
-      ButtonText2="or Sign up">
-      <label
-        htmlFor="email1"
-        className="modal__label">
+      buttonText={IsLoading ? "Loading..." : "Sign in"}
+      ButtonText2="or Sign up"
+    >
+      <label htmlFor="email1" className="modal__label">
         Email
         <input
-          className={`modal__input ${errors.email ? 'modal__input-error' : ''}`}
+          className={`modal__input ${errors.email ? "modal__input-error" : ""}`}
           type="email"
           name="email"
           id="email1"
@@ -56,13 +55,11 @@ const SigninModal = ({
           required
         />
       </label>
-      <label
-        htmlFor="password"
-        className="modal__label">
+      <label htmlFor="password" className="modal__label">
         Password
         <input
           className={`modal__input ${
-            errors.password ? 'modal__input-error' : ''
+            errors.password ? "modal__input-error" : ""
           }`}
           type="password"
           name="password"
@@ -73,16 +70,11 @@ const SigninModal = ({
           required
         />
       </label>
-      <button
-        type="submit"
-        onClick={onLogInClick}
-        className="Login__button">
+      <button type="submit" onClick={onLogInClick} className="Login__button">
         Sign in
       </button>
-      <button
-        onClick={onRegisterClick}
-        className="Or-Sign-Up__button">
-        {' '}
+      <button onClick={onRegisterClick} className="Or-Sign-Up__button">
+        {" "}
         or Sign up
       </button>
     </ModalWithForm>

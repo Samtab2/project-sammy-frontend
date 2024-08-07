@@ -1,6 +1,6 @@
-import './SearchForm.css';
-import { useContext } from 'react';
-import { keywordContext } from '../../contexts/keyWordContext';
+import "./SearchForm.css";
+import { useContext } from "react";
+import { keywordContext } from "../../contexts/keyWordContext";
 
 function SearchForm({ handleSearch }) {
   const { keyword, setkeyword } = useContext(keywordContext);
@@ -15,9 +15,7 @@ function SearchForm({ handleSearch }) {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="search__form">
+    <form onSubmit={handleSubmit} className="search__form">
       <section className="search__form-container">
         <h1 className="search__form-header">What's going on in the world?</h1>
         <p className="search__form-subHeader">
@@ -34,9 +32,7 @@ function SearchForm({ handleSearch }) {
             onChange={handleKeyWord}
           />
         </header>
-        <button
-          type="submit"
-          className="search__form-button">
+        <button type="submit" className="search__form-button">
           Search
         </button>
       </section>

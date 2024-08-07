@@ -83,39 +83,33 @@
     width: 385px;
     font-size: 36px;
     line-height: 40px;
-    padding-top: 10px;
-    margin-left: -120px;
   }
 
   .search__form-subHeader {
     padding: 20px 0 40px;
     font-size: 16px;
     line-height: 20px;
-    margin-left: -50px;
   }
 
   .search__form-input {
     padding: 18px 15px;
-    width: 400px;
+    width: 365px;
     font-size: 14px;
     line-height: 18px;
-    margin-left: -90px;
   }
 
   .search__form-button {
     padding: 18px 30px;
     width: 160px;
-    height: 56px; 
+    height: 56px;
     font-size: 16px;
     line-height: 18px;
   }
 }
 
-
 @media screen and (max-width: 400px) {
   .search__form {
     padding: 0 10px;
-    
   }
 
   .search__form-container {

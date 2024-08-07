@@ -37,7 +37,6 @@
   opacity: 60%;
 }
 
-
 @media screen and (max-width: 768px) {
   .SignUp__button {
     width: 358px;

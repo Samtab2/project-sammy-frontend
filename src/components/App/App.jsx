@@ -1,35 +1,35 @@
-import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import './App.css';
-import Main from '../Main/Main';
-import SigninModal from '../ModalWithForm/SigninModal';
-import RegisterModal from '../ModalWithForm/RegisterModal';
-import Footer from '../Footer/Footer';
-import SavedNews from '../SavedNews/SavedNews';
-import MobileMenu from '../MobileMenu/MobileMenu';
+import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import Main from "../Main/Main";
+import SigninModal from "../ModalWithForm/SigninModal";
+import RegisterModal from "../ModalWithForm/RegisterModal";
+import Footer from "../Footer/Footer";
+import SavedNews from "../SavedNews/SavedNews";
+import MobileMenu from "../MobileMenu/MobileMenu";
 import {
   getSavedArticles,
   removeSavedArticle,
   addSavedArticle,
-} from '../../utils/Api';
-import { checkToken, authorize, register } from '../../utils/Auth';
-import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-import { getSearchResult } from '../../utils/NewsApi';
-import { useLocation } from 'react-router-dom';
-import { keywordContext } from '../../contexts/keyWordContext';
-import { currentPageContext } from '../../contexts/currentPageContext';
-import { searchResultContext } from '../../contexts/searchResultContext';
-import { hasSearchedContext } from '../../contexts/hasSearchedContext';
-import { savedArticlesContext } from '../../contexts/savedArticlesContext';
-import { mobileContext } from '../../contexts/mobileContext';
-import { currentUserContext } from '../../contexts/currentUserContext';
+} from "../../utils/Api";
+import { checkToken, authorize, register } from "../../utils/Auth";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import { getSearchResult } from "../../utils/NewsApi";
+import { useLocation } from "react-router-dom";
+import { keywordContext } from "../../contexts/keyWordContext";
+import { currentPageContext } from "../../contexts/currentPageContext";
+import { searchResultContext } from "../../contexts/searchResultContext";
+import { hasSearchedContext } from "../../contexts/hasSearchedContext";
+import { savedArticlesContext } from "../../contexts/savedArticlesContext";
+import { mobileContext } from "../../contexts/mobileContext";
+import { currentUserContext } from "../../contexts/currentUserContext";
 function App() {
-  const [activeModal, setActiveModal] = useState('');
-  const [keyword, setkeyword] = useState('');
-  const [currentPage, setCurrentPage] = useState('');
+  const [activeModal, setActiveModal] = useState("");
+  const [keyword, setkeyword] = useState("");
+  const [currentPage, setCurrentPage] = useState("");
   const [currentUser, setCurrentUser] = useState({
-    name: '',
-    _id: '',
+    name: "",
+    _id: "",
   });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
@@ -59,14 +59,14 @@ function App() {
     if (mobileMenuOpen) {
       closeMobileMenu();
     }
-    setActiveModal('sign-in');
+    setActiveModal("sign-in");
   };
 
   const handleRegisterModalClick = () => {
     if (mobileMenuOpen) {
       closeMobileMenu();
     }
-    setActiveModal('sign-up');
+    setActiveModal("sign-up");
   };
 
   const handleLogout = () => {
@@ -74,30 +74,30 @@ function App() {
   };
 
   const onClose = () => {
-    setActiveModal('');
+    setActiveModal("");
   };
 
   useEffect(() => {
     const handleEscClose = (e) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         onClose();
       }
     };
-    document.addEventListener('keydown', handleEscClose);
+    document.addEventListener("keydown", handleEscClose);
     return () => {
-      document.removeEventListener('keydown', handleEscClose);
+      document.removeEventListener("keydown", handleEscClose);
     };
   }, []);
 
   useEffect(() => {
     const handleOverlayClick = (e) => {
-      if (e.target.classList.contains('modal')) {
+      if (e.target.classList.contains("modal")) {
         onClose();
       }
     };
-    document.addEventListener('click', handleOverlayClick);
+    document.addEventListener("click", handleOverlayClick);
     return () => {
-      document.removeEventListener('click', handleOverlayClick);
+      document.removeEventListener("click", handleOverlayClick);
     };
   }, []);
 
@@ -202,7 +202,7 @@ function App() {
           );
           setSavedArticles(unsaveNewsArticles);
 
-          const newArticle = { ...newsData, _id: '' };
+          const newArticle = { ...newsData, _id: "" };
           const newSearchResult = searchResult.map((article) =>
             article.url === newsData.url ? newArticle : article
           );
@@ -235,12 +235,15 @@ function App() {
         <currentUserContext.Provider value={{ isLoggedIn, currentUser }}>
           <hasSearchedContext.Provider value={{ hasSearched, setHasSearched }}>
             <searchResultContext.Provider
-              value={{ searchResult, setSearchResult }}>
+              value={{ searchResult, setSearchResult }}
+            >
               <savedArticlesContext.Provider
-                value={{ savedArticles, setSavedArticles }}>
+                value={{ savedArticles, setSavedArticles }}
+              >
                 <keywordContext.Provider value={{ keyword, setkeyword }}>
                   <mobileContext.Provider
-                    value={{ mobileMenuOpen, openMobileMenu, closeMobileMenu }}>
+                    value={{ mobileMenuOpen, openMobileMenu, closeMobileMenu }}
+                  >
                     <div className="page__content">
                       <Routes>
                         <Route
@@ -264,7 +267,8 @@ function App() {
                           element={
                             <ProtectedRoute
                               isLoggedIn={isLoggedIn}
-                              isLoggedInLoading={isLoading}>
+                              isLoggedInLoading={isLoading}
+                            >
                               <SavedNews
                                 handleRemoveArticle={handleRemoveArticle}
                               />
@@ -281,7 +285,7 @@ function App() {
                       )}
 
                       <SigninModal
-                        isOpen={activeModal === 'sign-in'}
+                        isOpen={activeModal === "sign-in"}
                         onClose={onClose}
                         onRegisterClick={handleRegisterModalClick}
                         onLogInClick={handleSignInModalClick}
@@ -290,7 +294,7 @@ function App() {
                         isLoading={isLoading}
                       />
                       <RegisterModal
-                        isOpen={activeModal === 'sign-up'}
+                        isOpen={activeModal === "sign-up"}
                         onClose={onClose}
                         onLoginClick={handleSignInModalClick}
                         onRegisterClick={handleRegisterModalClick}
