@@ -15,45 +15,12 @@ function SavedNewsHeader() {
     return string?.charAt(0).toUpperCase() + string?.slice(1);
   });
 
-  const getKeywordsString = (keyWords) => {
-    if (keyWords.length === 0) {
-      return "";
-    }
-    if (keyWords.length === 1) {
-      const count = {};
-      for (let keyword of keyWords) {
-        if (count[keyword]) {
-          count[keyword]++;
-        } else {
-          count[keyword] = 1;
-        }
-      }
-
-      const sortedKeywordsArrary = [];
-      for (const item in count) {
-        sortedKeywordsArrary.push([item, count[item]]);
-      }
-      sortedKeywordsArrary.sort((a, b) => {
-        return b[1] - a[1];
-      });
-
-      if (sortedKeywordsArrary.length === 1) {
-        return `${capitalizedFirstLetter(sortedKeywordsArrary[0][0])}`;
-      } else if (sortedKeywordsArrary.length === 2) {
-        return `${capitalizedFirstLetter(
-          sortedKeywordsArrary[0][0]
-        )} and ${capitalizedFirstLetter(sortedKeywordsArrary[1][0])}`;
-      } else {
-        const firstKeywords = sortedKeywordsArrary
-          .slice(0, 2)
-          .map((Keyword) => capitalizedFirstLetter(Keyword[0]))
-          .join(", ");
-
-        const moreCount = sortedKeywordsArrary.length - 2;
-        return `${firstKeywords} and ${moreCount} more`;
-      }
+  const getKeywordString = (keyWord) => {
+    const uniqueKeywords = [...new Set(keyWord)];
+    if (uniqueKeywords.length <= 2) {
+      return uniqueKeywords.join(", ");
     } else {
-      return null;
+      return `${uniqueKeywords[0]}, ${uniqueKeywords[1]}, and ${uniqueKeywords.length - 2} other`;
     }
   };
 
@@ -66,7 +33,7 @@ function SavedNewsHeader() {
       </h2>
       <div className="saved__news-Keyword-container">
         <p className="saved__news-Keywords-title">By Keywords:</p>
-        <p className="saved__news-Keywords">{keywordArray}</p>
+        <p className="saved__news-Keywords">{getKeywordString(capitalizedFirstLetter)}</p>
       </div>
     </nav>
   );

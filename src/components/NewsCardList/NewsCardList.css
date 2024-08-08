@@ -14,8 +14,7 @@
   font-weight: 400;
   font-style: normal;
   color: black;
-  padding-top: 40px;
-  margin-left: 16px;
+  padding-top: 30px;
 }
 
 .news__cards-container {
@@ -24,6 +23,7 @@
   gap: 16px;
   flex-direction: row;
   justify-content: center;
+  margin-left: 35px;
 }
 
 .news__card-list {

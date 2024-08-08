@@ -36,7 +36,6 @@ function NewsCard({
   const [isHovered, setIsHovered] = useState(false);
 
   const handleBookmarkClick = () => {
-    debugger;
     handleSaveArticle({ newsData, keyword });
   };
 
@@ -50,7 +49,6 @@ function NewsCard({
 
   return (
     <section className="news-card">
-      {/* TODO: add position relative to news-card to position keyword correctly */}
       {currentPage === "/saved-news" && (
         <>
           <h2 className="news__keyword">{newsData.keyword}</h2>

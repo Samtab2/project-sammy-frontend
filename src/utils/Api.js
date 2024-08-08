@@ -3,19 +3,18 @@ export function getSavedArticles() {
     resolve([
       {
         id: "65f7368dfb74bd6a92114c85",
-        author: "Lauren Forristal",
-        title:
-          "Bye-bye bots: Altera's game-playing AI agents get backing from Eric Schmidt | TechCrunch",
+        author: "Ashley Belanger",
+        title: "All the possible ways to destroy Google’s monopoly in search",
         description:
-          "Autonomous, AI-based players are coming to a gaming experience near you, and a new startup, Altera, is joining the fray to build this new guard of AI Research company Altera raised $9 million to build AI agents that can play video games alongside other player…",
-        url: "https://techcrunch.com/2024/05/08/bye-bye-bots-alteras-game-playing-ai-agents-get-backing-from-eric-schmidt/",
+          "What the future of search could look like as DOJ seeks to end Google's monopoly.",
+        url: "https://arstechnica.com/tech-policy/2024/08/all-the-possible-ways-to-destroy-googles-monopoly-in-search/",
         urlToImage:
-          "https://techcrunch.com/wp-content/uploads/2024/05/Minecraft-keyart.jpg?resize=1200,720",
-        publishedAt: "2024-05-08T15:14:57Z",
+          "https://cdn.arstechnica.net/wp-content/uploads/2024/08/breaking-up-google-760x380.jpg",
+        publishedAt: "2024-08-07T18:32:08Z",
         content:
-          "Autonomous, AI-based players are coming to a gaming experience near you, and a new startup, Altera, is joining the fray to build this new guard of AI agents.\r\nThe company announced Wednesday that it … [+6416 chars]",
-        source: "TechCrunch",
-        keyword: "Tech",
+          "13\r\nAfter US District Judge Amit Mehta ruled that Google has a monopoly in two marketsgeneral search services and general text advertisingeverybody is wondering how Google might be forced to change i… [+4487 chars]",
+        source: "Ars Technica",
+        keyword: "Apple",
       },
       {
         id: "65f7368dfb74bd6a92114c85",
@@ -29,25 +28,26 @@ export function getSavedArticles() {
         publishedAt: "2024-05-08T14:52:26Z",
         content:
           "Apple’s iPad event had a lot to like. New iPads with new chips and new sizes, a new Apple Pencil, and even some software updates. If you are a big fan of Apple hardware, well, it was probably a good … [+1385 chars]",
-        source: "TechCrunch",
+        source: "Tech Crunch",
         keyword: "Tech",
       },
       {
         id: "65f7368dfb74bd6a92114c85",
-        author: "Rebecca Bellan",
+        author: "Anne Tergesen and Oyin Adedoyin",
         title:
-          "Uber promises member exclusives as Uber One passes $1B run-rate | TechCrunch",
+          "The 401(k) Investors Convinced That Target-Date Funds Miss the Mark",
         description:
-          "Uber plans to deliver more perks to Uber One members, like member-exclusive events, in a bid to gain more revenue through subscriptions.  “You will see",
-        url: "https://techcrunch.com/2024/05/08/uber-promises-member-exclusives-as-uber-one-passes-1b-run-rate/",
+          "They are the default choice for millions of retirement savers who are automatically enrolled in 401(k) plans. But some investors are moving out of them.",
+        url: "https://www.wsj.com/personal-finance/retirement/401k-savers-target-date-funds-alternatives-6e4e6f75",
         urlToImage:
-          "https://techcrunch.com/wp-content/uploads/2023/05/GettyImages-1142304853-a.jpg?resize=1200,675",
-        publishedAt: "2024-05-08T14:41:36Z",
+          "https://s.yimg.com/ny/api/res/1.2/vpX9wLwvLmMrZLSsPX0riA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02MDA-/https://media.zenfs.com/en/the_wall_street_journal_hosted_996/200e36a41d4da40ee64854c3bc289a4d",
+        publishedAt: "2024-08-04T01:00:00Z",
         content:
-          "Uber plans to deliver more perks to Uber One members, like member-exclusive events, in a bid to gain more revenue through subscriptions. \r\nYou will see more member-exclusives coming up where members … [+4676 chars]",
-        source: "TechCrunch",
-        keyword: "Tech",
+          "A group of investors are shunning the most popular retirement investment on Wall Street.\r\nTarget-date funds are a professionally managed portfolio of stocks and bonds that recalibrates the mix as we … [+6270 chars]",
+        source: "Wall Street Journal",
+        keyword: "Wall Street",
       },
+      
     ]);
   });
 }

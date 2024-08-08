@@ -3,11 +3,12 @@
   flex-direction: column;
   background-color: #f5f6f7;
   padding: 62px 102px;
-  height: 1392px;
+  height: 1292px;
 }
 
 .saved__news-cards-container {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   gap: 16px;
 }
