@@ -112,6 +112,7 @@ function App() {
     checkToken()
       .then((res) => {
         if (res) {
+          setIsLoggedIn(true);
           setCurrentUser(res.data);
           getSavedArticles()
             .then((res) => {
