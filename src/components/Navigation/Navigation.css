@@ -80,7 +80,7 @@
   height: 2px;
   border-bottom: 3px solid #ffffff;
   left: -5px;
-  bottom: -34px;
+  bottom: -32px;
 }
 
 .nav__saved-news {
@@ -197,6 +197,10 @@
     max-width: 768px;
   }
 
+  .nav__user-container {
+   gap: 20px;
+  }
+
   .nav__logo-white {
     margin-left: 30px;
     margin-top: 10px;
@@ -205,7 +209,10 @@
   .nav__button-home {
     font-size: 16px;
     line-height: 20px;
-    margin-right: -10px;
+  }
+
+  .nav__buttons {
+    gap: 40px;
   }
 
   .nav__button-home.active::after {
@@ -213,9 +220,9 @@
   }
 
   .nav__saved__news-button-home {
-    margin-left: -100px;
     font-size: 16px;
     line-height: 20px;
+    
   }
 
   .nav__button-saved-articles-user {
@@ -224,7 +231,6 @@
   }
 
   .nav__button-saved-articles {
-    margin-right: -20px;
     font-size: 16px;
     line-height: 20px;
   }
@@ -252,7 +258,6 @@
     font-size: 16px;
     line-height: 20px;
     margin-top: 5px;
-    margin-right: 30px;
   }
 }
 

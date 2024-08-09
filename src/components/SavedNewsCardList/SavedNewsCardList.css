@@ -3,7 +3,7 @@
   flex-direction: column;
   background-color: #f5f6f7;
   padding: 62px 102px;
-  height: 1292px;
+  height: auto;
 }
 
 .saved__news-cards-container {
@@ -16,7 +16,7 @@
 @media screen and (max-width: 768px) {
   .saved__news-card {
     max-width: 600px;
-    height: 912px;
+    height: auto;
   }
 
   .saved__news-cards-container {
@@ -34,7 +34,7 @@
 
   .saved__news-cards-container {
     width: auto;
-    margin-left: auto;
+    margin-left: 40px;
     flex-direction: column;
   }
 }

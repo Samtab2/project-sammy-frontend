@@ -83,19 +83,22 @@
     width: 385px;
     font-size: 36px;
     line-height: 40px;
+    margin-right: 60px;
   }
 
   .search__form-subHeader {
     padding: 20px 0 40px;
+    width: 452px;
     font-size: 16px;
     line-height: 20px;
   }
 
   .search__form-input {
     padding: 18px 15px;
-    width: 365px;
+    width: 380px;
     font-size: 14px;
     line-height: 18px;
+    margin-right: 70px;
   }
 
   .search__form-button {
@@ -104,6 +107,7 @@
     height: 56px;
     font-size: 16px;
     line-height: 18px;
+    
   }
 }
 
@@ -118,32 +122,31 @@
   }
 
   .search__form-header {
-    font-size: 36px;
+    font-size: 48px;
     line-height: 40px;
-    width: 285px;
-    margin-left: auto;
+    width: 375px;
+    margin-right: 0;
   }
 
   .search__form-subHeader {
-    font-size: 18px;
+    font-size: 25px;
     line-height: 24px;
-    margin-left: auto;
-    width: 285px;
+    width: 375px;
   }
 
   .search__form-input {
     padding: 12px 15px;
     width: 350px;
+    height: 35px;
     font-size: 12px;
     line-height: 16px;
-    margin-top: 90px;
-    margin-left: auto;
+    margin-top: 70px;
+    margin-right: 0;
   }
 
   .search__form-button {
     padding: 12px 20px;
     width: 380px;
-    height: 40px;
     font-size: 14px;
     line-height: 16px;
     position: relative;

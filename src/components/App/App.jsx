@@ -112,7 +112,6 @@ function App() {
     checkToken()
       .then((res) => {
         if (res) {
-          setIsLoggedIn(true);
           setCurrentUser(res.data);
           getSavedArticles()
             .then((res) => {
@@ -191,11 +190,10 @@ function App() {
   };
 
   const handleRemoveArticle = ({ newsData }) => {
-    debugger
     removeSavedArticle(newsData)
       .then(() => {
         const unsavedNewsArticles = savedArticles.filter(
-          (article) => article.id !== newsData.id
+          (article) => article._id !== newsData._id
         );
         setSavedArticles(unsavedNewsArticles);
       })
