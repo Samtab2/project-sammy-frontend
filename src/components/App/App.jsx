@@ -191,10 +191,11 @@ function App() {
   };
 
   const handleRemoveArticle = ({ newsData }) => {
+    debugger
     removeSavedArticle(newsData)
       .then(() => {
         const unsavedNewsArticles = savedArticles.filter(
-          (article) => article._id !== newsData._id
+          (article) => article.id !== newsData.id
         );
         setSavedArticles(unsavedNewsArticles);
       })

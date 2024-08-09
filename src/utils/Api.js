@@ -2,7 +2,7 @@ export function getSavedArticles() {
   return new Promise((resolve, reject) => {
     resolve([
       {
-        id: "65f7368dfb74bd6a92114c85",
+        _id: "65f7368dfb74bd6a92114c85",
         author: "Ashley Belanger",
         title: "All the possible ways to destroy Google’s monopoly in search",
         description:
@@ -17,7 +17,7 @@ export function getSavedArticles() {
         keyword: "Apple",
       },
       {
-        id: "65f7368dfb74bd6a92114c85",
+        _id: "65f7368dfb74bd6a92114c85",
         author: "Alex Wilhelm",
         title: "Watch: When did iPads get as expensive as MacBooks?",
         description:
@@ -32,7 +32,6 @@ export function getSavedArticles() {
         keyword: "Tech",
       },
       {
-        id: "65f7368dfb74bd6a92114c85",
         author: "Anne Tergesen and Oyin Adedoyin",
         title:
           "The 401(k) Investors Convinced That Target-Date Funds Miss the Mark",
@@ -47,7 +46,6 @@ export function getSavedArticles() {
         source: "Wall Street Journal",
         keyword: "Wall Street",
       },
-      
     ]);
   });
 }
@@ -55,7 +53,7 @@ export function getSavedArticles() {
 export function addSavedArticle(newsData, keyword) {
   return new Promise((resolve, reject) => {
     resolve({
-      id: "65f7371e7bce9e7d331b11a0",
+      _id: "65f7371e7bce9e7d331b11a0",
       title: newsData.title,
       text: newsData.description,
       publishedAt: newsData.publishedAt,
