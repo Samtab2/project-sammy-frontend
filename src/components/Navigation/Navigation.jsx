@@ -29,7 +29,7 @@ function Navigation({ onLoginClick, onLogout }) {
   return (
     <nav className={`nav ${mobileMenuOpen ? "nav__menu-open" : ""} `}>
       <nav>
-        {currentPage === "/" ? (
+        {currentPage === "/" || mobileMenuOpen ? (
           <NavLink to="/">
             <img
               src={headerWhiteLogo}
