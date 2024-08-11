@@ -72,7 +72,7 @@
 }
 
 .news__button-bookmark:hover {
-  cursor: pointer;
+  background: transparent url(../../assets/BookMark-Hover.svg);
 }
 
 .news__button-bookmark_marked {
