@@ -207,8 +207,8 @@ function App() {
       addSavedArticle(newsData, keyword)
         .then((res) => {
           setSavedArticles([res, ...savedArticles]);
-          const savedArticlesId = res.data_id;
-          const newArticle = { ...newsData, _id: savedArticlesId, isSaved: true };
+          const savedArticlesId = res._id;
+          const newArticle = { ...newsData, _id: savedArticlesId };
           const newSearchResult = searchResult.map((article) =>
             article.url === newsData.url ? newArticle : article
           );
@@ -223,7 +223,7 @@ function App() {
           );
           setSavedArticles(unsaveNewsArticles);
 
-          const newArticle = { ...newsData, _id: "", isSaved: false };
+          const newArticle = { ...newsData, _id: "" };
           const newSearchResult = searchResult.map((article) =>
             article.url === newsData.url ? newArticle : article
           );
