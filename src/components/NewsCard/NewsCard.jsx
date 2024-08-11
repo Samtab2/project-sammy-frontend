@@ -82,7 +82,7 @@ function NewsCard({
               ? "news__button-bookmark_marked"
               : ""
           }`}
-          onClick={handleBookmarkClick}
+          onClick={newsData.isSaved ? handleRemoveClick : handleBookmarkClick}
         />
       ) : (
         ""
