@@ -47,12 +47,22 @@ function Navigation({ onLoginClick, onLogout }) {
           </NavLink>
         )}
       </nav>
-      <button
-        className={`nav__menu-button ${
-          activeModal !== "" ? "nav__menu-button_hidden" : ""
-        } ${mobileMenuOpen === true ? "nav__menu-button_open" : ""}`}
-        onClick={handleMobileMenu}
-      />
+          {currentPage === "/" ? (
+        <button
+          className={`nav__menu-button ${
+            activeModal !== "" ? "nav__menu-button_hidden" : ""
+          } ${mobileMenuOpen === true ? "nav__menu-button_open" : ""}`}
+          onClick={handleMobileMenu}
+        />
+      ) : (
+        <button
+          className={`nav__saved-news-menu-button ${
+            activeModal !== "" ? "nav__saved-news-menu-button_hidden" : ""
+          } ${mobileMenuOpen === true ? "nav__saved-news-menu-button_open" : ""}`}
+          onClick={handleMobileMenu}
+        />
+      )}
+  
 
       {mobileMenuOpen && (
         <MobileMenu onLoginClick={onLoginClick} onLogout={onLogout} />
@@ -82,18 +92,6 @@ function Navigation({ onLoginClick, onLogout }) {
         </nav>
       ) : isLoggedIn && currentPage === "/saved-news" ? (
         <nav className="nav__user-container">
-          <button
-            className={`nav__saved-news-menu-button ${
-              activeModal !== "" ? "nav__saved-news-menu-button_hidden" : ""
-            } ${
-              mobileMenuOpen === true ? "nav__saved-news-menu-button_open" : ""
-            } `}
-            onClick={handleMobileMenu}
-          />
-
-          {mobileMenuOpen && (
-            <MobileMenu onLoginClick={onLoginClick} onLogout={onLogout} />
-          )}
           <NavLink to="/" className="nav__saved__news-button-home" type="text">
             Home
           </NavLink>

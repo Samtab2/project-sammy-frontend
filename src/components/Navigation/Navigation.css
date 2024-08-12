@@ -277,8 +277,7 @@
 
   .nav__menu-button {
     display: flex;
-    background: url(../../assets/Mobile-menu-black.svg) center no-repeat;
-    background-color: #ffffff;
+    background: url(../../assets/mobile-Menu.svg) center no-repeat;
     width: 24px;
     height: 24px;
     border: none;
@@ -307,9 +306,14 @@
       no-repeat;
   }
 
+  .nav__saved-news-menu-button_open {
+    background: transparent url(../../assets/close-button-mobile.svg) center
+      no-repeat;
+  }
+
   .nav__saved-news-menu-button {
     display: flex;
-    background: transparent url(../../assets/mobile-Menu.svg) center no-repeat;
+    background: transparent url(../../assets/Mobile-menu-black.svg) center no-repeat;
     width: 24px;
     height: 24px;
     border: none;
