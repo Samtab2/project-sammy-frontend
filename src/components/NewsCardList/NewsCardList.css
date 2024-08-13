@@ -64,10 +64,8 @@
   }
 
   .news__cards-container {
-    display: flex;
     margin: auto;
     margin-left: 2px;
-    flex-wrap: wrap;
   }
 
   .news__cards-button {
