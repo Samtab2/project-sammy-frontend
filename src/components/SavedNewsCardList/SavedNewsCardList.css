@@ -18,10 +18,6 @@
     width: auto;
     height: auto;
   }
-
-  .saved__news-cards-container {
-    
-  }
 }
 
 @media screen and (max-width: 400px) {
