@@ -50,15 +50,15 @@ function Navigation({ onLoginClick, onLogout }) {
           {currentPage === "/" ? (
         <button
           className={`nav__menu-button ${
-            activeModal !== "" ? "nav__menu-button_hidden" : ""
-          } ${mobileMenuOpen === true ? "nav__menu-button_open" : ""}`}
+            activeModal === "" ? "nav__menu-button_hidden" : ""
+          } ${mobileMenuOpen === true ? "nav__menu-button_close" : ""}`}
           onClick={handleMobileMenu}
         />
       ) : (
         <button
           className={`nav__saved-news-menu-button ${
-            activeModal !== "" ? "nav__saved-news-menu-button_hidden" : ""
-          } ${mobileMenuOpen === true ? "nav__saved-news-menu-button_open" : ""}`}
+            activeModal === "" ? "nav__saved-news-menu-button_hidden" : ""
+          } ${mobileMenuOpen === true ? "nav__saved-news-menu-button_close" : ""}`}
           onClick={handleMobileMenu}
         />
       )}

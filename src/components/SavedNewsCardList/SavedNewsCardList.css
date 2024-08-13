@@ -15,26 +15,26 @@
 
 @media screen and (max-width: 768px) {
   .saved__news-card {
-    max-width: 600px;
+    width: auto;
     height: auto;
   }
 
   .saved__news-cards-container {
     width: 950px;
-    margin-left: -75px;
   }
 }
 
 @media screen and (max-width: 400px) {
   .saved__news-card {
-    width: 390px;
+    width: auto;
     height: auto;
     padding: 20px 10px;
   }
 
   .saved__news-cards-container {
+    display: flex;
     width: auto;
-    margin-left: 40px;
+    margin-left: 25px;
     flex-direction: column;
   }
 }

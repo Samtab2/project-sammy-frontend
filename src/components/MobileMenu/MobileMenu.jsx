@@ -12,7 +12,7 @@ const MobileMenu = ({ onLoginClick, onLogout, onCloseMenu }) => {
   };
 
   return (
-    <div className="mobile">
+    <nav className="mobile">
       <nav className="mobile__content">
         <nav className="mobile__links">
           <NavLink to="/" className="mobile__link" onClick={handleCloseMenu}>
@@ -43,7 +43,7 @@ const MobileMenu = ({ onLoginClick, onLogout, onCloseMenu }) => {
           )}
         </nav>
       </nav>
-    </div>
+    </nav>
   );
 };
 
