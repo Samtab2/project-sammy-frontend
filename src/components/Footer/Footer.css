@@ -52,6 +52,11 @@
   color: #1a1b22;
 }
 
+.footer__link-triplenTen a {
+  text-decoration: none;
+}
+
+
 .footer__link-home {
   font-weight: 400;
   font-size: 18px;

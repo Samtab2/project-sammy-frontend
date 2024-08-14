@@ -12,22 +12,38 @@ function Footer() {
         <ul className="footer__links">
           <div className="footer__links-wrapper">
             <li className="footer__link-home">Home</li>
-            <li className="footer__link-triplenTen">TriplenTen</li>
+            <li className="footer__link-triplenTen">
+              <a href="https://tripleten.com/" target="_blank" rel="noreferrer">
+                TriplenTen
+              </a>
+            </li>
           </div>
           <ul className="footer__social-links">
             <li className="footer__link-github">
-              <img
-                src={githubLogo}
-                alt="GitHub Logo"
-                className="footer__link-icon"
-              />
+              <a
+                href="https://github.com/Samtab2"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={githubLogo}
+                  alt="GitHub Logo"
+                  className="footer__link-icon"
+                />
+              </a>
             </li>
             <li className="footer__link-facebook">
-              <img
-                src={facebookLogo}
-                alt="Facebook Logo"
-                className="footer__link-icon"
-              />
+              <a
+                href="https://www.facebook.com/sammy.tabally.7/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={facebookLogo}
+                  alt="Facebook Logo"
+                  className="footer__link-icon"
+                />
+              </a>
             </li>
           </ul>
         </ul>
