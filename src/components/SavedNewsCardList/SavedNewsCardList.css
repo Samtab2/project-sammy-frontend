@@ -9,9 +9,10 @@
 .saved__news-cards-container {
   display: flex;
   flex-direction: row;
-  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
 }
-
 
 @media screen and (max-width: 768px) {
   .saved__news-card {
@@ -20,17 +21,11 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .saved__news-card {
-    width: auto;
-    height: auto;
     padding: 20px 10px;
   }
 
   .saved__news-cards-container {
-    display: flex;
-    width: auto;
-    margin-left: 25px;
-    flex-direction: column;
   }
 }

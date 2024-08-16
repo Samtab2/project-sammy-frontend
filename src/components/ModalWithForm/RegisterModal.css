@@ -54,7 +54,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .SignUp__button {
     width: 288px;
     height: 56px;

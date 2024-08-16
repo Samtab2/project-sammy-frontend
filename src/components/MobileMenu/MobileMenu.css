@@ -1,7 +1,7 @@
 .mobile {
   position: fixed;
   top: 0;
-  width: 390px;
+  width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
@@ -48,7 +48,7 @@
   background-color: transparent;
   margin-left: 10px;
   cursor: pointer;
-  width: 370px;
+  width: auto;
   height: 50px;
   color: white;
   font-family: "Roboto", Arial, sans-serif;

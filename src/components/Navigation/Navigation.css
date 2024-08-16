@@ -263,11 +263,11 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .nav {
     padding: 10px;
-    width: 380px;
     height: 56px;
+    width: 97%;
   }
 
   .nav__logo-white {

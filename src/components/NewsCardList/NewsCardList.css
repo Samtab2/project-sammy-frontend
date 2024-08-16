@@ -19,9 +19,10 @@
 .news__cards-container {
   display: flex;
   gap: 16px;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  margin-left: 35px;
+ 
 }
 
 .news__card-list {
@@ -63,11 +64,6 @@
     line-height: 36px;
   }
 
-  .news__cards-container {
-    margin: auto;
-    margin-left: 2px;
-  }
-
   .news__cards-button {
     margin: 30px auto;
     padding: 8px 16px;
@@ -88,7 +84,6 @@
 
   .news__cards-container {
     max-width: 288px;
-    margin: 0 auto;
   }
 
   .news__cards-header {
