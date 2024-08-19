@@ -25,7 +25,11 @@ function Navigation({ onLoginClick, onLogout }) {
   };
 
   return (
-    <nav className={`nav ${mobileMenuOpen ? "nav__menu-open" : ""} `}>
+    <nav
+      className={`nav ${
+        currentPage === "/saved-news" ? "nav__saved-news-nav" : ""
+      } ${mobileMenuOpen ? "nav__menu-open" : ""}`}
+    >
       <nav>
         {currentPage === "/" || mobileMenuOpen ? (
           <NavLink to="/">
@@ -45,7 +49,7 @@ function Navigation({ onLoginClick, onLogout }) {
           </NavLink>
         )}
       </nav>
-          {currentPage === "/" ? (
+      {currentPage === "/" ? (
         <button
           className={`nav__menu-button ${
             activeModal === "" ? "nav__menu-button_hidden" : ""
@@ -56,11 +60,12 @@ function Navigation({ onLoginClick, onLogout }) {
         <button
           className={`nav__saved-news-menu-button ${
             activeModal === "" ? "nav__saved-news-menu-button_hidden" : ""
-          } ${mobileMenuOpen === true ? "nav__saved-news-menu-button_close" : ""}`}
+          } ${
+            mobileMenuOpen === true ? "nav__saved-news-menu-button_close" : ""
+          }`}
           onClick={handleMobileMenu}
         />
       )}
-  
 
       {mobileMenuOpen && (
         <MobileMenu onLoginClick={onLoginClick} onLogout={onLogout} />
