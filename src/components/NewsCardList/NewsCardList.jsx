@@ -3,6 +3,7 @@ import NewsCard from "../NewsCard/NewsCard";
 import { useState, useContext } from "react";
 import { searchResultContext } from "../../contexts/searchResultContext";
 import { hasSearchedContext } from "../../contexts/hasSearchedContext";
+
 const NewsCardList = ({
   handleSaveArticle,
   handleRemoveArticle,
@@ -24,20 +25,20 @@ const NewsCardList = ({
         <>
           <h2 className="news__cards-header">Search results</h2>
           <ul className="news__cards-container">
-            {searchResult.slice(0, cardsDisplayed).map((result) => (
-              <article key={result.url} className="news__card-list">
+            {searchResult.slice(0, cardsDisplayed).map((result, index) => (
+              <li className="news__card-list" key={result.id || index}>
                 <NewsCard
                   newsData={result}
                   handleSaveArticle={handleSaveArticle}
                   handleRemoveArticle={handleRemoveArticle}
                   onClick={onLoginClick}
                 />
-              </article>
+              </li>
             ))}
           </ul>
           <button
             className={`news__cards-button ${
-              cardsDisplayed >= searchResult.length
+              cardsDisplayed >= searchResult.length ? "hidden" : ""
             }`}
             onClick={increaseVisibleCards}
           >

@@ -1,7 +1,8 @@
 import "./header.css";
 import Navigation from "../Navigation/Navigation";
+import SearchForm from "../SearchForm/SearchForm";
 
-function Header({ onLoginClick, onLogout, onRegisterClick }) {
+function Header({ onLoginClick, onLogout, onRegisterClick, handleSearch }) {
   return (
     <>
       <header className="header">
@@ -10,6 +11,7 @@ function Header({ onLoginClick, onLogout, onRegisterClick }) {
           onLogout={onLogout}
           onRegisterClick={onRegisterClick}
         />
+        <SearchForm handleSearch={handleSearch} />
       </header>
     </>
   );

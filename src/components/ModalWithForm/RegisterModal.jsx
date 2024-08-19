@@ -76,7 +76,7 @@ function RegisterModal({
         Username
         <input
           className="modal__input"
-          type="username"
+          type="text"
           name="username"
           id="username1"
           placeholder="Username"

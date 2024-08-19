@@ -15,16 +15,16 @@ function SearchForm({ handleSearch }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="search__form">
-      <section className="search__form-container">
-        <h1 className="search__form-header">What's going on in the world?</h1>
-        <p className="search__form-subHeader">
+    <form onSubmit={handleSubmit} className="search-form">
+      <section className="search-form__container">
+        <h1 className="search-form__header">What's going on in the world?</h1>
+        <p className="search-form__subHeader">
           Find the latest news on any topic and save them in your personal
           account.
         </p>
-        <header className="search__form-bar">
+        <header className="search-form__bar">
           <input
-            className="search__form-input"
+            className="search-form__input"
             type="text"
             id="search"
             value={keyword}
@@ -32,7 +32,7 @@ function SearchForm({ handleSearch }) {
             onChange={handleKeyWord}
           />
         </header>
-        <button type="submit" className="search__form-button">
+        <button type="submit" className="search-form__button">
           Search
         </button>
       </section>

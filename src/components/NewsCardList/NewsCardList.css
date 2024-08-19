@@ -22,11 +22,13 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
- 
 }
+
+
 
 .news__card-list {
   margin-bottom: 1rem;
+  list-style: none;
 }
 
 .news__cards-button {
@@ -77,14 +79,11 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .news__card-section {
     padding: 20px 10px;
   }
 
-  .news__cards-container {
-    max-width: 288px;
-  }
 
   .news__cards-header {
     height: 34px;
@@ -99,6 +98,5 @@
     font-size: 16px;
     height: 48px;
     width: 240px;
-    margin-left: 60px;
   }
 }

@@ -24,8 +24,6 @@ function Navigation({ onLoginClick, onLogout }) {
     }
   };
 
-  // TODO: style buttons in /saved-news Navigation differently
-  // use modifiers
   return (
     <nav className={`nav ${mobileMenuOpen ? "nav__menu-open" : ""} `}>
       <nav>
@@ -82,7 +80,7 @@ function Navigation({ onLoginClick, onLogout }) {
             }`}
             onClick={onLogout}
           >
-            <p className="nav__username">{currentUser.name}</p>
+            <span className="nav__username">{currentUser.name}</span>
             <img
               src={currentPage === "/" ? logOutWhite : logOutBlack}
               alt="logout"
@@ -92,7 +90,7 @@ function Navigation({ onLoginClick, onLogout }) {
         </nav>
       ) : isLoggedIn && currentPage === "/saved-news" ? (
         <nav className="nav__user-container">
-          <NavLink to="/" className="nav__saved__news-button-home" type="text">
+          <NavLink to="/" className="nav__saved__news-button-home">
             Home
           </NavLink>
           <NavLink to="/saved-news" className="nav__button-saved-articles-user">
@@ -104,7 +102,7 @@ function Navigation({ onLoginClick, onLogout }) {
             }`}
             onClick={onLogout}
           >
-            <p className="nav__username">{currentUser.name}</p>
+            <span className="nav__username">{currentUser.name}</span>
             <img
               src={currentPage === "/" ? logOutWhite : logOutBlack}
               alt="logout"

@@ -10,8 +10,6 @@
 .nav__menu-open {
   background-color: #1a1b22;
   min-height: 10px;
-  position: fixed;
-  z-index: 1;
   overflow: visible;
 }
 
@@ -267,7 +265,7 @@
   .nav {
     padding: 10px;
     height: 56px;
-    width: 97%;
+    width: 96%;
   }
 
   .nav__logo-white {
