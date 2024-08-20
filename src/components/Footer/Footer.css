@@ -55,15 +55,9 @@
   line-height: 24px;
   color: #1a1b22;
   list-style: none;
-}
-
-.footer__link-home a {
   text-decoration: none;
 }
 
-.footer__link-triplenTen a {
-  text-decoration: none;
-}
 
 
 .footer__link-home {
@@ -75,6 +69,8 @@
   line-height: 24px;
   color: #1a1b22;
   margin-right: 30px;
+  list-style: none;
+  text-decoration: none;
 }
 
 .footer__link-icon {
@@ -130,21 +126,15 @@
   }
 
   .footer__links-wrapper {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
   }
 
   .footer__links {
     align-items: center;
   }
 
-  .footer__link-home {
-    display: flex;
-    gap: 10px;
-  }
-
-  .footer__link-triplenTen {
-    margin-left: 0;
-  }
   .footer__social-links {
     list-style: none;
     gap: 10px;

@@ -4,50 +4,35 @@ import facebookLogo from "../../assets/facebookLogo.svg";
 
 function Footer() {
   return (
-    <footer className="footer">
-      <p className="footer__copyright">
+    <footer class="footer">
+      <p class="footer__copyright">
         &copy; {new Date().getFullYear()} Supersite, Powered by News API
       </p>
-      <ul className="footer__content">
-        <li className="footer__links-wrapper">
-          <a className="footer__link-home">
+      <div class="footer__links-wrapper">
+        <div class="footer__links">
+          <a href="#" class="footer__link-home">
             Home
           </a>
-        </li>
-        <li className="footer__link-triplenTen">
-          <a href="https://tripleten.com/" target="_blank" rel="noreferrer">
+          <a href="https://tripleten.com/" class="footer__link-triplenTen">
             TriplenTen
           </a>
-        </li>
-      </ul>
-      <ul className="footer__social-links">
-        <li className="footer__link-github">
-          <a
-            href="https://github.com/Samtab2"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src={githubLogo}
-              alt="GitHub Logo"
-              className="footer__link-icon"
-            />
+        </div>
+        <div class="footer__social-links">
+          <a href="https://github.com/Samtab2" class="footer__link-github">
+            <img src={githubLogo} alt="GitHub Logo" class="footer__link-icon" />
           </a>
-        </li>
-        <li className="footer__link-facebook">
           <a
             href="https://www.facebook.com/sammy.tabally.7/"
-            target="_blank"
-            rel="noreferrer"
+            class="footer__link-facebook"
           >
             <img
               src={facebookLogo}
               alt="Facebook Logo"
-              className="footer__link-icon"
+              class="footer__link-icon"
             />
           </a>
-        </li>
-      </ul>
+        </div>
+      </div>
     </footer>
   );
 }

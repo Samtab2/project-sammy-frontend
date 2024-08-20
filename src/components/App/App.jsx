@@ -83,6 +83,10 @@ function App() {
     setIsSuccessful(true);
   };
 
+  const onCloseSuccessModal = () => {
+    setIsSuccessful(false);
+  };
+
   useEffect(() => {
     const handleEscClose = (e) => {
       if (e.key === "Escape") {
@@ -324,9 +328,12 @@ function App() {
                         isLoading={isLoading}
                       />
                       <SuccessfulModal
-                        onClose={onClose}
+                        onClose={onCloseSuccessModal}
                         isOpen={isSuccessful}
-                        onLogInClick={handleSignInModalClick}
+                        onLoginClick={() => {
+                          handleSignInModalClick();
+                          onCloseSuccessModal();
+                        }}
                       />
                     </div>
 
