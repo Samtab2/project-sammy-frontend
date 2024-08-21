@@ -11,7 +11,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6px;
+  gap: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -27,6 +27,7 @@
   }
 
   .saved__news-cards-container {
-    margin-left: 50px;
+    margin-left: 25px;
+    width: 100%;
   }
 }

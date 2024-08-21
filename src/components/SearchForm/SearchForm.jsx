@@ -22,7 +22,7 @@ function SearchForm({ handleSearch }) {
           Find the latest news on any topic and save them in your personal
           account.
         </p>
-        <header className="search-form__bar">
+        <div className="search-form__bar">
           <input
             className="search-form__input"
             type="text"
@@ -31,7 +31,7 @@ function SearchForm({ handleSearch }) {
             placeholder="Enter Topic"
             onChange={handleKeyWord}
           />
-        </header>
+        </div>
         <button type="submit" className="search-form__button">
           Search
         </button>

@@ -68,6 +68,10 @@
   opacity: 60%;
 }
 
+.search-form__button:active {
+  opacity: 30%;
+}
+
 @media screen and (max-width: 768px) {
   .search-form {
     padding: 0 40px;

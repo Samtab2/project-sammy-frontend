@@ -2,7 +2,7 @@
 export const checkToken = () => {
   return new Promise((resolve, reject) => {
     resolve({
-      data: { name: 'fake user', email: 'test@example.com', id: 'fake ID' },
+      data: { name: 'Test', email: 'test@example.com', id: 'fake ID' },
     });
   });
 };

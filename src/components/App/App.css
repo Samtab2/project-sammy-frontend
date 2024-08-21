@@ -1,6 +1,6 @@
 .page {
   background-color: #ffffff;
-  background-image: url("../../assets/background.svg");
+  background-image: url("../../assets/background.png");
   margin: 0 auto;
   max-width: 1440px;
   max-height: 576px;
@@ -25,7 +25,6 @@
 @media screen and (max-width: 600px) {
    .page {
      min-width: 420px;
-     height: 100%;
    }
   
 }
