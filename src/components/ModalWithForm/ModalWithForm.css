@@ -88,7 +88,6 @@
 
 @media screen and (max-width: 768px) {
   .modal__content {
-    margin-bottom: 300px;
     padding: 35px 24px 30px;
   }
 
@@ -138,7 +137,7 @@
   }
 
   .modal__close-button {
-    right: 10px;
+    right: 5px;
     height: 20px;
     cursor: pointer;
     margin-left: auto;

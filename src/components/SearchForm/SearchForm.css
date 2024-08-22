@@ -65,11 +65,11 @@
 }
 
 .search-form__button:hover {
-  opacity: 60%;
+  background: #347eff;
 }
 
 .search-form__button:active {
-  opacity: 30%;
+  background: #2a65cc;
 }
 
 @media screen and (max-width: 768px) {

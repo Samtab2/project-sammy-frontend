@@ -18,11 +18,10 @@
 
 .news__cards-container {
   display: flex;
-  gap: 10px;
+  gap: 16px;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
-  margin-left: 66px;
+  margin-left: 60px;
 }
 
 

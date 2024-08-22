@@ -142,7 +142,7 @@ function App() {
           email: res.data.email,
           _id: res.data._id,
         });
-        setIsLoggedIn(true);
+        setIsLoggedIn(false);
         openSuccessModal(true);
         onClose();
       })

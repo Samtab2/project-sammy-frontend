@@ -10,14 +10,20 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+  gap: 16px;
+  margin-left: 60px;
 }
 
 @media screen and (max-width: 768px) {
   .saved__news-card {
     width: auto;
     height: auto;
+    padding: 20px;
+  }
+
+  .saved__news-cards-container {
+    gap: 10px;
+    margin-left: 25px;
   }
 }
 
