@@ -61,7 +61,8 @@
 
   .news__cards-container {
     margin-top: 0;
-    margin-left: 0;
+    margin-left: 10px;
+    gap: 6px;
   }
 
   .news__cards-header {
