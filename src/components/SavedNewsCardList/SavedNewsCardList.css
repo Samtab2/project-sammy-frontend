@@ -4,14 +4,15 @@
   background-color: #f5f6f7;
   padding: 40px;
   height: auto;
+  width: auto;
 }
 
 .saved__news-cards-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
-  margin-left: 60px;
 }
 
 @media screen and (max-width: 768px) {
@@ -19,21 +20,5 @@
     width: auto;
     height: auto;
     padding: 20px;
-  }
-
-  .saved__news-cards-container {
-    gap: 10px;
-    margin-left: 25px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .saved__news-card {
-    padding: 20px 10px;
-  }
-
-  .saved__news-cards-container {
-    margin-left: 25px;
-    width: 100%;
   }
 }

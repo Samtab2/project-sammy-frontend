@@ -24,7 +24,7 @@ const NewsCardList = ({
       {hasSearched ? (
         <>
           <h2 className="news__cards-header">Search results</h2>
-          <ul className="news__cards-container">
+          <div className="news__cards-container">
             {searchResult.slice(0, cardsDisplayed).map((result, index) => (
               <li className="news__card-list" key={result.id || index}>
                 <NewsCard
@@ -35,7 +35,7 @@ const NewsCardList = ({
                 />
               </li>
             ))}
-          </ul>
+          </div>
           <button
             className={`news__cards-button ${
               cardsDisplayed >= searchResult.length ? "hidden" : ""
