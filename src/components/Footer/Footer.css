@@ -71,13 +71,16 @@
   cursor: pointer;
 }
 
+.footer__social-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
 .footer__link-github {
   padding: 0 24px;
 }
 
-::marker {
-  display: none;
-}
 
 @media screen and (max-width: 768px) {
   .footer {

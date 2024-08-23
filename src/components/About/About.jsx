@@ -6,7 +6,7 @@ function About() {
       <img src={aboutImage} alt="aboutImage" className="about__image" />
       <div className="about__content">
         <h2 className="about__title">About the author</h2>
-        <p className="about__description">
+        <p className="about__pargraph">
           Hello, I'm Sammy Tabally, I'm full stack engineer proficient in
           JavaScript, React, Express, Node, HTML, CSS. I had a warehouse job
           before I started studying in web development.

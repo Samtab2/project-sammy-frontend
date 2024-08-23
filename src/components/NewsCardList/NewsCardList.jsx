@@ -20,10 +20,10 @@ const NewsCardList = ({
   };
 
   return (
-    <section className="news__card-section">
+    <div className="news__card-section">
       {hasSearched ? (
         <>
-          <h2 className="news__cards-header">Search results</h2>
+          <div className="news__cards-header">Search results</div>
           <div className="news__cards-container">
             {searchResult.slice(0, cardsDisplayed).map((result, index) => (
               <li className="news__card-list" key={result.id || index}>
@@ -48,7 +48,7 @@ const NewsCardList = ({
       ) : (
         ""
       )}
-    </section>
+    </div>
   );
 };
 

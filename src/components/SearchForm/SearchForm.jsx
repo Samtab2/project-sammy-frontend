@@ -30,6 +30,7 @@ function SearchForm({ handleSearch }) {
             value={keyword}
             placeholder="Enter Topic"
             onChange={handleKeyWord}
+            required
           />
         </div>
         <button type="submit" className="search-form__button">
