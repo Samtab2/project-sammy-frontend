@@ -18,7 +18,6 @@
   font-family: Roboto;
   font-style: normal;
   line-height: 22px;
-  
 }
 
 .footer__links-wrapper {
@@ -29,10 +28,7 @@
 .footer__content {
   display: flex;
   gap: 20px;
-  
 }
-
-
 
 .footer__links {
   display: flex;
@@ -51,8 +47,6 @@
   list-style: none;
   text-decoration: none;
 }
-
-
 
 .footer__link-home {
   font-weight: 400;
@@ -80,7 +74,6 @@
 .footer__link-github {
   padding: 0 24px;
 }
-
 
 @media screen and (max-width: 768px) {
   .footer {

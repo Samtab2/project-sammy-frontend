@@ -1,14 +1,10 @@
-import NotFoundImg from '../../assets/Not-Found-Img.svg';
-import './NotFound.css';
+import NotFoundImg from "../../assets/Not-Found-Img.svg";
+import "./NotFound.css";
 
 function NotFound() {
   return (
     <div className="not-found">
-      <img
-        className="not-found__img"
-        src={NotFoundImg}
-        alt="Not-Found-Img"
-      />
+      <img className="not-found__img" src={NotFoundImg} alt="Not-Found-Img" />
       <h1 className="not-found__header">Nothing found</h1>
       <p className="not-found__content">
         Sorry, but nothing matched your search terms

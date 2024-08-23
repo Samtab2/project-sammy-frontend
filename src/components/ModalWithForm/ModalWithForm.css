@@ -121,12 +121,9 @@
 }
 
 @media screen and (max-width: 600px) {
-
   .modal {
     background-color: black;
   }
-
-
 
   .modal__content {
     width: 340px;

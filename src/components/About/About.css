@@ -74,8 +74,7 @@
     width: 272px;
     height: 272px;
     position: relative;
-    margin-top: 20px;
-    margin-left: 75px;
+    margin: 20px auto;
   }
 
   .about__content {

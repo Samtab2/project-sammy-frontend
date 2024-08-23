@@ -15,10 +15,7 @@ const MobileMenu = ({ onLoginClick, onLogout, onCloseMenu }) => {
     <nav className="mobile">
       <nav className="mobile__content">
         <nav className="mobile__links">
-          <nav
-            className="mobile__link-NewsExplorer"
-            onClick={handleCloseMenu}
-          >
+          <nav className="mobile__link-NewsExplorer" onClick={handleCloseMenu}>
             NewsExplorer
           </nav>
           <button

@@ -20,7 +20,9 @@ function SavedNewsHeader() {
     if (uniqueKeywords.length <= 2) {
       return uniqueKeywords.join(", ");
     } else {
-      return `${uniqueKeywords[0]}, ${uniqueKeywords[1]}, and ${uniqueKeywords.length - 2} other`;
+      return `${uniqueKeywords[0]}, ${uniqueKeywords[1]}, and ${
+        uniqueKeywords.length - 2
+      } other`;
     }
   };
 
@@ -33,7 +35,9 @@ function SavedNewsHeader() {
       </h2>
       <div className="saved__news-Keyword-container">
         <p className="saved__news-Keywords-title">By Keywords:</p>
-        <p className="saved__news-Keywords">{getKeywordString(capitalizedFirstLetter)}</p>
+        <p className="saved__news-Keywords">
+          {getKeywordString(capitalizedFirstLetter)}
+        </p>
       </div>
     </nav>
   );

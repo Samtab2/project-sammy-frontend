@@ -35,7 +35,7 @@
 
 .mobile__link-NewsExplore-close {
   background: transparent url(../../assets/close-button-mobile.svg) center
-  no-repeat;
+    no-repeat;
   width: 24px;
   height: 24px;
   border: none;
@@ -44,7 +44,6 @@
   margin-top: 20px;
   cursor: pointer;
 }
-
 
 .mobile__link {
   font-family: "Roboto", Arial, sans-serif;

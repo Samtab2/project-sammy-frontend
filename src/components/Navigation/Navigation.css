@@ -9,10 +9,7 @@
 
 .nav__saved-news-nav {
   background-color: white;
-  
 }
-
-
 
 .nav__menu-open {
   background-color: #1a1b22;
@@ -241,8 +238,6 @@
     height: 40px;
   }
 
-
-
   .nav__button-saved-articles-user {
     font-size: 16px;
     line-height: 20px;
@@ -321,7 +316,8 @@
 
   .nav__saved-news-menu-button {
     display: flex;
-    background: transparent url(../../assets/Mobile-menu-black.svg) center no-repeat;
+    background: transparent url(../../assets/Mobile-menu-black.svg) center
+      no-repeat;
     width: 24px;
     height: 24px;
     border: none;

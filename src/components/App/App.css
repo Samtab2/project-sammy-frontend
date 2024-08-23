@@ -14,17 +14,8 @@
   margin: 0 auto;
 }
 
-
-
-
-
-
-
-
-
 @media screen and (max-width: 600px) {
-   .page {
-     min-width: 420px;
-   }
-  
+  .page {
+    min-width: 420px;
+  }
 }
