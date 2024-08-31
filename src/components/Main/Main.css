@@ -1,0 +1,12 @@
+.main {
+  min-height: 496px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.error-message {
+  color: red;
+  font-size: 16px;
+  margin-bottom: 16px;
+}

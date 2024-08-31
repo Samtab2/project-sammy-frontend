@@ -1,0 +1,24 @@
+.saved__news-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f6f7;
+  padding: 40px;
+  height: auto;
+  width: auto;
+}
+
+.saved__news-cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .saved__news-card {
+    width: auto;
+    height: auto;
+    padding: 20px;
+  }
+}

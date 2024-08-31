@@ -5,29 +5,52 @@ import facebookLogo from "../../assets/facebookLogo.svg";
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer__content">
-        <p className="footer__copyright">
-          © {new Date().getFullYear()} Supersite, Powered by News API
-        </p>
+      <p className="footer__copyright">
+        &copy; {new Date().getFullYear()} Supersite, Powered by News API
+      </p>
+      <nav className="footer__links-wrapper">
         <ul className="footer__links">
-          <li className="footer__link-home">Home</li>
-          <li className="footer__link-triplenTen">TriplenTen</li>
-          <li className="footer__link-github">
-            <img
-              src={githubLogo}
-              alt="GitHub Logo"
-              className="footer__link-icon"
-            />
+          <li>
+            <a href="#" className="footer__link-home">
+              Home
+            </a>
           </li>
-          <li className="footer__link-facebook">
-            <img
-              src={facebookLogo}
-              alt="Facebook Logo"
-              className="footer__link-icon"
-            />
+          <li>
+            <a
+              href="https://tripleten.com/"
+              className="footer__link-triplenTen"
+            >
+              TriplenTen
+            </a>
           </li>
         </ul>
-      </div>
+        <ul className="footer__social-links">
+          <li>
+            <a
+              href="https://github.com/Samtab2"
+              className="footer__link-github"
+            >
+              <img
+                src={githubLogo}
+                alt="GitHub Logo"
+                className="footer__link-icon"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/sammy.tabally.7/"
+              className="footer__link-facebook"
+            >
+              <img
+                src={facebookLogo}
+                alt="Facebook Logo"
+                className="footer__link-icon"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
     </footer>
   );
 }

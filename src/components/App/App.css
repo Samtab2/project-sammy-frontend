@@ -1,12 +1,21 @@
 .page {
   background-color: #ffffff;
-  height: 100%;
-  margin: 0;
+  background-image: url("../../assets/background.png");
+  margin: 0 auto;
+  max-width: 1440px;
+  max-height: 576px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .page__content {
-  min-width: 100vh;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .page {
+    min-width: 420px;
+  }
 }

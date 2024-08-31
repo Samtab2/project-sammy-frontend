@@ -1,32 +1,46 @@
 import "./SearchForm.css";
+import { useContext } from "react";
+import { keywordContext } from "../../contexts/keyWordContext";
 
+function SearchForm({ handleSearch }) {
+  const { keyword, setkeyword } = useContext(keywordContext);
 
-function SearchForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleSearch(keyword);
+  };
 
+  const handleKeyWord = (event) => {
+    setkeyword(event.target.value);
+  };
 
-    return (
-        <form  className="search__form">
-         <section className="search__form-container">
-            <h1 className="search__form-header">
-                What's going on in the world?
-            </h1>
-            <p className="search__form-subHeader">
-                Find the latest news on any topic and save them in your personal account.
-            </p>
-            <div className="search__form-bar">
-                <input
-                   className="search__form-input"
-                   type="text"
-                   id="search"
-                   placeholder="Enter Topic"
-                   />
-</div>
-     <button type="submit" className="search__form-button">
-        Search
-     </button>
-         </section>
- </form>
-    );
+  return (
+    <div className="search-form">
+      <section className="search-form__container">
+        <h1 className="search-form__header">What's going on in the world?</h1>
+        <p className="search-form__subHeader">
+          Find the latest news on any topic and save them in your personal
+          account.
+        </p>
+        <form className="search-form" onSubmit={handleSubmit}>
+          <form className="search-form__bar">
+            <input
+              className="search-form__input"
+              type="text"
+              id="search"
+              value={keyword}
+              placeholder="Enter Topic"
+              onChange={handleKeyWord}
+              required
+            />
+          </form>
+          <button type="submit" className="search-form__button">
+            Search
+          </button>
+        </form>
+      </section>
+    </div>
+  );
 }
 
 export default SearchForm;
