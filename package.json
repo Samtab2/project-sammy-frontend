@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-   "homepage": "https://samtab2.github.io/Sammy_news_explorer-frontend/",
+   "homepage": "https://samtab2.github.io/Sammy_news_explorer-frontend",
 
   "scripts": {
     "dev": "vite --open",
