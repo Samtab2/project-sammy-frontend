@@ -37,8 +37,15 @@ Ensure your code follows best practices and is well-documented.
 
 
 
+
+
+
+
 Also This is Frontend Application but doesn't run with Backend.
 
+
+
+Sorry, API Requests are out And You can run my Application via VS CODE 
 
 -Sammy Tabally
 
