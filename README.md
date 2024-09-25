@@ -45,7 +45,7 @@ Also This is Frontend Application but doesn't run with Backend.
 
 
 
-Sorry, API Requests are out And You can run my Application via Npm run dev so you can see it while npm is running 
+Sorry, API Requests are out And You can run my Application via Npm run dev on VScode Command so you can see it while npm is running 
 
 -Sammy Tabally
 
